@@ -10,6 +10,8 @@ Comando de teste para aparecer como alteraçao
 
 ou abra o VSCode e clique no menu "Terminal"
 
+blabla
+
 2 - Execute os seguintes comandos para configurar o nome do seu usuário e o seu e-mail
 
 `git config --global user.name "Seu Nome"`
