@@ -6,6 +6,7 @@ Repositório da equipe do projeto "Trilha de Educação"
 ### Preparação ###
 
 1 - Abra o git bash
+Comando de teste para aparecer como alteraçao
 
 ou abra o VSCode e clique no menu "Terminal"
 

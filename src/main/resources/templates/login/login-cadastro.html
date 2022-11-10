@@ -1,0 +1,176 @@
+Login Cadastro 
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="shortcut icon" href="assets/img/logoStudy.png" type="image/x-icon" />
+    <title>Entre</title>
+  </head>
+  <style>
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+
+* {
+  /*Isso reseta nosso Style deixando tudo centralizado */
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+}
+
+.main-login {
+  /* VH É O TAMANHO DA VIEWPORT */
+  /* VW PARA WIDTH E VH PARA HEIGHT */
+  width: 100vw; /*SE USA VH PQ É A PORCETAGEM DA LARGURA DA VIEWPORT*/
+  height: 100%;
+  background-image: linear-gradient(
+    55deg,
+    #ffffff 0,
+    #d6ffff 25%,
+    #9fd8ff 50%,
+    #64b2e3 75%,
+    #128fca 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.left-login {
+  width: 50vw; /*FICARÁ EM 50% DA TELA*/
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.left-login > h1 {
+  color: rgb(28, 14, 91);
+  font-size: 3vw;
+}
+
+.left-login-image {
+  width: 40vw;
+}
+
+.right-login {
+  width: 50vw; /*FICARÁ EM 50% DA TELA*/
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-login {
+  /* PORCENTAGEM PEGARÁ O AMANHO DA DIV QUE ESTA O CARD LOGIN  */
+  width: 60%; /*ELE VAI PEGAR 60% DO VH E TOMAR COMO TAMANHO*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 30px; /*O PRIMEIRO VALOR COLOCADO SE REFERE AO EIXO Y*/
+  /* 30 OU SEJA ELE TERÁ 30 PX NA PARTE DE CIMA E 30PX NA PARTE DE BAIXO*/
+  /* O SEGUNDO 30PX ADICIONARÁ OS PADDINGS PARA O EIXO X (ESQUERDA PARA DIREITA)*/
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px black;
+}
+
+.card-login > h1 {
+  color: rgb(12, 0, 74);
+  font-weight: 800;
+  margin: 0%;
+}
+
+.text-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0px;
+  width: 100%;
+}
+
+.text-field > input {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background: #ffffff;
+  color: #000000de;
+  font-size: 12pt;
+
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.text-field > label {
+  color: #000000de;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.text-field > input::placeholder {
+  color: #00000094;
+}
+
+.btn-login {
+  width: 230px;
+  padding: 16px 0px;
+  margin: 25px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  text-transform: uppercase; /*TRANSFORMAR TODAS LETRAS EM MAISCULA*/
+  font-weight: 800;
+  /*SERVE PARA DAR ESPAÇAMENTO ENTRE AS LETRAS*/
+  color: #ffffff;
+  background-color: rgb(78, 78, 232);
+  cursor: pointer;
+  text-align: center;
+}
+
+  </style>
+
+  <body>
+    <header></header>
+
+    <main class="main-login">
+      <div class="left-login">
+        <h1 class="">
+          Faça Login <br />
+          Entre para nosso time
+        </h1>
+        <img class="left-login-image" src="assets/img/thesis-animate.svg" alt="" />
+      </div>
+
+      <div class="right-login">
+        <div class="card-login">
+          <h1>LOGIN</h1>
+          <div class="text-field">
+            <label for="usuario"> Usuário</label>
+            <input type="text" nome="usario" placeholder="E-mail ou Usuário" />
+          </div>
+
+          <div class="text-field">
+            <label for="senha"> Senha</label>
+            <input
+              type="password"
+              nome="senha"
+              placeholder="Digite sua senha"
+            />
+          </div>
+
+          <a href="transicao.html"><button class="btn-login">Entrar</button></a>
+          <p>Ainda não possui cadastro? <a href="formulario-cadastro.html" style="color: blue;">Clique Aqui</a></p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
