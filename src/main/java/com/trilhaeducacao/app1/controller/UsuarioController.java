@@ -14,7 +14,7 @@ import com.trilhaeducacao.app1.model.Usuario;
 @Controller
 public class UsuarioController {
 
-	
+		
 	private static List<Usuario> listaUsuarios = new ArrayList<>();
 	
 	@GetMapping("")

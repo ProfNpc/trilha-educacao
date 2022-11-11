@@ -10,15 +10,15 @@ import org.springframework.web.servlet.ModelAndView;
 public class TrilhaAplication {
 
 	public static void main(String[] args) {
-		
-	}
-	 @GetMapping("/cadastro")
-	 
-	    public ModelAndView getList() {
-	        
-	        ModelAndView mv = new ModelAndView("cadastro");
-	        return mv;
-	    }
-	
+
 	}
 
+	@GetMapping("/cadastro")
+
+	public ModelAndView getList() {
+
+		ModelAndView mv = new ModelAndView("cadastro");
+		return mv;
+	}
+
+}
