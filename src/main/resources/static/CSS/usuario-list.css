@@ -1,0 +1,125 @@
+ @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+* {
+  /*Isso reseta nosso Style deixando tudo centralizado */
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+}
+
+.cabecalho {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 24px;
+  height: 90px;
+}
+
+.cabecalho-imagem {
+  height: 72px;
+}
+
+.cabecalho-menu {
+  display: flex;
+  gap: 32px;
+}
+
+.cabecalho-menu-item {
+  font-family: "Sarala", sans-serif;
+  color: #fff2e7;
+  font-weight: 400;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+/* NAV BAR TERMINA AQUI */
+
+body {
+  background-image: linear-gradient(
+    55deg,
+    #ffffff 0,
+    #d6ffff 25%,
+    #9fd8ff 50%,
+    #64b2e3 75%,
+    #128fca 100%
+  );
+
+}
+
+h1{
+    font-size: 45px;
+    text-align: center;
+    padding: 40px 0px;
+    color: rgb(28, 14, 91);
+}
+.cadastro-usuarios{
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0px;
+}
+.container{
+    display: flex;
+    height: 600px;
+    background-color: white;
+    width: 800px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+table, th, td{
+   
+    border: 0.3px solid rgb(167, 167, 167);
+    border-collapse: collapse;
+    margin: 0 auto;
+    padding: 10px 20px;
+    
+}
+
+th{
+  height: 70px;
+}
+
+
+table{
+    height: 600px;
+    width: 800px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+th{
+    background-color: rgb(78, 78, 232);
+    color: white;
+}
+
+
+/* CONTEYDO DA PAGINA TERMINA AQUI */
+
+.rodape {
+    padding: 32px;
+    border-top: 0.4px solid black;
+  }
+  
+  .imagem-rodape {
+    height: 48px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .conteudo-primario {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .cabecalho-imagem {
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  /* Feito por Kaique Oliveira */

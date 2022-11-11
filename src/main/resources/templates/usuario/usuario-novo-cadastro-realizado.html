@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/usuario-novo-cadastro-realizado.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/img/logoStudy.png"
+      type="image/x-icon"
+    />
+   
+    <title>Cadastro realizado!</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="form-image">
+            <img src="assets/img/login-animate.svg" alt="">
+        </div>
+        <div class="form">
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1><strong> Parabéns!</strong> <br>cadastro realizado com sucesso.</h1>
+                    </div>
+                     <!-- <div class="login-button">
+                        <button><a href="#">Entrar</a></button>
+                    </div>  -->
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <h4>
+                           ID:<span th:text="${pet.id}"></span>
+                        </h4>
+                      
+                    </div>
+
+                    <div class="input-box">
+                        <h4>
+                           Nome: <span th:text="${pet.id}"></span>
+                        </h4>
+                       
+                    </div>
+                    <div class="input-box">
+                        <h4>
+                           Sobrenome: <span th:text="${pet.id}"></span>
+                        </h4>
+                     
+                    </div>
+
+                    <div class="input-box">
+                        <h4>
+                            email: <span th:text="${pet.id}"></span>
+                        </h4>
+                  </div>
+
+                    <div class="input-box">
+                        <h4>
+                          Celular:
+                        </h4>
+
+
+                    
+                    </div>
+
+                </div>
+
+
+                    
+
+                <div class="continue-button">
+                    <button><a type="submit" href="#">Ir para listagem</a> </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
