@@ -26,11 +26,10 @@ public class UsuarioController {
 	public String form() {
 		return "usuario/usuario-form-cadastro";
 	}
-	
-	@PostMapping("/usuario/cadastro-realizado")
+	 
+	@PostMapping("/cadastro")
 	public String criado(Usuario usuario, Model model) {
 		listaUsuarios.add(usuario);
-		
-		return "usuario/usuario-novo-cadastr-realizado";
+		return "usuario/usuario-novo-cadastro-realizado";
 	}
 }
