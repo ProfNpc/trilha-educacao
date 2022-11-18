@@ -16,7 +16,7 @@
             <img src="assets/img/login-animate.svg" alt="">
         </div>
         <div class="form">
-            <form action="cadastro/cadastro-realizado">
+            <form action="/usuario/novo"  method="post">
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastro de novos usuários</h1>
@@ -27,27 +27,34 @@
                 </div>
 
                 <div class="input-group">
+               
+					<div class="input-box">
+                        <label for="id">Id</label>
+                        <input id="id" type="hidden" name="id"th:value="${usuario.id}">
+                    </div>
+                
+                
                     <div class="input-box">
                         <label for="firstname">Primeiro Nome</label>
-                        <input id="firstname" type="text" name="firstname" placeholder="Digite o primeiro nome"
-                            required>
+                        <input id="firstname" type="text" name="firstname"  th:value="${usuario.nome}">
+
                     </div>
 
                     <div class="input-box">
                         <label for="lastname">Sobrenome</label>
-                        <input id="lastname" type="text" name="lastname" placeholder="Digite o sobrenome" required>
+                        <input id="lastname" type="text" name="lastname"th:value="${usuario.sobrenome}">
                     </div>
                     <div class="input-box">
                         <label for="email">E-mail</label>
-                        <input id="email" type="email" name="email" placeholder="Digite o e-mail" required>
+                        <input id="email" type="email" name="email" th:value="${usuario.email}">
                     </div>
 
                     <div class="input-box">
                         <label for="number">Celular</label>
-                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                        <input id="number" type="tel" name="number" th:value="${usuario.celular}">
                     </div>
 
-                    <div class="input-box">
+                     <!-- <div class="input-box">
                         <label for="password">Senha</label>
                         <input id="password" type="password" name="password" placeholder="Digite uma senha" required>
                     </div>
@@ -57,7 +64,7 @@
                         <label for="confirmPassword">Confirme a Senha</label>
                         <input id="confirmPassword" type="password" name="confirmPassword"
                             placeholder="confirme a senha" required>
-                    </div>
+                    </div> -->
 
                 </div>
 

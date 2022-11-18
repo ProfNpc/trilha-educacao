@@ -30,19 +30,45 @@
           <tr>
             <th>Id</th>
             <th>Nome</th>
+             <th>Sobre nome</th>
             <!-- Utilizando colspan para dizer que quero aplicar esse titulo para 2 colunas -->
             <th>Email</th>
-            <th>Telefone</th>
+            <th>Celular</th>
           </tr>
 
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+         <tr th:each="usuario : ${usuarios}">
+          	<td>
+				<span th:text="${usuario.id}"></span>
+			</td>
+			
+           	<td>
+				<span th:text="${usuario.nome}"></span>
+			</td>
+			
+			<td>
+				<span th:text="${usuario.sobrenome}"></span>
+			</td>
+			
+			<td>
+				<span th:text="${usuario.email}"></span>
+			</td>
+			
+			
+			<td>
+				<span th:text="${usuario.celular}"></span>
+			</td>
           </tr>
 
+
           <tr>
+          	<td>
+				<a th:href="@{/usuario/{id} (id=${usuario.id}) }">Detalhe</a>
+            </td>
+            
+            <td>
+				<a th:href="@{/usuario/{id}/edit (id=${usuario.id}) }">Editar</a>
+			</td>
+          
             <td></td>
             <td></td>
             <td></td>
@@ -91,9 +117,10 @@
             <td></td>
           </tr>
         </table>
+        <a th:href="@{/usuario/novo}">Novo</a>
       </div>
     </section>
-  </main>
+  <!--</main> -->
 
   <!-- RODAPÉ -->
   <footer class="rodape">

@@ -9,7 +9,7 @@ import com.trilhaeducacao.app1.model.Usuario;
 
 public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
 	
-	  List<Usuario> findByDescricao(String descricao);
+	  List<Usuario> findByNome(String nome);
 
 	  Usuario findById(int id);
 }

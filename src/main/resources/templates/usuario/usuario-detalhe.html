@@ -11,7 +11,7 @@
       type="image/x-icon"
     />
    
-    <title>Cadastro realizado!</title>
+    <title>Detalhes do Usuário!</title>
   </head>
   <body>
     <div class="container">
@@ -58,7 +58,7 @@
 
                     <div class="input-box">
                         <h4>
-                          Celular:  <span th:text="${usuario.celular}"></span>
+                          Celular: <span th:text="${usuario.celular}"></span>
                         </h4>
 
 
@@ -71,7 +71,7 @@
                     
 
                 <div class="continue-button">
-                   <!-- <button><a type="submit" href="#">Ir para listagem</a> </button> !-->
+                     <button><a th:href="@{/usuario/list}">Ir para listagem</a> </button>
                 </div>
             </form>
         </div>
