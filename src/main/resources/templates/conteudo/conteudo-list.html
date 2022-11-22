@@ -37,13 +37,40 @@
                         <th>Responsavel pela matéria</th>
                     </tr>
             
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                <tr th:each="conteudo : ${conteudos}">
+          	<td>
+				<span th:text="${conteudo.id}"></span>
+			</td>
+			
+           	<td>
+				<span th:text="${conteudo.materia}"></span>
+			</td>
+			
+			<td>
+				<span th:text="${conteudo.nivel}"></span>
+			</td>
+			
+			<td>
+				<span th:text="${conteudo.responsavel}"></span>
+			</td>
+			
+			
+			<td>
+				<span th:text="${conteudo.celular}"></span>
+			</td>
+          </tr>
+
+
+          <tr>
+          	<td>
+				<a th:href="@{/conteudo/{id} (id=${conteudo.id}) }">Detalhe</a>
+            </td>
             
+            <td>
+				<a th:href="@{/conteudo/{id}/edit (id=${conteudo.id}) }">Editar</a>
+			</td>
+			
+            </tr>
                     <tr>
                       <td></td>
                       <td></td>
