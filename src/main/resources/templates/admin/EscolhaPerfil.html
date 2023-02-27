@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/EscolhaPerfil.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <nav class="nav-bar">
+            <div class="logo">
+                <a href="#conteudo-primario"> Y.our Study</a>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"> <a class="nav-link" href="#conteudo-primario">Inicio</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="#sobre">Objetivo</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="#skilss">Funcionalidades</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="#projetos">Participantes</a></li>
+                </ul>
+            </div>
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img src="assets/img/menu_white_36dp.svg" alt="" class="icon"></button>
+            </div>
+        </nav>
+
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"> <a class="nav-link" href="#conteudo-primario">Inicio</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#sobre">Objetivo</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#skilss">Funcionalidades</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#projetos">Participantes</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Home -->
+
+    <section class="conteudo">
+        
+        <div class="welcome">
+            <div class="texto-welcome">
+                <h1 class="apresentacao">
+                    Quem está acessando?
+                </h1>
+            </div>
+        </div>
+
+        <div class="container-funcoes">
+        
+        <a th:href="@{/admin}">
+            <div class="funcao">
+                <div class="icon-funcao">
+                    <img src="assets/img/user.png" alt="" class="icon">
+                </div>
+
+                <div class="descricao-funcao">
+                    <h1>Usuário</h1>
+                </div>
+            </div>
+        </a>
+
+		<a th:href="@{/admin}">
+            <div class="funcao">
+                <div class="icon-funcao">
+                    <img src="assets/img/admin.png" alt="" class="icon">
+                </div>
+
+                <div class="descricao-funcao">
+                    <h1>Administrador</h1>
+                </div>
+            </div>
+            </a>
+        </div>
+    </section>
+</body>
+
+</html>

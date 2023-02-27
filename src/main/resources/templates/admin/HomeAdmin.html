@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/HomeAdmin.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <nav class="nav-bar">
+          <div class="logo">
+               <a th:href="@{/home}"> Y.our Study</a>
+          </div>
+        <div class="nav-list">
+    <ul>
+       <li class="nav-item"> <a class="nav-link" href="#conteudo-primario" >Inicio</a></li>
+       <li class="nav-item"> <a class="nav-link" href="#sobre">Objetivo</a></li>
+       <li class="nav-item"> <a class="nav-link" href="#skilss">Funcionalidades</a></li>
+       <li class="nav-item">  <a class="nav-link" href="#projetos">Participantes</a></li>
+    </ul>   
+    </div>
+    <div class="mobile-menu-icon">
+        <button onclick="menuShow()"><img src="assets/img/menu_white_36dp.svg" alt="" class="icon"></button>
+    </div>
+    </nav>
+    
+    <div class="mobile-menu">
+    <ul>
+         <li class="nav-item"> <a class="nav-link" href="#conteudo-primario" >Inicio</a></li>
+         <li class="nav-item"> <a class="nav-link" href="#sobre">Objetivo</a></li>
+         <li class="nav-item"> <a class="nav-link" href="#skilss">Funcionalidades</a></li>
+         <li class="nav-item">  <a class="nav-link" href="#projetos">Participantes</a></li>
+    </ul>
+    </div>
+    </header>
+
+    <!-- Home -->
+
+    <section class="conteudo">
+        
+        <div class="container-funcoes">
+
+            <div class="welcome">
+                <div class="icon-apresentacao">
+                        <img class="logo-icon" src="assets/img/logoStudy.png" alt="">
+                </div>
+    
+              <div class="texto-apresentacao">
+                <h1 class="apresentacao"> Bem vindo, <strong><span class="usuario">Kaique</span></strong><br>
+                    Voce está acessando o perfil de <strong>Administrador</strong></h1>
+              </div>
+            </div>
+
+		<a th:href="@{/cadastro}">
+            <div class="funcao">
+                <div class="icon-funcao">
+                    <img src="assets/img/user.png" alt="" class="icon">
+                </div>
+
+                <div class="descricao-funcao">
+                    <h1>Cadastrar Usuário</h1>
+                </div>
+            </div>
+        </a>
+
+            <div class="funcao">
+                <div class="icon-funcao">
+                    <img src="assets/img/conteudo.png" alt="" class="icon">
+                </div>
+                
+                <div class="descricao-funcao">
+                    <h1>Cadastrar conteudo</h1>
+                </div>
+            </div>
+
+	<a th:href="@{/listagem}">
+            <div class="funcao">
+                <div class="icon-funcao">
+                    <img src="assets/img/lista.png" alt="" class="icon">
+                </div>
+                
+                <div class="descricao-funcao">
+                    <h1>Lista de usuarios</h1>
+                </div>
+            </div>
+	</a>
+
+            <div class="funcao">
+                <div class="icon-funcao">
+                    <img src="assets/img/suporte.png" alt="" class="icon">
+                </div>
+                
+                <div class="descricao-funcao">
+                    <h1>Suporte</h1>
+                </div>
+            </div>
+
+            
+            
+
+            
+
+            
+        </div>
+
+    </section>
+</body>
+</html>

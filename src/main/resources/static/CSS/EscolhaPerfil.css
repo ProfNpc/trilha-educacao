@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+* {
+  /*Isso reseta nosso Style deixando tudo centralizado */
+  margin: 0 ;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  
+}
+
+header {
+
+  position: fixed;
+  width: 100%;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 6rem;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav-item {
+  margin: 0 15px;
+}
+
+.nav-item a:hover{
+  opacity: 80%;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.15rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+.logo {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Sarala", sans-serif;
+  background-color: #64b2e3;
+  height: 11vh;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.logo a:hover {
+  opacity: 0.7;
+}
+
+.mobile-menu-icon {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+body{
+    background-image: linear-gradient(
+        55deg,
+        #ffffff 0,
+        #d6ffff 25%,
+        #9fd8ff 50%,
+        #64b2e3 75%,
+        #128fca 100%
+      );
+}
+
+.conteudo{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-funcoes{
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.funcao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    width: 280px;
+    background-color: white;
+    border-radius: 6px;
+    gap: 50px;
+    font-size: 13px;
+    color: rgb(54, 54, 54);
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+}
+
+.funcao:hover{
+  box-shadow: 10px 7px 4px 0px rgba(0,0,0,0.43);
+  transition: 0.3s;
+}
+
+.icon-funcao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    border-radius: 100px;
+    background-color: #d4d4d4;
+    border: 1.5px solid rgb(113, 113, 255);
+}
+
+.icon{
+    height: 90px;
+}
+
+.welcome{
+  height: 100px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 20px;
+  font-size: 27px;
+  color: rgb(54, 54, 54);
+  margin-top: 70px;
+  text-align: center;
+}
+
+.logo-icon{
+  height: 100px;
+}
+
+strong{
+  color: blue;
+}
+
+

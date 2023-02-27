@@ -13,114 +13,119 @@
 <body>
   <!-- CABEÇALHO -->
   <header class="cabecalho">
-    <img class="cabecalho-imagem" src="assets/img/logoStudy copy.png" alt="Logo da comunidade Ballerini" />
-    <nav class="cabecalho-menu">
-      <a class="cabecalho-menu-item" href="index.html">Inicio</a>
-      <a class="cabecalho-menu-item" href="funcoes.html">Matérias</a>
-      <a class="cabecalho-menu-item" href="#">Sobre</a>
-      <a class="cabecalho-menu-item" href="formulario-login.html">Entrar</a>
-    </nav>
-  </header>
+    <nav class="nav-bar">
+      <div class="logo">
+          <a th:href="@{/home}"> Y.our Study</a>
+      </div>
+    <div class="nav-list">
+<ul>
+   <li class="nav-item"> <a class="nav-link" href="#conteudo-primario" >Inicio</a></li>
+   <li class="nav-item"> <a class="nav-link" href="#sobre">Objetivo</a></li>
+   <li class="nav-item"> <a class="nav-link" href="#skilss">Funcionalidades</a></li>
+   <li class="nav-item">  <a class="nav-link" href="#projetos">Participantes</a></li>
+</ul>   
+</div>
+<div class="mobile-menu-icon">
+    <button onclick="menuShow()"><img src="assets/img/menu_white_36dp.svg" alt="" class="icon"></button>
+</div>
+</nav>
+
+<div class="mobile-menu">
+<ul>
+     <li class="nav-item"> <a class="nav-link" href="#conteudo-primario" >Inicio</a></li>
+     <li class="nav-item"> <a class="nav-link" href="#sobre">Objetivo</a></li>
+     <li class="nav-item"> <a class="nav-link" href="#skilss">Funcionalidades</a></li>
+     <li class="nav-item">  <a class="nav-link" href="#projetos">Participantes</a></li>
+</ul>
+</div>
+</header>
 
   <main class="conteudo-pagina">
     <section class="cadastro-usuarios">
-      <h1>Lista de Usuários</h1>
-      <div class="container">
-        <table>
-          <tr>
-            <th>Id</th>
-            <th>Nome</th>
-             <th>Sobre nome</th>
-            <!-- Utilizando colspan para dizer que quero aplicar esse titulo para 2 colunas -->
-            <th>Email</th>
-            <th>Celular</th>
-          </tr>
-
-         <tr th:each="usuario : ${usuarios}">
-          	<td>
-				<span th:text="${usuario.id}"></span>
-			</td>
-			
-           	<td>
-				<span th:text="${usuario.nome}"></span>
-			</td>
-			
-			<td>
-				<span th:text="${usuario.sobrenome}"></span>
-			</td>
-			
-			<td>
-				<span th:text="${usuario.email}"></span>
-			</td>
-			
-			
-			<td>
-				<span th:text="${usuario.celular}"></span>
-			</td>
-          </tr>
-
-
-          <tr>
-          	<td>
-				<a th:href="@{/usuario/{id} (id=${usuario.id}) }">Detalhe</a>
-            </td>
-            
-            <td>
-				<a th:href="@{/usuario/{id}/edit (id=${usuario.id}) }">Editar</a>
-			</td>
-          </tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
-        <a th:href="@{/usuario/novo}">Novo</a>
+      <div class="conteudo">
+        <h1>Lista de Usuários</h1>
+        <div class="container">
+          <table>
+            <tr>
+              <th>Id</th>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Telefone</th>
+            </tr>
+  
+  				<!-- para que as informações contidas na lista onde 
+  				armazena os dados do usuario é necessario escrever o codigo abaixo: -->
+            	
+            	<!-- para acessar algo especifico da lista de usuarios precisaremos percorrer por essa lista: -->
+            	<tr th:each="usuario : ${usuarios}"> 
+              <td>
+              </td>
+              
+              <td>
+				<span th:text="${usuario.nome}"></span></td>
+			  <td>
+              <span th:text="${usuario.email}"></span>
+              </td>
+              
+              <td>
+              	  <span th:text="${usuario.celular}"></span>
+              </td>
+            </tr>
+  
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+  
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+  
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+  
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+  
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+  
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+  
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
       </div>
+
     </section>
-  <!--</main> -->
+  </main>
 
   <!-- RODAPÉ -->
   <footer class="rodape">
