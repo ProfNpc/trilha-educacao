@@ -1,133 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/conteudo-list.css" />
-    <link rel="shortcut icon" href="assets/img/logoStudy.png" type="image/x-icon" />
-    <title>Lista de disciplinas</title>
-  </head>
-  <body>
-    <!-- CABEÇALHO -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/conteudo-list.css">
+    <title>Lista</title>
+</head>
+
+<body>
+<!--
     <header class="cabecalho">
-      <img
-        class="cabecalho-imagem"
-        src="assets/img/logoStudy copy.png"
-        alt="Logo da comunidade Ballerini"
-      />
-      <nav class="cabecalho-menu">
-        <a class="cabecalho-menu-item" href="index.html">Inicio</a>
-        <a class="cabecalho-menu-item" href="funcoes.html">Matérias</a>
-        <a class="cabecalho-menu-item" href="#">Sobre</a>
-        <a class="cabecalho-menu-item" href="formulario-login.html">Entrar</a>
-      </nav>
+        <nav class="nav-bar">
+            <div class="logo">
+                <a th:href="@{/home}"> Y.our Study</a>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"> <a class="nav-link" href="#conteudo-primario">Inicio</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="#sobre">Objetivo</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="#skilss">Funcionalidades</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="#projetos">Participantes</a></li>
+                </ul>
+            </div>
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img src="assets/img/menu_white_36dp.svg" alt="" class="icon"></button>
+            </div>
+        </nav>
+
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"> <a class="nav-link" href="#conteudo-primario">Inicio</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#sobre">Objetivo</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#skilss">Funcionalidades</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#projetos">Participantes</a></li>
+            </ul>
+        </div>
     </header>
 
-    <main class="conteudo-pagina">
-        <section class="cadastro-usuarios">
-          <h1>Lista de conteudos</h1>
-            <div class="container">
-                <table>
-                    <tr>
-                        <th>Id</th>
-                        <th>Matéria</th>
-                        <!-- Utilizando colspan para dizer que quero aplicar esse titulo para 2 colunas -->
-                        <th>Nivel do conteúdo</th>
-                        <th>Responsavel pela matéria</th>
-                    </tr>
-            
-                <tr th:each="conteudo : ${conteudos}">
-          	<td>
-				<span th:text="${conteudo.id}"></span>
-			</td>
-			
-           	<td>
-				<span th:text="${conteudo.materia}"></span>
-			</td>
-			
-			<td>
-				<span th:text="${conteudo.nivel}"></span>
-			</td>
-			
-			<td>
-				<span th:text="${conteudo.responsavel}"></span>
-			</td>
-			
-			
-			<td>
-				<span th:text="${conteudo.celular}"></span>
-			</td>
-          </tr>
+    <!-- listagem de conteudos cadastrados -->
 
-
-          <tr>
-          	<td>
-				<a th:href="@{/conteudo/{id} (id=${conteudo.id}) }">Detalhe</a>
-            </td>
-            
-            <td>
-				<a th:href="@{/conteudo/{id}/edit (id=${conteudo.id}) }">Editar</a>
-			</td>
-			
-            </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                  </tr>
-
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                  </tr>
-
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                  </tr>
-                </table>
+	<!-- Pra percorrer nossa lista de maneira mais facil nos precisamos guradando a variavel lista dentro de uma variavel mais simples na tag que englobva todo o conteudo que vai ser alterado -->
+   <div class = "container">
+   		 <div class="card" th:each = "conteudo : ${conteudos}" >
+      <div class="card-header" th:text="${conteudo.nomeConteudo}">Nome do conteúdo</div>  
+      
+      <div class="card-body">
+      
+      <div class = "row">   <!-- essa div é a responsavel por deixar as seguintes em formato de linha -->
+      <div class="col-12 col-sm-8 mb-3">    <!-- estamos dizendo q essa div ocupa 8 colunas, e usamos mb pra adicionar um margin bottom, e podemo usar mt, ml, mr, todos relacionados as margens -->
+        
+        <div class="row">
+          <!-- quando ocupar o col medium essa div usará 6 colunas-->
+        	<div class="col-md-5">Matéria: <span th:text="${conteudo.materiaConteudo}">Portugues</span></div>
+        	<div class="col-md-7">Nivel academico: <span th:text="${conteudo.nivelConteudo}">Médio</span></div>
         </div>
-        </section>
-    </main>
+        
+        <div> Tipo de exercicio <span th:text="${conteudo.tipoExercicioConteudo}">Questionario</span></div>
+        <div>Data que foi adicionado:  <span th:text="${conteudo.dataAdicaoConteudo}">10/02/2023</spanth:text="conteudo.descricaoConteudo"></div>
 
-       <!-- RODAPÉ -->
-    <footer class="rodape">
-        <img class="imagem-rodape" src="assets/img/logoStudy.png" alt="" />
-    </footer>
-    </main>
-  </body>
+        <div>Descrição</div>
+        <div>
+            <textarea class="form-control" th:text="${conteudo.descricaoConteudo}" >Descrição do conteúdo adicionado</textarea>
+        </div>
+        </div>
+
+      <!-- quando acontecer o primeiro salto de tananhp, essa div ocupará 4 colunas de 12 -->
+		<div class = "col-12 col-sm-4">   <!-- e essa div ocupa o restante das 4 colunas -->
+       		<div>
+            	<img class="img-thumbnail" th:src = "${conteudo.enderedecoImagemConteudo}"src="" alt="">
+        	</div>
+        	</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
 </html>

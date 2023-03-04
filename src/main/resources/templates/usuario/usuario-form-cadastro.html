@@ -1,91 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/usuario-form-cadastro.css" />
-    <link rel="shortcut icon" href="assets/img/logoStudy.png" type="image/x-icon" />
-    <title>Cadastro de novos usuários</title>
-</head>
+ <div class="container">
+        <div class="card">
+            <div class="form-header mb-3 container">
+                <h1>Cadastro</h1>
+                <h5>Insira as informações</h2>
+            </div>
 
-<body>
-    <div class="container">
-        <div class="form-image">
-            <img src="assets/img/login-animate.svg" alt="">
-        </div>
-        <div class="form">
-            <form action="/home" method="post">
-                <div class="form-header">
-                    <div class="title">
-                        <h1>Cadastro de novos usuários</h1>
+            <form class="input-group row g-3 needs-validation">
+
+                <div class="input-box col-md-4 position-relative">
+                    <label for="nome" class="form-label">Nome completo</label>
+                    <input type="text" class="form-control" id="nome" value="Kaique" required>
+                    <div class="valid-tooltip">
+                        Bom!
                     </div>
-                    <!-- <div class="login-button">
-                        <button><a href="#">Entrar</a></button>
-                    </div> -->
                 </div>
 
-                <div class="input-group">
-                    <div class="input-box">
-                        <label for="firstname">Nome de usuário</label>
-                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu nume de usuário"
-                            required>
+                <div class="input-box col-md-4 position-relative">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" value="Otto" required>
+                    <div class="valid-tooltip">
+                        Bom!
                     </div>
-
-                    <div class="input-box">
-                        <label for="email">E-mail</label>
-                        <input id="email" type="email" name="email" placeholder="Digite o e-mail" required>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="number">Celular</label>
-                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="password">Senha</label>
-                        <input id="password" type="password" name="password" placeholder="Digite uma senha" required>
-                    </div>
-
                 </div>
 
-                <!-- <div class="gender-inputs">
-                    <div class="gender-title">
-                        <h6>Gênero</h6>
+                <div class="input-box col-md-4 position-relative">
+                    <label for="senha" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="senha" value="Otto" required>
+                    <div class="valid-tooltip">
+                        Bom!
                     </div>
+                </div>
 
-                     <div class="gender-group">
-                        <div class="gender-input">
-                            <input id="female" type="radio" name="gender">
-                            <label for="female">Feminino</label>
+                <div class="input-box col-md-4 position-relative">
+                    <label for="usuario" class="form-label">Nome de usuário</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text" id="usuarioPrepend">@</span>
+                        <input type="text" class="form-control" id="usuario"
+                            aria-describedby="validationTooltipUsernamePrepend" required>
+                        <div class="invalid-tooltip">
+                            Please choose a unique and valid username.
                         </div>
+                    </div>
+                </div>
 
-                        <div class="gender-input">
-                            <input id="male" type="radio" name="gender">
-                            <label for="male">Masculino</label>
+                <div class="input-box col-md-4 position-relative">
+
+                    <label for="telefone" class="form-label">Telefone com DDD</label>
+                    <div class="input-group has-validation">
+                        <input type="tel" class="form-control" id="telefone"
+                            aria-describedby="validationTooltipUsernamePrepend" required>
+                        <div class="invalid-tooltip">
+                            Please choose a unique and valid username.
                         </div>
+                    </div>
+                </div>
 
-                        <div class="gender-input">
-                            <input id="others" type="radio" name="gender">
-                            <label for="others">Outros</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="none" type="radio" name="gender">
-                            <label for="none">Prefiro não dizer</label>
-                        </div>
-                    </div> 
-                </div>  -->
-
-                <div class="continue-button">
-               
-                  <button>Continuar</button>
+                <div class="input-box col-md-6 position-relative">
+                    <label for="cidade" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="cidade" required>
+                    <div class="invalid-tooltip">
+                        Please provide a valid city.
+                    </div>
+                </div>
+                <div class=" state col-md-3 mt-2 position-relative ">
+                    <label for="estado" class="form-label">Estado</label>
+                    <select class="form-select" id="estado" required>
+                        <option selected disabled value="">Escolha</option>
+                        <option>SP</option>
+                        <option>RJ</option>
+                        <option>BH</option>
+                        <option>BA</option>
+                    </select>
+                    <div class="invalid-tooltip">
+                        Please select a valid state.
+                    </div>
+                </div>
+                <div class="input-box col-md-3 position-relative">
+                    <label for="cep" class="form-label">CEP</label>
+                    <input type="text" class="form-control" id="cep" required>
+                    <div class="invalid-tooltip">
+                        Please provide a valid zip.
+                    </div>
+                </div>
+                <div class="col-12 mt-4">
+                    <button class="btn btn-primary" type="submit">Enviar informações</button>
                 </div>
             </form>
-            
         </div>
-    </div>
-</body>
-
-</html>

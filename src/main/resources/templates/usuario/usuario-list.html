@@ -1,137 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/css/usuario-list.css" />
-  <link rel="shortcut icon" href="assets/img/logoStudy.png" type="image/x-icon" />
-  <title>Lista de Usuários</title>
-</head>
-
-<body>
-  <!-- CABEÇALHO -->
-  <header class="cabecalho">
-    <nav class="nav-bar">
-      <div class="logo">
-          <a th:href="@{/home}"> Y.our Study</a>
-      </div>
-    <div class="nav-list">
-<ul>
-   <li class="nav-item"> <a class="nav-link" href="#conteudo-primario" >Inicio</a></li>
-   <li class="nav-item"> <a class="nav-link" href="#sobre">Objetivo</a></li>
-   <li class="nav-item"> <a class="nav-link" href="#skilss">Funcionalidades</a></li>
-   <li class="nav-item">  <a class="nav-link" href="#projetos">Participantes</a></li>
-</ul>   
+<div class="container">
+  <table class="table table-light">
+    <thead class="table-info" >
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Tel</th>
+        <th scope="col">Idade</th>
+        <th scope="col">cep</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="usuario : ${usuarios}"> 
+        <th scope="row">1</th>
+        <td><span th:text="${usuario.nome}">></spanth:text="${usuario.email}">></td>
+        <td><span th:text="${usuario.email}"></span></td>
+        <td>(xx) xxxx-xxxx</td>
+        <td>19</td>
+        <td>06390-280</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>(xx) xxxx-xxxx</td>
+        <td>@fat</td>
+        <td>dsd</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+        <td>@fat</td>
+        <td>dsd</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<div class="mobile-menu-icon">
-    <button onclick="menuShow()"><img src="assets/img/menu_white_36dp.svg" alt="" class="icon"></button>
-</div>
-</nav>
-
-<div class="mobile-menu">
-<ul>
-     <li class="nav-item"> <a class="nav-link" href="#conteudo-primario" >Inicio</a></li>
-     <li class="nav-item"> <a class="nav-link" href="#sobre">Objetivo</a></li>
-     <li class="nav-item"> <a class="nav-link" href="#skilss">Funcionalidades</a></li>
-     <li class="nav-item">  <a class="nav-link" href="#projetos">Participantes</a></li>
-</ul>
-</div>
-</header>
-
-  <main class="conteudo-pagina">
-    <section class="cadastro-usuarios">
-      <div class="conteudo">
-        <h1>Lista de Usuários</h1>
-        <div class="container">
-          <table>
-            <tr>
-              <th>Id</th>
-              <th>Nome</th>
-              <th>Email</th>
-              <th>Telefone</th>
-            </tr>
-  
-  				<!-- para que as informações contidas na lista onde 
-  				armazena os dados do usuario é necessario escrever o codigo abaixo: -->
-            	
-            	<!-- para acessar algo especifico da lista de usuarios precisaremos percorrer por essa lista: -->
-            	<tr th:each="usuario : ${usuarios}"> 
-              <td>
-              </td>
-              
-              <td>
-				<span th:text="${usuario.nome}"></span></td>
-			  <td>
-              <span th:text="${usuario.email}"></span>
-              </td>
-              
-              <td>
-              	  <span th:text="${usuario.celular}"></span>
-              </td>
-            </tr>
-  
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-  
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-  
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-  
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-  
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-  
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-  
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
-        </div>
-      </div>
-
-    </section>
-  </main>
-
-  <!-- RODAPÉ -->
-  <footer class="rodape">
-    <img class="imagem-rodape" src="assets/img/logoStudy.png" alt="" />
-  </footer>
-  </main>
-</body>
-
-</html>

@@ -11,7 +11,6 @@
 
 header {
 
-  position: fixed;
   width: 100%;
 }
 
@@ -99,16 +98,17 @@ body {
   justify-content: space-around;
   font-size: 20px;
   margin-left: 50px;
-  margin-bottom: 115px;
-  padding: 100px 0;
+  margin-bottom: 150px;
+  margin-top: 50px
 }
 
-.conteudo-escrito {
+.container-funcoes {
   display: flex;
   flex-direction: column;
   color: white;
   gap: 10px;
   align-items: flex-start;
+ width: 600px;
 }
 .imagem {
   height: 500px;
@@ -170,6 +170,10 @@ body {
 }
 
 /* SECTION 2 */
+.sobre-mim{
+	  background-color: white;
+	  height: 800px
+}
 
 .sobre-mim-texto {
   display: flex;
@@ -197,6 +201,7 @@ body {
 
 .section3 {
   margin-top: 150px;
+
 }
 
 .container1 {

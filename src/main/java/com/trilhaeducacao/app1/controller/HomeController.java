@@ -19,5 +19,5 @@ public class HomeController {
 	public String Escolha() {
 		return "admin/EscolhaPerfil";
 	}
-
+	
 }
