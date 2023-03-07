@@ -2,16 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/conteudo-list.css">
-    <title>Lista</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/conteudo-list.css">
+	<title>Lista</title>
 </head>
 
 <body>
-<!--
+	<!--
     <header class="cabecalho">
         <nav class="nav-bar">
             <div class="logo">
@@ -43,40 +44,59 @@
     <!-- listagem de conteudos cadastrados -->
 
 	<!-- Pra percorrer nossa lista de maneira mais facil nos precisamos guradando a variavel lista dentro de uma variavel mais simples na tag que englobva todo o conteudo que vai ser alterado -->
-   <div class = "container">
-   		 <div class="card" th:each = "conteudo : ${conteudos}" >
-      <div class="card-header" th:text="${conteudo.nomeConteudo}">Nome do conteúdo</div>  
-      
-      <div class="card-body">
-      
-      <div class = "row">   <!-- essa div é a responsavel por deixar as seguintes em formato de linha -->
-      <div class="col-12 col-sm-8 mb-3">    <!-- estamos dizendo q essa div ocupa 8 colunas, e usamos mb pra adicionar um margin bottom, e podemo usar mt, ml, mr, todos relacionados as margens -->
-        
-        <div class="row">
-          <!-- quando ocupar o col medium essa div usará 6 colunas-->
-        	<div class="col-md-5">Matéria: <span th:text="${conteudo.materiaConteudo}">Portugues</span></div>
-        	<div class="col-md-7">Nivel academico: <span th:text="${conteudo.nivelConteudo}">Médio</span></div>
-        </div>
-        
-        <div> Tipo de exercicio <span th:text="${conteudo.tipoExercicioConteudo}">Questionario</span></div>
-        <div>Data que foi adicionado:  <span th:text="${conteudo.dataAdicaoConteudo}">10/02/2023</spanth:text="conteudo.descricaoConteudo"></div>
+	<div class="container">
+		<div class="card" th:each="conteudo : ${conteudos}">
+			<div class="card-header" th:text="${conteudo.nomeConteudo}">Nome do conteúdo</div>
 
-        <div>Descrição</div>
-        <div>
-            <textarea class="form-control" th:text="${conteudo.descricaoConteudo}" >Descrição do conteúdo adicionado</textarea>
-        </div>
-        </div>
+			<div class="card-body">
 
-      <!-- quando acontecer o primeiro salto de tananhp, essa div ocupará 4 colunas de 12 -->
-		<div class = "col-12 col-sm-4">   <!-- e essa div ocupa o restante das 4 colunas -->
-       		<div>
-            	<img class="img-thumbnail" th:src = "${conteudo.enderedecoImagemConteudo}"src="" alt="">
-        	</div>
-        	</div>
-        </div>
-      </div>
-    </div>
-  </div>
+				<div class="row">
+					<!-- essa div é a responsavel por deixar as seguintes em formato de linha -->
+					<div class="col-12 col-sm-8 mb-3">
+						<!-- estamos dizendo q essa div ocupa 8 colunas, e usamos mb pra adicionar um margin bottom, e podemo usar mt, ml, mr, todos relacionados as margens -->
+
+						<div class="row">
+							<!-- quando ocupar o col medium essa div usará 6 colunas-->
+							<div class="col-md-5">Categoria: <span
+									th:text="${conteudo.categoriaConteudo}">Portugues</span></div>
+							<div class="col-md-5">Tema: <span th:text="${conteudo.temaConteudo}">Portugues</span></div>
+							<div class="col-md-7">Revisão conteudo: <span
+									th:text="${conteudo.revisaoConteudo}">Médio</span></div>
+						</div>
+
+						<div> Pergunta: <span th:text="${conteudo.perguntaConteudo}">Qual função correta nessa
+								situcão?</span></div>
+						<div> Url imagem pra auxiliar <span th:src="${conteudo.imagemAuxilio}">Qual função correta
+								nessa situcão?</span></div>
+						<div> Alternativa 1: <span th:text="${conteudo.alternativa1}">alternativa1</span></div>
+						<div> Alternativa 2: <span th:text="${conteudo.alternativa2}">alternativa2</span></div>
+						<div> Alternativa 3: <span th:text="${conteudo.alternativa3}">alternativa3</span></div>
+						<div> Alternativa 4: <span th:text="${conteudo.alternativa4}">alternativa4</span></div>
+						<div> Alternativa correta: <span th:text="${conteudo.alternativaCorreta}">alternativa
+								correta</span></div>
+
+						<div>Data que foi adicionado: <span th:text="${conteudo.dataAdicaoConteudo}">10/02/2023
+								</spanth:text="conteudo.descricaoConteudo">
+						</div>
+
+						<div>Descrição</div>
+						<div>
+							<textarea class="form-control" th:text="${conteudo.descricaoConteudo}">Descrição do conteúdo
+								adicionado</textarea>
+						</div>
+					</div>
+
+					<!-- quando acontecer o primeiro salto de tananhp, essa div ocupará 4 colunas de 12 -->
+					<div class="col-12 col-sm-4">
+						<!-- e essa div ocupa o restante das 4 colunas -->
+						<div>
+							<img class="img-thumbnail" th:src="${conteudo.enderedecoImagemConteudo}" src="" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </body>
 

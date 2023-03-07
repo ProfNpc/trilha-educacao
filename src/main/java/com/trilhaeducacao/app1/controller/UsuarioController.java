@@ -41,6 +41,17 @@ public class UsuarioController {
 		public String Login() {
 			return "usuario/usuario-login";
 		}
+		
+		@GetMapping("/frontend")
+		public String FrontEnd() {
+			return "categorias/front-end";
+		}
+		
+		@GetMapping("/backend")
+		public String BackEnd() {
+			return "categorias/back-end";
+		}
+		
 	
 }
 

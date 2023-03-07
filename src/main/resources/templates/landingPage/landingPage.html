@@ -15,30 +15,42 @@
     <!-- CABEÇALHO -->
 
     <header class="cabecalho">
-            <nav class="nav-bar">
-              <div class="logo">
-                   <a href="#conteudo-primario"> Y.our Study</a>
+            <nav class="navbar navbar-expand-lg bar bg-dark">
+            <div class="container-fluid">
+               <a th:href="@{/home}"class="text-light  navbar-brand" href="#">Y.our Study</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="text-light nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="text-light nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="text-light nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="text-light dropdown-item" href="#">Action</a></li>
+                      <li><a class="text-light dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="text-light dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="text-light nav-link disabled">Disabled</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success search" type="submit">Search</button>
+                </form>
               </div>
-            <div class="nav-list">
-       <ul class="nav justify-content-end">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">Active</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled">Disabled</a>
-  </li>
-</ul>
-    </div>
-        <div class="mobile-menu-icon">
-            <button onclick="menuShow()"><img src="assets/img/menu_white_36dp.svg" alt="" class="icon"></button>
-        </div>
-    </nav>
+            </div>
+          </nav>
         
     <div class="mobile-menu">
     <ul>
@@ -56,14 +68,14 @@
 
         <section class="conteudo-primario" id="conteudo-primario" data-aos="fade-down">
             <div class="container-funcoes">
-                <h1 class="titulo">Organize seus <br> estudos</h1>
+                <h1 class="titulo"> Pratique programação <br> conosco</h1>
                 <h2 class="subtitulo">Estude e pratique com nossa<br> variedade de funcionalidades</h2>
                 <div class="botoes">
-                <a th:href="@{/cadastro}"><button class="botao"> <img src="assets/img/icons8-linkedin-circled.svg" alt=""> Começar</button></a>
-                  <a href="#" onclick="abrirPag(`entrar`)"><button class="botao"> <img src="assets/img/icons8-github.svg" alt=""> Entrar</button></a>
+                <a class="link" th:href="@{/cadastro}"><button class="botao"> <img src="assets/img/icons8-linkedin-circled.svg" alt=""> Começar</button></a>
+                  <a class="link" href="#" onclick="abrirPag(`entrar`)"><button class="botao"> <img src="assets/img/icons8-github.svg" alt=""> Entrar</button></acla>
                 </div>
             </div>
-               <img class="imagem" src="assets/img/usandoPc.svg" alt="">
+               <img class="imagem" src="assets/img/outer-space-animate.svg" alt="">
         </section>
 
 <!-- AQUI SE INICIA O CONTEUDO 2 -->
@@ -179,11 +191,11 @@
     
 <!-- RODAPÉ -->
        <!-- Footer -->
-<footer class="text-center text-lg-start bg-white text-muted">
+<footer class="text-center text-lg-start bg-dark text-light ">
   <!-- Section: Social media -->
-  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom ">
     <!-- Left -->
-    <div class="me-5 d-none d-lg-block">
+    <div class="me-5 d-none d-lg-block ">
       <span>Get connected with us on social networks:</span>
     </div>
     <!-- Left -->
@@ -214,7 +226,7 @@
   <!-- Section: Social media -->
 
   <!-- Section: Links  -->
-  <section class="">
+  <section>
     <div class="container text-center text-md-start mt-5">
       <!-- Grid row -->
       <div class="row mt-3">

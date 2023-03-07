@@ -6,8 +6,9 @@
         height: 500px;
         width: 500px;
         border-radius: 10px;
-        color: black;
+        color: #FFF;
           box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+          border: 1px solid #6427a1;   
     }
 
     .container {
@@ -27,12 +28,21 @@
     
     .input-box{
 		width: 400px;
-		
 	}
 	
+	.entrar{
+		background-color: #6427a1;
+		border: none;
+		}
+		
+			
+	.entrar:hover{
+		background-color: rgb(64, 0, 128);
+}
+
 </style>
     <div class="">
-        <div class="card">
+        <div class="card bg-dark">
             <div class="form-header mb-5  ">
                 <h1>Ja possui cadastro?</h1>
                 <h5>Entre com sua conta!</h2>
@@ -54,7 +64,7 @@
               <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div> -->
                 <div class="column">
-                    <button type="submit" class="btn btn-primary">Entrar</button>
+                    <button type="submit" class="btn btn-primary entrar">Entrar</button>
                     <a th:href="@{/admin/dashboard}" >Criar uma conta</a>
                 </div>
             </form>
