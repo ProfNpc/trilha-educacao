@@ -6,11 +6,13 @@
                 <h5>Insira as informações</h2>
             </div>
 
-            <form class="input-group row g-3 needs-validation">
+		<!-- Na tag form precisamos dizer q o método é post e precisamos trazer o objeto usuario-->
+            <form method="post" action="/insertAlunos" th:object ="${usuario}"class="input-group row g-3 needs-validation">
 
                 <div class="input-box col-md-4 position-relative">
                     <label for="nome" class="form-label">Nome completo</label>
-                    <input type="text" class="form-control" id="nome" value="Kaique" required>
+                    <!--Aqui precisamos passar qual o atributo da minha classe usuario que vai receber o valor digitado no input e pra isso usamos o th:field e usamos atributos asteristicos-->
+                    <input placeholder="Digite seu nome completo"  type="text" class="form-control" id="nome" value="Kaique" required>
                     <div class="valid-tooltip">
                         Bom!
                     </div>
@@ -56,6 +58,7 @@
                     </div>
                 </div>
 
+				<!--
                 <div class="input-box col-md-6 position-relative">
                     <label for="cidade" class="form-label">Cidade</label>
                     <input type="text" class="form-control" id="cidade" required>
@@ -63,6 +66,8 @@
                         Please provide a valid city.
                     </div>
                 </div>
+                -->
+                <!--
                 <div class=" state col-md-3 mt-3 position-relative ">
                     <label for="estado" class="form-label">Estado</label>
                     <select class="form-select" id="estado" required>
@@ -76,6 +81,7 @@
                         Please select a valid state.
                     </div>
                 </div>
+                -->
                 <div class="input-box col-md-3 position-relative">
                     <label for="cep" class="form-label">CEP</label>
                     <input type="text" class="form-control" id="cep" required>

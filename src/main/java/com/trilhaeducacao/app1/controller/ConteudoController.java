@@ -21,7 +21,7 @@ public class ConteudoController {
 		// adicionando valores aos atributos que criamso em Conteudo de model
 
 		// vamos fazer a conexão com o banco de dados via JPA
-
+ 
 		conteudo.setNomeConteudo("Java Script pra web");
 		conteudo.setTemaConteudo("funcoes em js");
 		conteudo.setCategoriaConteudo("Front-End");

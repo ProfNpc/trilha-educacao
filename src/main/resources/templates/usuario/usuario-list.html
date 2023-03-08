@@ -4,6 +4,7 @@
       <tr>
         <th scope="col">Id</th>
         <th scope="col">Nome</th>
+        <th scope="col">User</th>
         <th scope="col">Email</th>
         <th scope="col">Tel</th>
         <th scope="col">Idade</th>
@@ -13,11 +14,12 @@
     <tbody>
       <tr th:each="usuario : ${usuarios}"> 
         <th scope="row">1</th>
-        <td><span th:text="${usuario.nome}">></spanth:text="${usuario.email}">></td>
-        <td><span th:text="${usuario.email}"></span></td>
-        <td>(xx) xxxx-xxxx</td>
-        <td>19</td>
-        <td>06390-280</td>
+        <td><span th:text="${usuario.nome}"></td>
+        <td><span th:text="${usuario.nomeUsuario}"></span></td>
+        <td th:text="${usuario.email}">(xx) xxxx-xxxx</td>
+        <td th:text="${usuario.tel}">19</td>
+        <td th:text="${usuario.idade}">06390-280</td>
+         <td th:text="${usuario.cep}">06390-280</td>
       </tr>
       <tr>
         <th scope="row">2</th>
@@ -26,6 +28,7 @@
         <td>(xx) xxxx-xxxx</td>
         <td>@fat</td>
         <td>dsd</td>
+         <td>dsd</td>
       </tr>
       <tr>
         <th scope="row">3</th>
@@ -33,6 +36,7 @@
         <td>the Bird</td>
         <td>@twitter</td>
         <td>@fat</td>
+         <td>dsd</td>
         <td>dsd</td>
       </tr>
     </tbody>

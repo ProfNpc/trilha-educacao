@@ -1,9 +1,29 @@
 package com.trilhaeducacao.app1.model;
 
 import java.time.LocalDate;
+ 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+// Dizendo que a classe pedido é uma entidade no banco de dados
 
 public class Conteudo {
 //aqui adicionaremos os atributos que o objeto Conteudo possui:
+	
+	//adicionando um atributo ID e colocando uma anotação de que ele é um id
+	
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) // ele vai criar a tabela conteudo com uma coluna chamada ID auto incremento 
+	private Long id;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	private String nomeConteudo;
 	private String temaConteudo;
