@@ -38,7 +38,7 @@
 			<div class="espacamento container-texto-categoria">
 
 				<div class="texto-categoria">
-					<h1 class="titulo-categoria">Lista de usuarios</h1>
+					<h1 class="titulo-categoria">Usuarios encontrados na pesquisa</h1>
 				</div>
 
 				<form method="post" action="pesquisar-usuario" th:object="${usuario}" class="d-flex" role="search">
@@ -52,23 +52,23 @@
 						<tr>
 							<th scope="col">Id</th>
 							<th scope="col">Nome</th>
-							<th scope="col">Email</th>
+							
 							<th scope="col">Tel</th>
 							<!--<th scope="col">Idade</th>-->
-							<th scope="col">cep</th>
+							
 							<th scope="col">Ação</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="usuario : ${usuariosList}">
+						<tr th:each="usuario : ${ListaDeUsuarios}">
 							<!-- colocamos o atribuot q colocamos no metodo q retorna a lista, dessa forma irá puxar todos os cadastros q estao no banco-->
 
 							<td th:text="${usuario.id}">(xx) xxxx-xxxx</td>
 							<td><span th:text="${usuario.nome}"></td>
-							<td th:text="${usuario.email}">(xx) xxxx-xxxx</td>
+							
 							<td th:text="${usuario.tel}">19</td>
 							<!--<td th:text="${usuario.idade}">06390-280</td>-->
-							<td th:text="${usuario.cep}">06390-280</td>
+							
 
 							<td>
 

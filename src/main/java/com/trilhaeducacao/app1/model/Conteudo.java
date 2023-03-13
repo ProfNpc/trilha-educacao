@@ -1,7 +1,8 @@
 package com.trilhaeducacao.app1.model;
 
 import java.time.LocalDate;
- 
+
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -9,6 +10,7 @@ import javax.persistence.Id;
 
 // Dizendo que a classe pedido é uma entidade no banco de dados
 
+@Entity
 public class Conteudo {
 //aqui adicionaremos os atributos que o objeto Conteudo possui:
 	

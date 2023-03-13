@@ -258,3 +258,32 @@ strong{
 		background-color: rgb(64, 0, 128);
 	}
 	
+	.container-texto-categoria {
+		
+		display: flex;
+		width: 100%;
+		justify-content: flex-start;
+		align-items: center;
+		margin: 0 auto;
+		gap: 20px;
+		font-size: 15px;
+		color: rgb(54, 54, 54);
+		padding: 20px;
+		
+	}
+
+	.texto-categoria {
+		color: white;
+		max-width: 600px;
+	}
+
+
+	.titulo-categoria {
+		color: #128fca;
+		font-size: 50px;
+	}
+
+	.descricao-categoria-p {
+		font-size: 16px;
+	}
+	

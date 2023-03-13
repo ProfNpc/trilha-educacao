@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/HomeAdmin.css">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<!--dizendo q esse elemento é um fragmento e dando um nome a ele -->
+	<header th:fragment="cabecalho" class="cabecalho">
+
+		<nav class="navbar navbar-expand-lg bar bg-dark">
+			<div class="container-fluid">
+				<a th:href="@{/home}" class="text-light  navbar-brand" href="#">Y.our Study</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse container" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="text-light nav-link active" aria-current="page" href="#">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="text-light nav-link" href="#">Link</a>
+						</li>
+
+						<li class="nav-item">
+							<a data-toogle ="modal" data-target="#modalPesquisa" class="text-light nav-link">teste</a>
+						</li>
+						
+						<li class="nav-item dropdown">
+							<a class="text-light nav-link dropdown-toggle" href="#" role="button"
+								data-bs-toggle="dropdown" aria-expanded="false">
+								Dropdown
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="text-light dropdown-item" href="#">Action</a></li>
+								<li><a class="text-light dropdown-item" href="#">Another action</a></li>
+								<li>
+									<hr class="dropdown-divider">
+								</li>
+								<li><a class="text-light dropdown-item" href="#">Something else here</a></li>
+							</ul>
+						</li>
+						<li class="nav-item">
+							<a class="text-light nav-link disabled">Disabled</a>
+						</li>
+					</ul>
+					<form class="d-flex" role="search">
+						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success search" type="submit">Search</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+
+		<div class="mobile-menu">
+			<ul>
+				<li class="nav-item"> <a class="nav-link" href="#conteudo-primario">Inicio</a></li>
+				<li class="nav-item"> <a class="nav-link" href="#sobre">Objetivo</a></li>
+				<li class="nav-item"> <a class="nav-link" href="#skilss">Funcionalidades</a></li>
+				<li class="nav-item"> <a class="nav-link" href="#projetos">Participantes</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<!-- Side bar -->
+
+	<div th:fragment="side-bar" class="side-bar bg-dark">
+		<div class="menu">
+			<div class="item"><a th:href="@{/admin/dashboard}"><i class="fas fa-desktop"></i>Dashboard</a></div>
+			<div class="item">
+				<a class="sub-btn"><i class="fas fa-table"></i>Cursos<i class="fas fa-angle-right dropdown"></i></a>
+				<div class="sub-menu">
+					<a href="#" onclick="abrirPag(`frontend`)" class="sub-item">Front-end</a>
+					<a href="#" onclick="abrirPag(`backend`)" class="sub-item">Back-End</a>
+					<a href="#" class="sub-item">Data Science</a>
+				</div>
+			</div>
+
+			<div class="item">
+				<a class="sub-btn"><i class="fas fa-cogs"></i>Usuário<i class="fas fa-angle-right dropdown"></i></a>
+				<div class="sub-menu">
+					<a th:href="@{/inseriralunos}" class="sub-item">Cadastrar</a>
+					<a th:href="@{/listagem}">Listar</a>
+				</div>
+			</div>
+
+			<div class="item">
+				<a class="sub-btn"><i class="fas fa-cogs"></i>Admin<i class="fas fa-angle-right dropdown"></i></a>
+				<div class="sub-menu">
+					<a th:href="@{/inseriralunos}" class="sub-item">Cadastrar</a>
+					<a th:href="@{/listagem}">Lista</a>
+				</div>
+			</div>
+
+			<div class="item">
+				<a href="#"><i class="fas fa-th"></i>Minha conta</a>
+			</div>
+
+			<div class="item"><a href="index.html"><i class="fas fa-info-circle"></i>Sobre</a></div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+	<!--<script src="assets/js/homeAdmin.js"></script> -->
+
+
+	<script src="/assets/js/abrirPagina.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			$('.sub-btn').click(function () {
+				$(this).next('.sub-menu').slideToggle();
+				$(this).find('.dropdown').toggleClass('rotate');
+			});
+
+			$('.menu-btn').click(function () {
+				$('.side-bar').addClass('active');
+				$('.menu-btn').css("visibility", "hidden");
+			});
+
+			$('.close-btn').click(function () {
+				$('.side-bar').removeClass('active');
+				$('.menu-btn').css("visibility", "visible");
+			});
+
+		});
+
+
+	</script>
+
+</body>
+
+</html>
