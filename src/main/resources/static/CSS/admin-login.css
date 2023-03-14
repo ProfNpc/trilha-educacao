@@ -1,0 +1,68 @@
+body, html{
+	height: 100%;
+	width: 100%;
+	  background: linear-gradient(90deg, rgba(10,9,25,1) 0%, rgba(98,19,172,1) 100%);
+	display: flex;
+		justify-content: center;
+	align-items: center;
+}
+
+	.card {
+		display: flex;
+			flex-direction: column;
+	justify-content: center;
+	align-items: center;
+		padding: 30px;
+		height: 500px;
+		width: 500px;
+		border-radius: 10px;
+		color: #FFF;
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+		border: 1px solid #6427a1;
+	}
+
+	.container {
+		width: 600px;
+	}
+
+	.column {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		gap: 20px;
+	}
+
+	.form-header h1 ml-5 {
+		font-size: 25px;
+	}
+
+	.input-box {
+		width: 400px;
+	}
+
+.botoes{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+	.entrar {
+		background-color: #6427a1;
+		border: none;
+		width: 400px;
+	}
+
+.voltar{
+	width: 250px;
+}
+
+	.entrar:hover {
+		background-color: rgb(64, 0, 128);
+	}
+	
+	.cadastro-container{
+		height: 600px;
+		width: 600px;
+	}
+	
+	
