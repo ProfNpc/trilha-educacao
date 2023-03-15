@@ -111,6 +111,17 @@ public class UsuarioController {
 		mv.setViewName("usuario/pesquisa-resultado");
 		return mv;
 	}
+	
+	  @GetMapping("/entrar") public String Login() { 
+		  
+		  return"usuario/usuario-login";
+	  }
+	  
+	  @GetMapping("/usuario/home") public String usuarioHome() { 
+		  
+		  return"usuario/usuario-home";
+	  }
+	  
 	/*
 	 * @GetMapping("/cadastro")// model serve pra adicionar dados, informações
 	 * public String Cadastro(Model model) { return "usuario/usuario-form-cadastro";

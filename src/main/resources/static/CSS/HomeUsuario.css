@@ -70,16 +70,21 @@ body, html{
     margin-top: 20px;
 }
 
+.container-central{
+	display: flex;
+	 flex-wrap: wrap;
+	 gap: 30px;
+}
 .funcao{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 230px;
-  width: 230px;
-   background-color: rgb(64, 0, 128) ;
+  text-align: center;
+  height: 170px;
+  width: 170px;
   border-radius: 6px;
-  border: 1px solid #6427a1;
+  border-bottom: 1px solid #6427a1;
   gap: 50px;
   font-size: 12px;
   color: white;
@@ -104,7 +109,7 @@ body, html{
 }
 
 .icon{
-    height: 70px;
+    height: 40px;
 }
 
 h1{
@@ -264,29 +269,106 @@ strong{
 	.container-texto-categoria {
 		
 		display: flex;
+		flex-direction: column;
 		width: 100%;
 		justify-content: flex-start;
-		align-items: center;
 		margin: 0 auto;
 		gap: 20px;
-		font-size: 15px;
+		font-size: 10px;
 		color: rgb(54, 54, 54);
 		padding: 20px;
+		border-top: 1px solid #6427a1;
+		border-radius: 10px;
+		
 		
 	}
+	
+	
 
 	.texto-categoria {
 		color: white;
-		max-width: 600px;
+		
 	}
 
 
 	.titulo-categoria {
-		color: #128fca;
-		font-size: 50px;
+		color: white;
+		
+		
 	}
 
-	.descricao-categoria-p {
-		font-size: 16px;
-	}
 	
+	
+texto-categoria {
+  color: white;
+  margin-left: 50px;
+  max-width: 600px;
+}
+
+
+.titulo-categoria{
+  color: #128fca;
+font-size: 40px;
+}
+
+.descricao-categoria-p{
+	font-size: 16px;
+}
+
+.backend{
+	color: yellow;
+}
+
+.descricao-categoria{
+  color: rgb(232, 232, 232);
+}
+
+.html{
+  color: rgb(230, 100, 0);
+}
+
+.css{
+  color: rgb(41, 113, 227);
+}
+
+.js{
+  color: yellow;
+}
+
+.react{
+  color: #64b2e3;
+}
+
+.andamento {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: justify;
+  gap: 15px;
+  height: 100px;
+  width: 530px;
+  border-radius: 10px;
+  border-bottom: 1px solid #128fca;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.212);
+  padding: 15px;
+}
+
+.titulo-andamento{
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	gap: 10px;
+}
+
+.icon-andamento{
+	height: 30px;
+}
+
+.btn-continuar{
+	border-radius: 2px;
+	margin-top: 10px;
+}

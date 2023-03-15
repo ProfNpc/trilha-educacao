@@ -13,19 +13,24 @@
 	<link rel="stylesheet" href="/css/admin-login.css">
 	<title>Login área administrativa - Y.our Study </title>
 </head>
+
 <style>
-body{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: blue;
+.login{
+	height: 500px;
+	width: 500px;
 }
+
 </style>
+
 <body>
 
-	<div class="login-form container">
-		<div class="container">
-			<div class="card bg-dark">
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	
+	<section class="conteudo container">
+
+	<div class="login-form ">
+		<div class="">
+			<div class="card bg-dark cadastro-container login">
 				<div class="form-header mb-5  ">
 					<h1>Ja possui cadastro?</h1>
 					<h5>Entre com sua conta!</h2>

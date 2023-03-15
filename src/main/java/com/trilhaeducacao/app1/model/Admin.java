@@ -1,5 +1,6 @@
 package com.trilhaeducacao.app1.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +18,7 @@ public class Admin {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+	@Column
 	@Size(min = 3, max = 20, message = "O nome deve conter entre 3 e 20 caracteres" )
 	private String nome;
 	@Email

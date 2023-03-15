@@ -16,8 +16,12 @@
 
 <body>
 
-	<div class="login-form container">
-		<div class="container">
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	
+	<section class="conteudo container">
+
+	<div class="login-form ">
+		<div class="">
 			<div class="card bg-dark cadastro-container">
 				<div class="form-header mb-5  ">
 					<h1>Cadastro de Admin</h1>
@@ -26,8 +30,8 @@
 				<form method="post" th:object="${admin}" action="salvarAdmin" class="inputt-group">
 
 					<div class="input-box mb-3">
-						<label for="nome" class="form-label" th:field="*{nome}">Nome</label>
-						<input type="text" class="form-control" id="nome" aria-describedby="emailHelp">
+						<label for="nome" class="form-label" >Nome</label>
+						<input type="text" class="form-control"th:field="*{nome}" id="nome" aria-describedby="emailHelp">
 
 					</div>
 
@@ -47,13 +51,13 @@
 					<div class="column botoes">
 						<button type="submit" class="btn btn-primary entrar">Cadastrar</button>
 						<button type="submit" class="btn btn-primary voltar">Voltar</button>
-						<a th:href="@{/admin/dashboard}">Criar uma conta</a>
+						<a th:href="@{/admin/login}">Já possui uma conta?</a>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-
+	</section>
 </body>
 
 </html>
