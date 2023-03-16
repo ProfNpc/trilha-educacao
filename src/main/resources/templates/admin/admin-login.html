@@ -15,50 +15,54 @@
 </head>
 
 <style>
-.login{
-	height: 500px;
-	width: 500px;
-}
-
+	.login {
+		height: 500px;
+		width: 500px;
+	}
 </style>
 
 <body>
 
 	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
-	
+
 	<section class="conteudo container">
 
-	<div class="login-form ">
-		<div class="">
-			<div class="card bg-dark cadastro-container login">
-				<div class="form-header mb-5  ">
-					<h1>Ja possui cadastro?</h1>
-					<h5>Entre com sua conta!</h2>
-				</div>
-				<form class="inputt-group">
-
-					<div class="input-box mb-3">
-						<label for="email" class="form-label">Email</label>
-						<input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-						<!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+		<div class="login-form ">
+			<div class="">
+				<div class="card bg-dark cadastro-container login">
+					<div class="form-header mb-5  ">
+						<h1>Ja possui cadastro?</h1>
+						<h5>Entre com sua conta!</h2>
 					</div>
+					<form method="post" action="/admin/login" th:object="${admin}" class="inputt-group">
 
-					<div class="input-box mb-3">
-						<label for="senha" class="form-label">Senha</label>
-						<input type="password" class="form-control" id="senha">
-					</div>
-					<!-- <div class="mb-3 form-check">
+						<div class="alert alert-danger" role="alert" th:if="${msg}">
+							<strong th:text="${msg}"> </strong>
+						</div>
+
+						<div class="input-box mb-3">
+							<label for="nome" class="form-label">Nome</label>
+							<input type="text" class="form-control" th:field="*{nome}" id="nome"
+								aria-describedby="emailHelp">
+							<!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+						</div>
+
+						<div class="input-box mb-3">
+							<label for="senha" class="form-label">Senha</label>
+							<input type="password" class="form-control" th:field="*{senha}" id="senha">
+						</div>
+						<!-- <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
               <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div> -->
-					<div class="column botoes">
-						<button type="submit" class="btn btn-primary entrar">Entrar</button>
-						<a th:href="@{/cadastro}">Criar uma conta</a>
-					</div>
-				</form>
+						<div class="column botoes">
+							<button type="submit" class="btn btn-primary entrar">Entrar</button>
+							<a th:href="@{/cadastro}">Criar uma conta</a>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>
 
 </body>
 

@@ -41,4 +41,12 @@ public class ServiceAdmin {
 		
 		adminrepositorio.save(admin);
 	}
+	
+	// criando metodo pra consulta de login dos admins
+	public Admin loginAdmin(String nome, String senha) throws ServiceExc{
+		
+		// estamos adicionando o metodo q criamos no repositorio do admin
+		Admin adminLogin = adminrepositorio.buscarLogin(nome, senha);
+		return adminLogin;
+	}
 }
