@@ -23,21 +23,33 @@
 		<div class="welcome">
 			<div class="texto-welcome">
 				<h1 class="apresentacao">
-					Selecione um perfil de acesso
+					Mudar perspectiva
 				</h1>
 			</div>
 		</div>
 
 		<div class="container-funcoes">
 
-			<a class="ancora" th:href="@{/usuario/home}">
+			<a class="ancora" th:href="@{/entrar}">
 				<div class="funcao bg-dark" id="color3">
 					<!-- <div class="icon-funcao"> -->
 					<img src="/assets/img/user.png" alt="" class="icon">
 					<!-- </div> -->
 
 					<div class="descricao-funcao">
-						<h1 class="escolha">Usuário</h1>
+						<h1 class="escolha">Aluno</h1>
+					</div>
+				</div>
+			</a>
+
+			<a class="ancora" th:href="@{/usuario/home}">
+				<div class="funcao bg-dark" id="color3">
+					<!-- <div class="icon-funcao"> -->
+					<img src="/assets/img/professor.png" alt="" class="icon">
+					<!-- </div> -->
+
+					<div class="descricao-funcao">
+						<h1 class="escolha">Professor</h1>
 					</div>
 				</div>
 			</a>
@@ -45,7 +57,7 @@
 			<a th:href="@{/cadastro}">
 				<div th:href="@{/cadastro}" class="funcao bg-dark" id="color1">
 					<!-- <div class="icon-funcao"> -->
-					<img src="/assets/img/user.png" alt="" class="icon">
+					<img src="/assets/img/admin.png" alt="" class="icon">
 					<!-- </div> -->
 
 					<div class="descricao-funcao">

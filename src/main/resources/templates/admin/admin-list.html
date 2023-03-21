@@ -41,7 +41,7 @@
 			<div class="espacamento container-texto-categoria">
 
 				<div class="texto-categoria">
-					<h1 class="titulo-categoria text-light">Usuarios</h1>
+					<h1 class="titulo-categoria text-light">Administradores</h1>
 				</div>
 
 				<form method="post" action="pesquisar-usuario" th:object="${usuario}" class="d-flex" role="search">
@@ -56,33 +56,30 @@
 							<th scope="col">Id</th>
 							<th scope="col">Nome</th>
 							<th scope="col">Email</th>
-							<th scope="col">Tel</th>
-							<!--<th scope="col">Idade</th>-->
-							<th scope="col">cep</th>
+
 							<th scope="col">Ação</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="usuario : ${usuariosList}">
+						<tr th:each="admin : ${adminList}">
 							<!-- colocamos o atribuot q colocamos no metodo q retorna a lista, dessa forma irá puxar todos os cadastros q estao no banco-->
 
-							<td th:text="${usuario.id}">(xx) xxxx-xxxx</td>
-							<td><span th:text="${usuario.nome}"></td>
-							<td th:text="${usuario.email}">(xx) xxxx-xxxx</td>
-							<td th:text="${usuario.tel}">19</td>
-							<!--<td th:text="${usuario.idade}">06390-280</td>-->
-							<td th:text="${usuario.cep}">06390-280</td>
+							<td th:text="${admin.id}"></td>
+							<td th:text="${admin.nome}"></td>
+							<td th:text="${admin.email}">(xx) xxxx-xxxx</td>
+
 
 							<td>
 
-								<a class="btn btn-primary" th:href="@{alterar/{id}(id=${usuario.id})}">
+								<a class="btn btn-primary">
 
 									<i class="fas fa-edit"></i>Editar</a>
 
-								<a class="btn btn-danger" th:href="@{excluir/{id}(id=${usuario.id})}">
+								<a class="btn btn-danger" th:href="@{excluir/{id}(id=${admin.id})}">
 
 									<i class="fas fa-times"></i>Excluir</a>
 
+							</td>
 						</tr>
 
 					</tbody>

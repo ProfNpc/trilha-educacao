@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/HomeAdmin.css">
+	<title>Solicitações</title>
+</head>
+
+<style>
+	* {
+		color: white
+	}
+
+	.espacamento {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 1px solid #6427a1;
+		border-radius: 10px;
+
+	}
+
+	.filtro {
+		background-color: #128fca;
+		color: white;
+	}
+
+	.botoes {
+		margin-top: 30px;
+	}
+
+	.card {
+		height: 390px;
+	}
+
+	.foto-perfil {
+		height: 200px;
+		background-color: blue;
+	}
+</style>
+
+<body>
+
+	<div th:replace="fragmentos/fragmentos :: cabecalho2"></div>
+	<section class="conteudo">
+		<div th:replace="fragmentos/fragmentos :: side-bar"></div>
+
+
+		<div class="container-funcoes">
+
+			<div class="espacamento container-texto-categoria">
+
+				<div class="texto-categoria">
+					<h1 class="titulo-categoria text-light">Solicitações</h1>
+				</div>
+
+
+			</div>
+			<div class="container">
+				<div class="card bg-dark" th:each="solicitacao : ${solicitacaoList}">
+					<div class="card-header alert alert-warning">Solicitação pendente de cadastro de aluno</div>
+
+					<div class="card-body">
+
+						<div class="row">
+							<!-- essa div é a responsavel por deixar as seguintes em formato de linha -->
+							<div class="col-12 col-sm-8 mb-3">
+								<!-- estamos dizendo q essa div ocupa 8 colunas, e usamos mb pra adicionar um margin bottom, e podemo usar mt, ml, mr, todos relacionados as margens -->
+
+								<div class="row">
+									<!-- quando ocupar o col medium essa div usará 6 colunas-->
+									<div class="">Nome completo: <span th:text="${solicitacao.nome}">Kaique Oliveira de Freitas Mota</span></div>
+									<div class="">Idade: <span th:text="${solicitacao.idade}">19</span></div>
+									<div class="">E-mail <span th:text="${solicitacao.email}">19</span></div>
+									<div class="">Data de nascimento: <span th:text="${solicitacao.dataNasc}">19</span></div>
+									<div class="">Celular: <span th:text="${solicitacao.tel}">19</span></div>
+									<div class="">RG: <span th:text="${solicitacao.rg}">19</span></div>
+									<div class="">CPF: <span th:text="${solicitacao.cpf}">19</span></div>
+									<div class="">Motivo da solicitação: <span th:text="${solicitacao.motivoSolicitacao}">19</span></div>
+									<div class="botoes mt-8">
+										<a th:href="@{/inseriralunos}"><button
+												class="btn btn-primary btn-continuar">Cadastrar</button></a>
+																				<a class="btn btn-danger" th:href="@{/solicitacao/excluir/{id}(id=${solicitacao.id})}">
+
+									<i class="fas fa-times"></i>Excluir</a>
+									</div>
+								</div>
+
+							</div>
+
+							<!-- quando acontecer o primeiro salto de tananhp, essa div ocupará 4 colunas de 12 -->
+
+							<div class="col-12 col-sm-4 perfil">
+								<!-- e essa div ocupa o restante das 4 colunas -->
+								<div>
+									<img class="img-thumbnail foto-perfil"
+										src="https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+										alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</section>
+
+
+
+	<script src="/assets/js/abrirPagina.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			$('.sub-btn').click(function () {
+				$(this).next('.sub-menu').slideToggle();
+				$(this).find('.dropdown').toggleClass('rotate');
+			});
+
+			$('.menu-btn').click(function () {
+				$('.side-bar').addClass('active');
+				$('.menu-btn').css("visibility", "hidden");
+			});
+
+			$('.close-btn').click(function () {
+				$('.side-bar').removeClass('active');
+				$('.menu-btn').css("visibility", "visible");
+			});
+
+		});
+
+
+	</script>
+
+</body>
+
+</html>

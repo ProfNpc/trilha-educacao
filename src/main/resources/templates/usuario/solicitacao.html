@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/HomeAdmin.css">
+	<title>Login área administrativa - Y.our Study </title>
+</head>
+
+<style>
+
+	.conteudo {
+		margin-top: 30px;
+	}
+
+	.login {
+		height: 500px;
+		width: 500px;
+	}
+</style>
+
+<body>
+
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+
+	<section class="conteudo container">
+
+		<div class="login-form ">
+			<div class="">
+				<div class="card bg-dark text-light">
+					<div class="form-header mb-3 container">
+						<h1>Ainda não possui acesso?</h1>
+						<h5>Solicite um para sua rede de ensino!</h2>
+					</div>
+
+					<!-- Na tag form precisamos dizer q o método é post e precisamos trazer o objeto usuario-->
+					<form method="post" action="/insertSolicitacao" th:object="${solicitacao}"
+						class="input-group row g-3 needs-validation">
+
+						<!--Nome -->
+
+
+						<div class="input-box col-md-4 position-relative">
+							<label for="nome" class="form-label">Nome completo</label>
+							<input placeholder="Digite seu nome completo" th:field="*{nome}" type="text"
+								class="form-control" id="nome">
+						</div>
+
+
+						<!-- email-->
+
+						<div class="input-box col-md-4 position-relative">
+							<label for="email" class="form-label">Email</label>
+							<input placeholder="Digite seu email" th:field="*{email}" type="text" class="form-control"
+								id="nome">
+						</div>
+
+						<div class="input-box col-md-4 position-relative">
+							<label for="nome" class="form-label">Idade</label>
+							<input placeholder="Digite sua idade" th:field="*{idade}" type="text" class="form-control"
+								id="nome">
+						</div>
+
+						<div class="input-box col-md-4 position-relative">
+							<label for="nome" class="form-label">Data de nascimento</label>
+							<input placeholder="Digite sua data de nascimento" th:field="*{dataNasc}" type="text"
+								class="form-control" id="nome">
+						</div>
+
+						<div class="input-box col-md-4 position-relative">
+							<label for="nome" class="form-label">Telefone ou celular</label>
+							<input placeholder="Digite seu telefone ou celular" th:field="*{tel}" type="text"
+								class="form-control" id="nome">
+						</div>
+
+
+						<div class="input-box col-md-4 position-relative">
+							<label for="nome" class="form-label">RG</label>
+							<input placeholder="Digite seu RG" th:field="*{rg}" type="text" class="form-control"
+								id="nome">
+						</div>
+
+
+						<div class="input-box col-md-4 position-relative">
+							<label for="nome" class="form-label">CPF</label>
+							<input placeholder="Digite seu CPF" th:field="*{cpf}" type="text" class="form-control"
+								id="nome">
+						</div>
+
+
+						<div class="input-box col-md-4 position-relative">
+							<label for="nome" class="form-label">CEP</label>
+							<input placeholder="Digite seu CEP" th:field="*{cep}" type="text" class="form-control"
+								id="nome">
+						</div>
+
+
+						<div class="input-box col-md-4 position-relative">
+							<label for="nome" class="form-label">Motivo da solicitação</label>
+							<input placeholder="Digite o motivo da solicitação" th:field="*{motivoSolicitacao}"
+								type="text" class="form-control" id="nome">
+						</div>
+
+
+
+						<div class="col-12 mt-4">
+							<button class="btn btn-primary enviar" type="submit">Enviar informações</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+</body>
+
+</html>

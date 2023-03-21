@@ -124,9 +124,19 @@ h1 {
   color: rgb(54, 54, 54);
 }
 
+.container-central{
+	display: flex;
+	 flex-wrap: wrap;
+	 gap: 30px;
+}
+
 .texto-categoria {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	text-align: start;
   color: white;
-  margin-left: 50px;
+  margin-left: 0px;
   max-width: 600px;
 }
 

@@ -28,7 +28,7 @@
 <body>
 
 	<!-- Cabecalho -->
-	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	<div th:replace="fragmentos/fragmentos :: cabecalho2"></div>
 
 
 	<section class="conteudo">
@@ -41,12 +41,12 @@
 			<div class="container">
 				<div class="card bg-dark text-light">
 					<div class="form-header mb-3 container">
-						<h1>Cadastro</h1>
+						<h1>Cadastro de alunos</h1>
 						<h5>Insira as informações</h2>
 					</div>
 
 					<!-- Na tag form precisamos dizer q o método é post e precisamos trazer o objeto usuario-->
-					<form method="post" action="/insertAlunos" th:object="${usuario}"
+					<form method="post" action="/insertUsuarios" th:object="${usuario}"
 						class="input-group row g-3 needs-validation">
 
 						<!--Nome -->
@@ -148,7 +148,7 @@
                     </div>
                 </div>
                 -->
-						<div class="input-box col-md-3 position-relative">
+						<div class="input-box col-md-4 position-relative">
 
 							<label for="cep" class="form-label">CEP</label>
 							<input type="text" th:field="*{cep}" class="cep form-control" id="cep">

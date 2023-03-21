@@ -70,6 +70,12 @@ body, html{
     margin-top: 20px;
 }
 
+.container-central{
+	display: flex;
+	 flex-wrap: wrap;
+	 gap: 30px;
+}
+
 .funcao{
   display: flex;
   flex-direction: column;
@@ -132,7 +138,7 @@ h1{
 }
 
 strong{
-  color: blue;
+  color: #2e7bab;
 }
 
 .side-bar{
@@ -283,7 +289,7 @@ strong{
 
 	.titulo-categoria {
 		color: #128fca;
-		font-size: 50px;
+		font-size: 40px;
 	}
 
 	.descricao-categoria-p {

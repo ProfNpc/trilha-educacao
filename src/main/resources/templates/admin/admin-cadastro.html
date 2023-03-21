@@ -24,8 +24,8 @@
 		<div class="">
 			<div class="card bg-dark cadastro-container">
 				<div class="form-header mb-5  ">
-					<h1>Cadastro de Admin</h1>
-					<h5>Crie seu usuario de admin no sistema</h2>
+					<h1>Cadastre de admin</h1>
+					<h5>Preencha todos os campos do formulário</h2>
 				</div>
 				<form method="post" th:object="${admin}" action="salvarAdmin" class="inputt-group">
 
@@ -50,7 +50,7 @@
 
 					<div class="column botoes">
 						<button type="submit" class="btn btn-primary entrar">Cadastrar</button>
-						<button type="submit" class="btn btn-primary voltar">Voltar</button>
+						<button type class="btn btn-primary voltar">Voltar</button>
 						<a th:href="@{/admin/login}">Já possui uma conta?</a>
 					</div>
 				</form>

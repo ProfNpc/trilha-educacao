@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -53,6 +54,22 @@ public class AdminController {
 			return mv;
 		}
 	
+	@GetMapping("/admin/listagem")
+	public ModelAndView listagemUsuarios() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("admin/admin-list");
+		mv.addObject("adminList", adminRepositorio.findAll()); // o find all é responsavel por listar todos os
+																	// dados q tem no banco
+		return mv;
+	}
+	
+	@GetMapping("/admin/excluir/{id}")
+	public String excluirAdmin(@PathVariable("id") Long id) {
+		adminRepositorio.deleteById(id); // dessa vez usamos o metodo de delete ao inves de save, dessa maneira ele
+											// irá deletar o usuario buscando pelo seu id
+		return "redirect:/admin/listagem";
+	}
+	
 	@PostMapping("salvarAdmin")
 	public ModelAndView Cadastrar(Admin admin) throws Exception {
 		ModelAndView mv = new ModelAndView();
@@ -65,7 +82,7 @@ public class AdminController {
 	// Método de login
 	
 	@PostMapping("/admin/login")
-	public ModelAndView login(Admin admin) throws NoSuchAlgorithmException, ServiceExc{
+	public ModelAndView login(Admin admin, HttpSession session) throws NoSuchAlgorithmException, ServiceExc{
 		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("admin", new Admin());
@@ -80,6 +97,7 @@ public class AdminController {
 			mv.setViewName("admin/admin-login");
 		}else {
 			
+			session.setAttribute ("adminLogado", adminLogin);
 			// sempre q retornarmos metodos é importante colocar os parenteses no final
 			return DashBoardAdmin();
 		}
@@ -87,6 +105,13 @@ public class AdminController {
 		return mv;
 	}
 	
+	@PostMapping("/admin/logout")
+	public ModelAndView adminLogout(HttpSession session) {
+		
+		session.invalidate();
+		return login();
+		
+	}
 
 
 }

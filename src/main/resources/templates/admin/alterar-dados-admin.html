@@ -11,10 +11,9 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<link rel="stylesheet" href="/css/HomeAdmin.css">
-	<title>Cadastro</title>
+	<title>Alterar Dados</title>
 </head>
 <style>
-
 	.container-erro {
 
 		font-size: 12px;
@@ -24,94 +23,35 @@
 	.teste {
 		margin-top: 20px;
 	}
-
-	.card {
-		width: 50%;
-		height: 100%;
-		border-radius: 0px;
-		overflow: auto;
-	}
-
-	.card-container {
-		display: flex;
-		height: 500px;
-		width: 80vw;
-		background-color: blue;
-
-	}
-
-	.form-image {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		width: 50%;
-		height: 100%;
-		background: linear-gradient(90deg, rgba(98,19,172,1) 0%, rgba(10,9,25,1) 100%);
-		overflow: auto;
-	}
-	
-	.texto-form, h1{
-		color: white;
-		
-		font-weight: 500;
-		display: flex;
-		justify-content: flex-start;
-		text-align: start;
-		
-	}
-	.texto-form{
-		width: 100%;
-	}
-	
-	.texto{
-		margin-left: 20px;
-		font-size: 40px;
-	}
-
-	input,
-	label {
-		height: 35px;
-	}
-
-	.icon {
-		height: 450px;
-	}
 </style>
 
 <body>
 
 	<!-- Cabecalho -->
-	<div th:replace="fragmentos/fragmentos :: cabecalho"></div> 
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
 
 
 	<section class="conteudo">
-
+		<div th:replace="fragmentos/fragmentos :: side-bar"></div>
 
 
 		<div class="container-funcoes">
 
-
-			<div class="card-container">
-				<div class="form-image">
-				<div class="texto-form"><h1 class="texto"></h1></div>
-					<img src="/assets/img/login-animate.svg" alt="" class="icon">
-				</div>
-
-				<div class="card bg-dark text-light container">
+			<div class="container">
+				<div class="card bg-dark text-light">
 					<div class="form-header mb-3 container">
-						<h1>Cadastre-se</h1>
-						<h5>Insira suas informações</h2>
+						<h1>Editar</h1>
+						<h5>Altere informações</h2>
 					</div>
 
 					<!-- Na tag form precisamos dizer q o método é post e precisamos trazer o objeto usuario-->
-					<form method="post" action="/insertAlunos" th:object="${usuario}"
+					<!-- lemrbando q oq fica em action é sempre a requisição do metodo post-->
+					<form method="post" action="/admin/alterar" th:object="${admin}"
 						class="input-group row g-3 needs-validation">
+						<!-- colocamos como hidden pq o usuario nao precisa ver esse input-->
 
-						<!--Nome -->
-
-
-						<div class="input-box col-md-6 position-relative">
+						<input type="hidden" th:field='*{id}'>
+						<div class="input-box col-md-4 position-relative">
 
 
 
@@ -131,7 +71,7 @@
 
 						<!-- email-->
 
-						<div class="input-box col-md-6 position-relative">
+						<div class="input-box col-md-4 position-relative">
 
 							<!-- usamos o th:if pra verificar se ha algo de errado nesse campo -->
 
@@ -147,54 +87,49 @@
 
 						</div>
 
-						<div class="input-box col-md-6 position-relative">
-
-
-
-
-
-							<label for="email" class="form-label">Senha</label>
-							<input placeholder="Digite seu email" type="text" class="form-control" id="nome">
-
+						<div class="input-box col-md-4 position-relative">
+							<label for="senha" class="form-label">Senha</label>
+							<input type="password"  th:field="*{senha}"class="form-control" id="senha" required>
 						</div>
 
-						<div class="input-box col-md-6 position-relative">
-							<label for="senha" class="form-label">Confirmar senha</label>
-							<input type="password" class="form-control" id="senha" required>
-						</div>
-
-
-						<div class="input-box col-md-6 position-relative">
-
-
-
-							<label for="telefone" class="form-label">Celular</label>
+						<!--
+						<div class="input-box col-md-4 position-relative">
+							<label for="usuario" class="form-label">Nome de usuário</label>
 							<div class="input-group has-validation">
-								<input type="tel" th:field="*{tel}" class="form-control" id="telefone"
+								<span class="input-group-text" id="usuarioPrepend">@</span>
+								<input type="text" class="form-control" id="usuario"
 									aria-describedby="validationTooltipUsernamePrepend">
 
-
-
 							</div>
 
-							<div class=" container-erro alert-danger" role="alert" th:if="${#fields.hasErrors('tel')}">
-								<label class="validation-message" th:errors="*{tel}"> </label>
-							</div>
-
-						</div>
-						<div class="input-box col-md-6 position-relative">
-
-							<label for="cep" class="form-label">CEP</label>
-							<input type="text" th:field="*{cep}" class="cep form-control" id="cep">
-
-							<div class=" container-erro alert-danger" role="alert" th:if="${#fields.hasErrors('cep')}">
-								<label class="validation-message" th:errors="*{cep}"> </label>
-							</div>
+						</div>  -->
 
 
 
-
-						</div>
+						<!--
+                <div class="input-box col-md-6 position-relative">
+                    <label for="cidade" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="cidade" required>
+                    <div class="invalid-tooltip">
+                        Please provide a valid city.
+                    </div>
+                </div>
+                -->
+						<!--
+                <div class=" state col-md-3 mt-3 position-relative ">
+                    <label for="estado" class="form-label">Estado</label>
+                    <select class="form-select" id="estado" required>
+                        <option selected disabled value="">Escolha</option>
+                        <option>SP</option>
+                        <option>RJ</option>
+                        <option>BH</option>
+                        <option>BA</option>
+                    </select>
+                    <div class="invalid-tooltip">
+                        Please select a valid state.
+                    </div>
+                </div>
+                -->
 
 						<div class="col-12 mt-4">
 							<button class="btn btn-primary enviar" type="submit">Enviar informações</button>

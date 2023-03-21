@@ -27,7 +27,7 @@ public class UsuarioController {
 	@GetMapping("/inseriralunos")
 	public ModelAndView InsertAlunos(Usuario usuario) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("usuario/usuario-form-cadastro");
+		mv.setViewName("usuario/usuario-cadastro");
 		mv.addObject("usuario", new Usuario());
 		return mv;
 
@@ -38,13 +38,41 @@ public class UsuarioController {
 																					// uma variavel pra esse objeto
 		ModelAndView mv = new ModelAndView();
 		if (br.hasErrors()) {
+			mv.setViewName("usuario/usuario-cadastro"); // caso tenha algum erro a tela continará em formulario
+			mv.addObject("usuario");
+		} else {
+
+			// caso contrario ele redionará para a tela de usuarios cadastrados
+			mv.setViewName("redirect:/informacoesEnviadas"); // aqui redirecionamos para a requisição q esta no get, e
+																// nao ao
+			// arquivo na pasta
+			usuariorepositorio.save(usuario);
+		}
+		return mv;
+	}
+	
+	@GetMapping("/inserirUsuarios")
+	public ModelAndView Insertusuarios(Usuario usuario) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("usuario/usuario-form-cadastro");
+		mv.addObject("usuario", new Usuario());
+		return mv;
+
+	}
+
+	@PostMapping("insertUsuarios")
+	public ModelAndView inserirUsuario(@Valid Usuario usuario, BindingResult br) { // passamos o objeto aluno e criamos
+																					// uma variavel pra esse objeto
+		ModelAndView mv = new ModelAndView();
+		if (br.hasErrors()) {
 			mv.setViewName("usuario/usuario-form-cadastro"); // caso tenha algum erro a tela continará em formulario
 			mv.addObject("usuario");
 		} else {
 
 			// caso contrario ele redionará para a tela de usuarios cadastrados
-			mv.setViewName("redirect:/listagem"); // aqui redirecionamos para a requisição q esta no get, e nao ao
-													// arquivo na pasta
+			mv.setViewName("redirect:/listagem"); // aqui redirecionamos para a requisição q esta no get, e
+																// nao ao
+			// arquivo na pasta
 			usuariorepositorio.save(usuario);
 		}
 		return mv;
@@ -94,16 +122,19 @@ public class UsuarioController {
 											// irá deletar o usuario buscando pelo seu id
 		return "redirect:/listagem";
 	}
-	
+
 	// esse post é referente ao input q procura por usuarios
 	@PostMapping("pesquisar-usuario")
-	public ModelAndView pesquisarUsuario(@RequestParam (required = false)String nome) { // passamos a string nome como parametro pq vamos nos absear nela pra buscar os usuarios
+	public ModelAndView pesquisarUsuario(@RequestParam(required = false) String nome) { // passamos a string nome como
+																						// parametro pq vamos nos absear
+																						// nela pra buscar os usuarios
 		ModelAndView mv = new ModelAndView();
 		List<Usuario> listaUsuarios; // criamso essa variavel para armazenar todos os dados dos usuarios
 		// verificando se o usuario n esta enviando nada
-		if(nome==null || nome.trim().isEmpty()) {
-			listaUsuarios = usuariorepositorio.findAll(); // caso digite nada ele devolverá a lista copmplete de usuarios
-		}else {
+		if (nome == null || nome.trim().isEmpty()) {
+			listaUsuarios = usuariorepositorio.findAll(); // caso digite nada ele devolverá a lista copmplete de
+															// usuarios
+		} else {
 			// e aqui ja utilizamos o metodo criado la no repository
 			listaUsuarios = usuariorepositorio.findByNomeContainingIgnoreCase(nome);
 		}
@@ -111,52 +142,29 @@ public class UsuarioController {
 		mv.setViewName("usuario/pesquisa-resultado");
 		return mv;
 	}
+
+	@GetMapping("/entrar")
+	public String Login() {
+
+		return "usuario/usuario-login";
+	}
+
+	@GetMapping("/usuario/home")
+	public String usuarioHome() {
+
+		return "usuario/usuario-home";
+	}
+
+	@GetMapping("/usuario/solicitacao")
+	public String usuarioSolicitacao() {
+		return "usuario/usuario-solicitacao";
+	}
 	
-	  @GetMapping("/entrar") public String Login() { 
-		  
-		  return"usuario/usuario-login";
-	  }
-	  
-	  @GetMapping("/usuario/home") public String usuarioHome() { 
-		  
-		  return"usuario/usuario-home";
-	  }
-	  
-	/*
-	 * @GetMapping("/cadastro")// model serve pra adicionar dados, informações
-	 * public String Cadastro(Model model) { return "usuario/usuario-form-cadastro";
-	 * }
-	 * 
-	 * //Lista de usuarios
-	 * 
-	 * @GetMapping("/listagem") public String Listagem(Model model) {
-	 * 
-	 * //criando um atalho pra criação de um novo usuario Usuario usuario = new
-	 * Usuario(); //aqui estamos alterando dinamicante o valor das variaveis q estao
-	 * em model
-	 * 
-	 * usuario.setNome("Kaique"); usuario.setEmail("kaiqueoliveira375@gmail.com");
-	 * usuario.setTel(1194395572); usuario.setIdade(19); usuario.setCep(210);
-	 * 
-	 * 
-	 * //essas informacoes serão exibidas na tela mas dentro de uma lista:
-	 * 
-	 * List <Usuario> usuarios = Arrays.asList(usuario); // guardando a lista de
-	 * usuarios dentro de uma lista chamada usuarios
-	 * 
-	 * model.addAttribute("usuarios", usuarios); // o model q é responsavel por
-	 * levar nossas informações ate é a vie
-	 * 
-	 * return "usuario/usuario-list"; }
-	 * 
-	 * @GetMapping("/entrar") public String Login() { return
-	 * "usuario/usuario-login"; }
-	 * 
-	 * @GetMapping("/frontend") public String FrontEnd() { return
-	 * "categorias/front-end"; }
-	 * 
-	 * @GetMapping("/backend") public String BackEnd() { return
-	 * "categorias/back-end"; }
-	 */
+	@GetMapping("/usuario/notificacao")
+	public String usuarioNotificacao() {
+		return "usuario/notificacao";
+	}
+	
+
 
 }

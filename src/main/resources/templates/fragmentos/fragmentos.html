@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="/css/HomeAdmin.css">
 	<title>Document</title>
 </head>
+<style>
+</style>
 
 <body>
 
@@ -37,9 +39,9 @@
 						</li>
 
 						<li class="nav-item">
-							<a data-toogle ="modal" data-target="#modalPesquisa" class="text-light nav-link">teste</a>
+							<a data-toogle="modal" data-target="#modalPesquisa" class="text-light nav-link">teste</a>
 						</li>
-						
+
 						<li class="nav-item dropdown">
 							<a class="text-light nav-link dropdown-toggle" href="#" role="button"
 								data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,57 +56,47 @@
 								<li><a class="text-light dropdown-item" href="#">Something else here</a></li>
 							</ul>
 						</li>
-						<li class="nav-item">
-							<a class="text-light nav-link disabled">Disabled</a>
-						</li>
+
 					</ul>
 					<form class="d-flex" role="search">
 						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 						<button class="btn btn-outline-success search" type="submit">Search</button>
 					</form>
+
+
+
+
 				</div>
 			</div>
 		</nav>
 
 
 	</header>
-	
-	
+
+
 	<!-- Header admin-->
-	
-		<header th:fragment="cabecalho2" class="cabecalho">
 
-		<nav class="navbar navbar-expand-lg bar bg-dark">
+	<header th:fragment="cabecalho2" class="cabecalho">
+
+		<nav class="navbar bg-dark">
 			<div class="container-fluid">
-				<a th:href="@{/home}" class="text-light  navbar-brand" href="#">Y.our Study</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-					aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse container teste" id="navbarSupportedContent">
-				
-				
-					<form class="d-flex teste" role="search">
-						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-success search" type="submit">Search</button>
-					</form>
-					
-					
-				</div>
+				<a class="navbar-brand text-light">Y.our Study</a>
+				<form class="d-flex" role="search">
+					<button class="btn btn-danger sair" type="submit">Sair</button>
+				</form>
 			</div>
 		</nav>
 
 
 	</header>
 
-	<!-- Side bar -->
+	<!-- Side bar Admin-->
 
 	<div th:fragment="side-bar" class="side-bar bg-dark">
 		<div class="menu">
 			<div class="item"><a th:href="@{/admin/dashboard}"><i class="fas fa-desktop"></i>Dashboard</a></div>
 			<div class="item">
-				<a class="sub-btn"><i class="fas fa-table"></i>Cursos<i class="fas fa-angle-right dropdown"></i></a>
+				<a class="sub-btn"><i class="fas fa-table"></i>Equipes<i class="fas fa-angle-right dropdown"></i></a>
 				<div class="sub-menu">
 					<a href="#" onclick="abrirPag(`frontend`)" class="sub-item">Front-end</a>
 					<a href="#" onclick="abrirPag(`backend`)" class="sub-item">Back-End</a>
@@ -115,7 +107,15 @@
 			<div class="item">
 				<a class="sub-btn"><i class="fas fa-cogs"></i>Usuário<i class="fas fa-angle-right dropdown"></i></a>
 				<div class="sub-menu">
-					<a th:href="@{/inseriralunos}" class="sub-item">Cadastrar</a>
+					<a th:href="@{/inserirUsuarios}" class="sub-item">Cadastrar</a>
+					<a th:href="@{/listagem}">Listar</a>
+				</div>
+			</div>
+
+			<div class="item">
+				<a class="sub-btn"><i class="fas fa-cogs"></i>Professor<i class="fas fa-angle-right dropdown"></i></a>
+				<div class="sub-menu">
+					<a th:href="@{/inserirUsuarios}" class="sub-item">Cadastrar</a>
 					<a th:href="@{/listagem}">Listar</a>
 				</div>
 			</div>
@@ -123,13 +123,22 @@
 			<div class="item">
 				<a class="sub-btn"><i class="fas fa-cogs"></i>Admin<i class="fas fa-angle-right dropdown"></i></a>
 				<div class="sub-menu">
-					<a th:href="@{/inseriralunos}" class="sub-item">Cadastrar</a>
-					<a th:href="@{/listagem}">Lista</a>
+					<a th:href="@{/inserirUsuarios}" class="sub-item">Cadastrar</a>
+					<a th:href="@{/admin/listagem}">Lista</a>
 				</div>
 			</div>
 
 			<div class="item">
-				<a href="#"><i class="fas fa-th"></i>Minha conta</a>
+				<a class="sub-btn"><i class="fas fa-cogs"></i>Solicitações<i
+						class="fas fa-angle-right dropdown"></i></a>
+				<div class="sub-menu">
+					<a th:href="@{/listagemsolicitacao}" class="sub-item">Usuario</a>
+
+				</div>
+			</div>
+
+			<div class="item">
+				<a th:href="@{/escolha}"><i class="fas fa-th"></i>Minha conta</a>
 			</div>
 
 			<div class="item"><a href="index.html"><i class="fas fa-info-circle"></i>Sobre</a></div>
@@ -137,20 +146,23 @@
 	</div>
 
 
-<!-- Side-bar Usario-->
+	<!-- Side-bar Usario-->
 
-<div th:fragment="side-bar-user" class="side-bar bg-dark">
+	<div th:fragment="side-bar-user" class="side-bar bg-dark">
 		<div class="menu">
-			<div class="item"><a th:href="@{/admin/dashboard}"><i class="fas fa-desktop"></i>Dashboard</a></div>
+			<div class="item"><a th:href="@{/usuario/home}"><i class="fas fa-desktop"></i>Dashboard</a></div>
 			<div class="item">
-				<a class="sub-btn"><i class="fas fa-table"></i>Cursos<i class="fas fa-angle-right dropdown"></i></a>
+				<a class="sub-btn"><i class="fas fa-table"></i>Atividades<i class="fas fa-angle-right dropdown"></i></a>
 				<div class="sub-menu">
-					<a href="#" onclick="abrirPag(`frontend`)" class="sub-item">Front-end</a>
+					<a th:href="@{/frontend}" class="sub-item">Front-end</a>
 					<a href="#" onclick="abrirPag(`backend`)" class="sub-item">Back-End</a>
 					<a href="#" class="sub-item">Data Science</a>
 				</div>
 			</div>
 
+			<div class="item">
+				<a th:href="@{/usuario/notificacao}"><i class="fas fa-bell"></i>Notificações</a>
+			</div>
 
 			<div class="item">
 				<a href="#"><i class="fas fa-th"></i>Minha conta</a>
