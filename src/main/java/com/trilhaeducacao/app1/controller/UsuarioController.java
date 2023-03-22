@@ -159,12 +159,7 @@ public class UsuarioController {
 	public String usuarioSolicitacao() {
 		return "usuario/usuario-solicitacao";
 	}
-	
-	@GetMapping("/usuario/notificacao")
-	public String usuarioNotificacao() {
-		return "usuario/notificacao";
-	}
-	
+
 
 
 }

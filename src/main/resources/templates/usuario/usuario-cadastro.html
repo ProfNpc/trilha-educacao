@@ -154,13 +154,13 @@
 
 
 							<label for="email" class="form-label">Senha</label>
-							<input placeholder="Digite seu email" type="text" class="form-control" id="nome">
+							<input placeholder="Digite sua senha" type="password" class="form-control" id="nome">
 
 						</div>
 
 						<div class="input-box col-md-6 position-relative">
 							<label for="senha" class="form-label">Confirmar senha</label>
-							<input type="password" class="form-control" id="senha" required>
+							<input placeholder="Confirme sua senha" type="password" class="form-control" id="senha" required>
 						</div>
 
 
@@ -170,7 +170,7 @@
 
 							<label for="telefone" class="form-label">Celular</label>
 							<div class="input-group has-validation">
-								<input type="tel" th:field="*{tel}" class="form-control" id="telefone"
+								<input placeholder="Digite seu celular" type="tel" th:field="*{tel}" class="form-control" id="telefone"
 									aria-describedby="validationTooltipUsernamePrepend">
 
 
@@ -185,7 +185,7 @@
 						<div class="input-box col-md-6 position-relative">
 
 							<label for="cep" class="form-label">CEP</label>
-							<input type="text" th:field="*{cep}" class="cep form-control" id="cep">
+							<input placeholder="Digite seu CEP" type="text" th:field="*{cep}" class="cep form-control" id="cep">
 
 							<div class=" container-erro alert-danger" role="alert" th:if="${#fields.hasErrors('cep')}">
 								<label class="validation-message" th:errors="*{cep}"> </label>

@@ -14,20 +14,23 @@
 	<title>Notificações</title>
 </head>
 <style>
-.titulo-categoria{
-	font-size: 30px;
-	border-bottom: 1px solid #6427a1;
-	border-radius: 10px;
-	height: 60px;
-	
-}
+	.titulo-categoria {
+		font-size: 30px;
+		border-bottom: 1px solid #6427a1;
+		border-radius: 10px;
+		height: 60px;
+		width: 100%;
 
-.container-texto-categoria{
-	border: none;
+	}
+
+	.container-texto-categoria {
+		border: none;
 	}
 	
-	.i{
-		margin-left: 20px;
+
+	.botoes {
+		display: flex;
+		gap: 10px;
 	}
 </style>
 
@@ -50,7 +53,7 @@
 			<div class="container-texto-categoria">
 
 				<div class="texto-categoria">
-					<h1 class="titulo-categoria text-light ">Notificações<i class="i fas fa-bell "></i></h1> 
+					<h1 class="titulo-categoria text-light "><strong class="html">HTML </strong>- Atividades</h1>
 				</div>
 
 				<a>
@@ -59,10 +62,12 @@
 						<div class="descricao-categoria">
 							<div class="titulo-andamento">
 								<img src="/assets/img/html.png" alt="" class="icon-andamento">
-								<h1><strong class="html">HTML </strong> Nova atividade adicionada!</h1>
+								<h1><strong class="html">HTML </strong> O que é o HTML?</h1>
 							</div>
-
-							<button class="btn btn-primary btn-continuar">Realizar atividade</button>
+							<div class="botoes">
+								<button class="btn btn-primary btn-continuar">Realizar atividade</button>
+								<button class="btn btn-success btn-continuar">Guia</button>
+							</div>
 						</div>
 					</div>
 				</a>

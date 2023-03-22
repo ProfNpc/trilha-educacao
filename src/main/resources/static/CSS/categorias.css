@@ -308,3 +308,7 @@ strong {
 .enviar:hover {
   background-color: rgb(64, 0, 128);
 }
+
+a{
+	text-decoration: none;
+}

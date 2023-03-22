@@ -10,5 +10,25 @@ public class CategoriaController {
 	public String FrontEnd() {
 		return "categorias/front-end";
 	}
+	
+	@GetMapping("/frontend/html")
+	public String Html() {
+		return "categorias/html";
+	}
+	
+	@GetMapping("/frontend/css")
+	public String Css() {
+		return "categorias/css";
+	}
+	
+	@GetMapping("/frontend/javascript")
+	public String JavaScript() {
+		return "categorias/javascript";
+	}
+	
+	@GetMapping("/frontend/react")
+	public String React() {
+		return "categorias/react";
+	}
 
 }
