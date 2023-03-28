@@ -26,12 +26,27 @@
 	.container-texto-categoria {
 		border: none;
 	}
-	
+
 
 	.botoes {
 		display: flex;
 		gap: 10px;
 	}
+
+	.andamento {
+		height: 150px;
+	}
+	
+	.titulo{
+		display: flex;
+	}
+	
+	.titulo-andamento{
+		display: flex;
+		flex-direction: column;
+		justify-content: left;
+		align-items:  flex-start;
+		}
 </style>
 
 <body>
@@ -57,12 +72,24 @@
 				</div>
 
 				<a>
-					<div class="andamento" id="color1">
+					<div class="andamento" id="color1" th:each="conteudo : ${conteudoList}">
 
 						<div class="descricao-categoria">
 							<div class="titulo-andamento">
-								<img src="/assets/img/html.png" alt="" class="icon-andamento">
-								<h1><strong class="html">HTML </strong> O que é o HTML?</h1>
+
+								<div class="titulo">
+									<img src="/assets/img/html.png" alt="" class="icon-andamento">
+									<h1><span class="html" th:text="${conteudo.titulo}">HTML O que é o HTML?</span></h1>
+								</div>
+
+								<div class="descricao-atividade">
+
+									<div class="container-texto-notificacao">
+										<span th:text="${conteudo.descricao}"> </span>
+									</div>
+								</div>
+
+
 							</div>
 							<div class="botoes">
 								<button class="btn btn-primary btn-continuar">Realizar atividade</button>

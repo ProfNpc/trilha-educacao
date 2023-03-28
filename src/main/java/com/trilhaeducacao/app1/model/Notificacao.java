@@ -20,6 +20,9 @@ public class Notificacao {
 	@NotBlank(message = "O nome nao pode ser vazio.") 
 														
 	private String titulo;
+	
+	@Size(min = 5, max = 200, message = "O assunto deve conter no minimo 5 caracteres") 
+	@NotBlank(message = "O nome nao pode ser vazio.") 
 	private String assunto;
 	
 	

@@ -14,20 +14,45 @@
 	<title>Notificações</title>
 </head>
 <style>
-.titulo-categoria{
-	font-size: 30px;
-	border-bottom: 1px solid #6427a1;
-	border-radius: 10px;
-	height: 60px;
-	
-}
+	.titulo-categoria {
+		font-size: 30px;
+		border-bottom: 1px solid #6427a1;
+		border-radius: 10px;
+		height: 60px;
 
-.container-texto-categoria{
-	border: none;
 	}
-	
-	.i{
+
+	.container-texto-categoria {
+		border: none;
+	}
+
+	.i {
 		margin-left: 20px;
+	}
+
+	.comunicado {
+		font-size: 30px;
+	}
+
+	.andamento {
+		height: 280px;
+		justify-content: space-between;
+
+	}
+
+	.titulo-notificacao {
+		font-size: 25px;
+	}
+
+	.container-texto-notificacao {
+		height: 100px;
+		width: 400px;
+		font-size: 15px;
+	}
+
+	.btn {
+		width: 100px;
+
 	}
 </style>
 
@@ -50,19 +75,33 @@
 			<div class="container-texto-categoria">
 
 				<div class="texto-categoria">
-					<h1 class="titulo-categoria text-light ">Notificações<i class="i fas fa-bell "></i></h1> 
+					<h1 class="titulo-categoria text-light ">Notificações<i class="i fas fa-bell "></i></h1>
 				</div>
 
 				<a>
-					<div class="andamento" id="color1">
+					<div class="andamento" id="color1" th:each="notificacao : ${notificacaoList}">
 
 						<div class="descricao-categoria">
 							<div class="titulo-andamento">
-								<img src="/assets/img/html.png" alt="" class="icon-andamento">
-								<h1><strong class="html">HTML </strong> Nova atividade adicionada!</h1>
+
+								<h1 class="html comunicado">Comunicado </h1>
+
 							</div>
 
-							<button class="btn btn-primary btn-continuar">Realizar atividade</button>
+							<div class="assunto">
+
+								<div class="titulo-notificacao mb-2">
+									<span th:text="${notificacao.titulo}"> </span>
+								</div>
+
+								<div class="container-texto-notificacao">
+									<span th:text="${notificacao.assunto}"> </span>
+								</div>
+
+								<a th:href="@{notificacao/excluir/{id}(id=${notificacao.id})}">
+									<button class="btn btn-primary btn-continuar mb-2">Ok</button>
+								</a>
+							</div>
 						</div>
 					</div>
 				</a>

@@ -11,10 +11,7 @@ public class CategoriaController {
 		return "categorias/front-end";
 	}
 	
-	@GetMapping("/frontend/html")
-	public String Html() {
-		return "categorias/html";
-	}
+
 	
 	@GetMapping("/frontend/css")
 	public String Css() {
@@ -29,6 +26,11 @@ public class CategoriaController {
 	@GetMapping("/frontend/react")
 	public String React() {
 		return "categorias/react";
+	}
+	
+	@GetMapping("/questionario2/html")
+	public String QuestionarioHtml() {
+		return "categorias/questionario-html";
 	}
 
 }

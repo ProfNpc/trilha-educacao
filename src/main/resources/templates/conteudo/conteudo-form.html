@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/HomeAdmin.css">
+	<title>Cadastro</title>
+</head>
+<style>
+	.container-erro {
+
+		font-size: 12px;
+		color: red;
+	}
+
+	.teste {
+		margin-top: 20px;
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.assunto {
+
+		height: 150px;
+		width: 390px;
+		font-size: 20px;
+
+	}
+</style>
+
+<body>
+
+	<!-- Cabecalho -->
+	<div th:replace="fragmentos/fragmentos :: cabecalho2"></div>
+
+
+	<section class="conteudo">
+		<div th:replace="fragmentos/fragmentos :: side-bar"></div>
+
+
+		<div class="container-funcoes">
+
+
+			<div class="container">
+				<div class="card bg-dark text-light">
+					<div class="form-header mb-3 container">
+						<h1>Adicionar uma nova atividade</h1>
+						<h5>Preencha todas as informações com atenção</h5>
+					</div>
+
+					<!-- Na tag form precisamos dizer q o método é post e precisamos trazer o objeto usuario-->
+					<form method="post" action="/insertConteudo" th:object="${conteudo}"
+						class="input-group row g-3 needs-validation">
+
+						<!--Nome -->
+
+
+						<div class="input-box col-md-5 position-relative">
+							<label for="titulo" class="form-label">Titulo</label>
+
+							<input placeholder="Digite o titulo " th:field="*{titulo}" type="text" class="form-control"
+								id="titulo">
+
+							<div class=" container-erro alert-danger" role="alert"
+								th:if="${#fields.hasErrors('titulo')}">
+
+								<label class="validation-message" th:errors="*{titulo}"> </label>
+							</div>
+
+						</div>
+						
+						
+						<!--<div class="input-box col-md-5 position-relative">
+							<label for="descricao" class="form-label">Descricao</label>
+
+							<input placeholder="Digite a descrição " th:field="*{descricao}" type="text" class="form-control"
+								id="descricao">
+
+							<div class=" container-erro alert-danger" role="alert"
+								th:if="${#fields.hasErrors('descricao')}">
+
+								<label class="validation-message" th:errors="*{descricao}"> </label>
+							</div>
+
+						</div>
+						
+						-->
+
+
+						<div class="col-12 mt-4">
+							<button class="btn btn-primary enviar" type="submit">Enviar informações</button>
+						</div>
+					</form>
+				</div>
+
+
+
+			</div>
+
+	</section>
+
+
+
+	<script src="/assets/js/abrirPagina.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			$('.sub-btn').click(function () {
+				$(this).next('.sub-menu').slideToggle();
+				$(this).find('.dropdown').toggleClass('rotate');
+			});
+
+			$('.menu-btn').click(function () {
+				$('.side-bar').addClass('active');
+				$('.menu-btn').css("visibility", "hidden");
+			});
+
+			$('.close-btn').click(function () {
+				$('.side-bar').removeClass('active');
+				$('.menu-btn').css("visibility", "visible");
+			});
+
+		});
+
+
+	</script>
+
+</body>
+
+</html>
