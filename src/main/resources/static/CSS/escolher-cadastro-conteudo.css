@@ -1,12 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
-* {
-  /*Isso reseta nosso Style deixando tudo centralizado */
-  margin: 0 ;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-  text-decoration: none;
-}
 
 :root {
   --bg-color: linear-gradient(
@@ -22,9 +14,6 @@
   --cor-clara: rgb(44, 116, 179);
   --cor-escura: #0A2647;
 }
-a{
-	text-decoration: none;
-}
 
 .search{
 	border: 1px solid #6427a1 ;
@@ -36,18 +25,8 @@ a{
 	border:  rgb(64, 0, 128);;
 }
 
-.mobile-menu-icon {
-  display: none;
-}
-
-.mobile-menu {
-  display: none;
-}
-
-body, html{
+body{
      background: linear-gradient(90deg, rgba(10,9,25,1) 0%, rgba(98,19,172,1) 100%);
-      height: 100%;
-      width: 100%;
 }
 
 .conteudo{
@@ -72,11 +51,13 @@ body, html{
 
 .container-central{
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	 flex-wrap: wrap;
 	 gap: 30px;
 }
 
-.funcao{
+.funcao-conteudo{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,6 +72,11 @@ body, html{
   color: white;
   cursor: pointer;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+}
+
+.funcao-conteudo:hover{
+  box-shadow: 10px 7px 4px 0px rgba(0,0,0,0.43);
+  transition: 0.3s;
 }
 
 .funcao:hover{
@@ -110,7 +96,11 @@ body, html{
 }
 
 .icon{
-    height: 70px;
+    height: 50px;
+}
+
+.icon-categoria{
+    height: 80px;
 }
 
 h1{
@@ -121,7 +111,8 @@ h1{
   height: 100px;
   display: flex;
   width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
+  text-align: center;
   align-items: center;
   margin: 0 auto;
   gap: 20px;
@@ -271,8 +262,9 @@ strong{
 		
 		display: flex;
 		width: 100%;
-		justify-content: flex-start;
+		justify-content: center;
 		align-items: center;
+		text-align: center;
 		margin: 0 auto;
 		gap: 20px;
 		font-size: 15px;
@@ -296,7 +288,35 @@ strong{
 		font-size: 16px;
 	}
 	
-	.html{
+	a{
+	text-decoration: none;
+}
+
+.descricao-categoria{
+	width: 200px;
+}
+
+
+
+
+
+
+
+
+
+.descricao-categoria-p{
+	font-size: 16px;
+}
+
+.backend{
+	color: yellow;
+}
+
+.descricao-categoria{
+  color: rgb(232, 232, 232);
+}
+
+.html{
   color: rgb(230, 100, 0);
 }
 
@@ -311,3 +331,37 @@ strong{
 .react{
   color: #64b2e3;
 }
+
+
+.logo-icon {
+  height: 100px;
+}
+
+strong {
+  color: blue;
+}
+
+
+
+
+
+.funcao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: justify;
+  gap: 15px;
+  height: 230px;
+  width: 230px;
+  background-color: rgb(64, 0, 128);
+  border-radius: 6px;
+  border: 1px solid #6427a1;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+  padding: 15px;
+}
+	
+

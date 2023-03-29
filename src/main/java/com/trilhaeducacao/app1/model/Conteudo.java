@@ -31,6 +31,8 @@ public class Conteudo {
 	private String dataAdicao;
 	
 	@Column(name = "descricao")
+	@Size(min = 5, max = 200, message = "A descricao deve conter no minimo 5 caracteres") 
+	@NotBlank(message = "A descricao nao pode ser vazia.") 
 	private String descricao;
 	public String getDescricao() {
 		return descricao;

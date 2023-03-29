@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/escolher-cadastro-conteudo.css">
+	<title>Document</title>
+</head>
+
+<body>
+	<div th:replace="fragmentos/fragmentos :: cabecalho2"></div>
+	<!-- Home -->
+
+	<section class="conteudo">
+
+
+
+		<div th:replace="fragmentos/fragmentos :: side-bar"></div>
+
+		<div class="container-funcoes">
+
+			<div class="container-texto-categoria">
+				<div class="welcome">
+					<div class="texto-categoria">
+						<h1 class="titulo-categoria text-light">
+							Escolha uma categoria
+						</h1>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="container-central container ">
+				<a class="ancora" th:href="@{/admin/escolha-front-end}">
+					<div class="funcao-conteudo bg-dark" id="color3">
+						<!-- <div class="icon-funcao"> -->
+						<img src="/assets/img/front-end.png" alt="" class="icon-categoria">
+						<!-- </div> -->
+
+						<div class="descricao-funcao">
+							<h1 class="escolha">Front-End</h1>
+						</div>
+					</div>
+				</a>
+
+				<a class="ancora" th:href="@{/usuario/home}">
+					<div class="funcao-conteudo bg-dark" id="color3">
+						<!-- <div class="icon-funcao"> -->
+						<img src="/assets/img/back-end.png" alt="" class="icon-categoria">
+						<!-- </div> -->
+
+						<div class="descricao-funcao">
+							<h1 class="escolha">Back-End</h1>
+						</div>
+					</div>
+				</a>
+
+
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

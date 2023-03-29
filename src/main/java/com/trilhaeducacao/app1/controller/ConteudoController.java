@@ -26,7 +26,7 @@ public class ConteudoController {
 	public ModelAndView InsertAtividade(Conteudo conteudo) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("conteudo/conteudo-form");
-		mv.addObject("conteudo", new Notificacao());
+		mv.addObject("conteudo", new Conteudo());
 		return mv;
 
 	}
@@ -61,4 +61,15 @@ public class ConteudoController {
 	public String questionarioHtml() {
 		return "categorias/questionario-html";
 	}
+	
+	@GetMapping("/admin/escolher-cadastro-conteudo")
+	public String escolherCadastroConteudo() {
+		return "conteudo/escolher-cadastro-conteudo";
+	}
+	
+	@GetMapping("/admin/escolha-front-end")
+	public String escolhaFrontEnd() {
+		return "conteudo/escolha-front-end";
+	}
+	
 }
