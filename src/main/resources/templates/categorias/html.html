@@ -36,18 +36,22 @@
 	.andamento {
 		height: 150px;
 	}
-	
-	.titulo{
+
+	.titulo {
 		display: flex;
 		gap: 10px;
 	}
-	
-	.titulo-andamento{
+
+	.titulo-andamento {
 		display: flex;
 		flex-direction: column;
 		justify-content: left;
-		align-items:  flex-start;
-		}
+		align-items: flex-start;
+	}
+
+	.container-texto-notificacao-hidden {
+		display: none;
+	}
 </style>
 
 <body>
@@ -88,12 +92,23 @@
 									<div class="container-texto-notificacao">
 										<h6><span th:text="${conteudo.descricao}"> </span></h6>
 									</div>
+
+									<div class="container-texto-notificacao-hidden">
+										<h6><span th:text="${conteudo.pergunta1}"> </span></h6>
+									</div>
+
+									<div class="container-texto-notificacao-hidden">
+										<h6><span th:text="${conteudo.alternativa1}"> </span></h6>
+									</div>
 								</div>
 
 
 							</div>
 							<div class="botoes">
-								<button class="btn btn-primary btn-continuar">Realizar atividade</button>
+								<a th:href="@{/questionario/html/{id}(id=${conteudo.id})}">
+
+									<button class="btn btn-primary btn-continuar">Realizar atividade</button></a>
+
 								<button class="btn btn-success btn-continuar">Guia</button>
 							</div>
 						</div>

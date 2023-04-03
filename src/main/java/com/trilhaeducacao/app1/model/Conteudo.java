@@ -29,11 +29,29 @@ public class Conteudo {
 	private String titulo;
 	
 	private String dataAdicao;
+	private String alternativa1;
 	
+	public String getAlternativa1() {
+		return alternativa1;
+	}
+	public void setAlternativa1(String alternativa1) {
+		this.alternativa1 = alternativa1;
+	}
 	@Column(name = "descricao")
 	@Size(min = 5, max = 200, message = "A descricao deve conter no minimo 5 caracteres") 
 	@NotBlank(message = "A descricao nao pode ser vazia.") 
 	private String descricao;
+	
+	@Column(name = "pergunta1")
+	@Size(min = 5, max = 200, message = "A descricao deve conter no minimo 5 caracteres") 
+	@NotBlank(message = "A descricao nao pode ser vazia.")
+	private String pergunta1;
+	public String getPergunta1() {
+		return pergunta1;
+	}
+	public void setPergunta1(String pergunta1) {
+		this.pergunta1 = pergunta1;
+	}
 	public String getDescricao() {
 		return descricao;
 	}

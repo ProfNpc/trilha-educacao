@@ -27,26 +27,27 @@
 				<div class="row">
 					<div class="two-thirds column">
 						<div class="titulo text-light">
-						<h2 class="text-light titulo-questionario"><strong class="html">HTML: </strong> suas primeiras tags</h2>
+							<h2 class="text-light titulo-questionario"><strong class="html">HTML: </strong> <span
+									th:text="${conteudo.titulo}"> suas primeiras tags</span></h2>
 							<div id="progress_bar"></div>
 						</div>
 
-
 						<form class="questions_box">
 							<div id="question-1">
-								<h2 class="h2">Questão 1</h2>
-								<h3 class="h3">Qual tag é responsavel por deixar o texto em negrito?</h3>
-								<div class="form-check">
-									<input id="question-1-answer-a" type="radio" name="favelang" value="1" />
-									Usamos a tag LI<br />
-									<input id="question-1-answer-b" type="radio" name="favelang" value="2" />
-									Com a tag B<br />
-									<input id="question-1-answer-c" type="radio" name="favelang" value="3" />
-									Não é possivel deixar o texto em negrito<br />
+								<h2 class="h2">Questão 1
+									<h3 class="h3" th:text="${conteudo.pergunta1}">Qual tag é responsavel por deixar o texto em negrito?</h3>
+									
+									<div class="form-check">
+										<input id="question-1-answer-a" type="radio" name="favelang" value="1" />
+										Usamos a tag LI<br />
+										<input id="question-1-answer-b" type="radio" name="favelang" value="2" />
+										Com a tag B<br />
+										<input id="question-1-answer-c" type="radio" name="favelang" value="3" />
+										Não é possivel deixar o texto em negrito<br />
 
-								</div>
-								<div id="submit1" class="button">Avançar</div>
-								<div class="clearfix"></div>
+									</div>
+									<div id="submit1" class="button">Avançar</div>
+									<div class="clearfix"></div>
 							</div>
 
 							<div id="question-2">
@@ -130,6 +131,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 	</section>
 
 	<script src="/assets/js/questionarios.js"></script>

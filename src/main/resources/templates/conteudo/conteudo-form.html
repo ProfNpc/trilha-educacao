@@ -36,6 +36,73 @@
 		font-size: 20px;
 
 	}
+
+	.guia {
+		height: 130px;
+		width: 350px;
+		border: 10px;
+	}
+
+
+
+	.right {
+		width: 40%;
+		height: 100%;
+
+		overflow: auto;
+	}
+
+	.container-imports {
+		display: flex;
+		flex-direction: row;
+		text-align: center;
+		align-items: center;
+		width: 100%;
+		display: flex;
+		justify-content: start;
+		gap: 80px;
+		flex-wrap: wrap;
+
+	}
+
+	.funcao {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		margin: 0;
+		height: 130px;
+		width: 130px;
+		padding: 30px;
+		gap: 10px;
+	}
+
+	.teste {
+		width: 1000px;
+	}
+
+	.icon {
+		height: 50px;
+	}
+	
+	.imports{
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		
+		
+	}
+	
+	.imports-test{
+		display: flex;
+		gap: 30px;
+		flex-wrap: wrap;
+	}
+	
+	.card{
+		width: 900px;
+	}
+	
 </style>
 
 <body>
@@ -59,50 +126,122 @@
 					</div>
 
 					<!-- Na tag form precisamos dizer q o método é post e precisamos trazer o objeto usuario-->
+					<!-- <h3>Pergunta <span id="passo"></span></h3> -->
 					<form method="post" action="/insertConteudo" th:object="${conteudo}"
 						class="input-group row g-3 needs-validation">
 
 						<!--Nome -->
 
+						<div id="step_1" class="step">
+							<div class="input-box col-md-5 position-relative " e>
+								<label for="titulo" class="form-label">Titulo</label>
 
-						<div class="input-box col-md-5 position-relative">
-							<label for="titulo" class="form-label">Titulo</label>
+								<input placeholder="Digite o titulo " th:field="*{titulo}" type="text"
+									class="form-control" id="titulo">
 
-							<input placeholder="Digite o titulo " th:field="*{titulo}" type="text" class="form-control"
-								id="titulo">
+								<div class=" container-erro alert-danger" role="alert"
+									th:if="${#fields.hasErrors('titulo')}">
 
-							<div class=" container-erro alert-danger" role="alert"
-								th:if="${#fields.hasErrors('titulo')}">
+									<label class="validation-message" th:errors="*{titulo}"> </label>
+								</div>
 
-								<label class="validation-message" th:errors="*{titulo}"> </label>
+
+
+							</div>
+
+
+
+							<div class="input-box col-md-5 position-relative">
+								<label for="descricao" class="form-label">Descricao</label>
+
+								<input placeholder="Digite a descrição " th:field="*{descricao}" type="text"
+									class="form-control" id="descricao">
+
+								<div class=" container-erro alert-danger" role="alert"
+									th:if="${#fields.hasErrors('descricao')}">
+
+									<label class="validation-message" th:errors="*{descricao}"> </label>
+								</div>
+
+
+
 							</div>
 
 						</div>
-						
-						
-						<div class="input-box col-md-5 position-relative">
-							<label for="descricao" class="form-label">Descricao</label>
 
-							<input placeholder="Digite a descrição " th:field="*{descricao}" type="text" class="form-control"
-								id="descricao">
 
-							<div class=" container-erro alert-danger" role="alert"
-								th:if="${#fields.hasErrors('descricao')}">
+						<div id="step_2" class="step">
+							<div class="input-box col-md-4 position-relative right teste">
+								<label for="descricao" class="form-label">Guia de estudo
+</label>
 
-								<label class="validation-message" th:errors="*{descricao}"> </label>
+								<div class="container-imports left">
+
+									<textarea class="guia"> </textarea>
+
+									<div class="imports">
+									
+								
+									<!--<div class="titulo-imports">
+									<h1>Importe arquivos necessarios</h1>
+									</div> -->
+									
+									<div class="imports-test">
+										<div class="funcao bg-dark"><img src="/assets/img/imagem.png" alt=""
+												class="icon">
+											<p>Importar imagem</p>
+										</div>
+										<div class="funcao  bg-dark"><img src="/assets/img/video.png" alt=""
+												class="icon">
+											<p>Importar video</p>
+										</div>
+									</div>
+									</div>
+								</div>
+
+								<div class=" container-erro alert-danger" role="alert"
+									th:if="${#fields.hasErrors('descricao')}">
+
+									<label class="validation-message" th:errors="*{descricao}"> </label>
+								</div>
+
 							</div>
 
-						</div>
-						
-						
 
 
-						<div class="col-12 mt-4">
-							<button class="btn btn-primary enviar" type="submit">Enviar informações</button>
 						</div>
+
+						<div id="step_3" class="step">
+							<div class="input-box col-md-5 position-relative">
+								<label for="descricao" class="form-label">2) Digite um guia de estudo para essa
+									atividade</label>
+
+								<textarea class="guia"> </textarea>
+
+								<div class=" container-erro alert-danger" role="alert"
+									th:if="${#fields.hasErrors('descricao')}">
+
+									<label class="validation-message" th:errors="*{descricao}"> </label>
+								</div>
+
+							</div>
+							<div class="col-12 mt-4">
+								<button class="btn btn-primary enviar" type="submit">Enviar informações</button>
+							</div>
+						</div>
+
+
+
+
+
+
+
 					</form>
 				</div>
-
+				<div class="botoes-row">
+					<button class="btn btn-primary" id="prev">Anterior</button>
+					<button class="btn btn-success" id="next">Avançar</button>
+				</div>
 
 
 			</div>
@@ -110,8 +249,17 @@
 	</section>
 
 
-
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+		integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+		integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+		crossorigin="anonymous"></script>
 	<script src="/assets/js/abrirPagina.js"></script>
+	<script src="/assets/js/form-etapas.js"></script>
 	<script type="text/javascript">
 
 		$(document).ready(function () {
