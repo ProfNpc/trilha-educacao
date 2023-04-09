@@ -105,4 +105,29 @@ public class ConteudoController {
 		return "conteudo/escolha-front-end";
 	}
 	
+	@GetMapping("/lembrete/{id}")
+	public ModelAndView lembrete(@PathVariable("id") Long id) {
+
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("conteudo/lembrete-guia.html");
+		Conteudo conteudo = conteudorepositorio.getOne(id);
+		mv.addObject("conteudo", conteudo);
+		mv.addObject("conteudoList", conteudorepositorio.findAll()); // o atribute value q vai ser guardado na variavel ao lado é a variavel
+											// responsavel por capiturar o di do user
+		return mv;
+	}
+	
+	@GetMapping("/guia/{id}")
+	public ModelAndView Guia(@PathVariable("id") Long id) {
+
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("conteudo/guia.html");
+		Conteudo conteudo = conteudorepositorio.getOne(id);
+		mv.addObject("conteudo", conteudo);
+		mv.addObject("conteudoList", conteudorepositorio.findAll()); // o atribute value q vai ser guardado na variavel ao lado é a variavel
+											// responsavel por capiturar o di do user
+		return mv;
+	}
+
+	
 }

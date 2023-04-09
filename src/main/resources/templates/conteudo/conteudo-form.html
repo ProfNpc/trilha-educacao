@@ -26,8 +26,9 @@
 
 	form {
 		display: flex;
-		flex-direction: column;
+
 	}
+
 
 	.assunto {
 
@@ -84,25 +85,39 @@
 	.icon {
 		height: 50px;
 	}
-	
-	.imports{
+
+	.imports {
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
-		
-		
+
+
 	}
-	
-	.imports-test{
+
+	.imports-test {
 		display: flex;
 		gap: 30px;
 		flex-wrap: wrap;
 	}
-	
-	.card{
+
+	.card {
 		width: 900px;
 	}
-	
+
+	.pergunta {
+		font-size: 20px;
+		color: rgb(172, 228, 255);
+	}
+
+	.a,
+	.b,
+	.c {
+		color: rgb(172, 228, 255);
+	}
+
+	.rc {
+		color: green;
+	}
 </style>
 
 <body>
@@ -173,29 +188,29 @@
 						<div id="step_2" class="step">
 							<div class="input-box col-md-4 position-relative right teste">
 								<label for="descricao" class="form-label">Guia de estudo
-</label>
+								</label>
 
 								<div class="container-imports left">
 
 									<textarea class="guia"> </textarea>
 
 									<div class="imports">
-									
-								
-									<!--<div class="titulo-imports">
+
+
+										<!--<div class="titulo-imports">
 									<h1>Importe arquivos necessarios</h1>
 									</div> -->
-									
-									<div class="imports-test">
-										<div class="funcao bg-dark"><img src="/assets/img/imagem.png" alt=""
-												class="icon">
-											<p>Importar imagem</p>
+
+										<div class="imports-test">
+											<div class="funcao bg-dark"><img src="/assets/img/imagem.png" alt=""
+													class="icon">
+												<p>Importar imagem</p>
+											</div>
+											<div class="funcao  bg-dark"><img src="/assets/img/video.png" alt=""
+													class="icon">
+												<p>Importar video</p>
+											</div>
 										</div>
-										<div class="funcao  bg-dark"><img src="/assets/img/video.png" alt=""
-												class="icon">
-											<p>Importar video</p>
-										</div>
-									</div>
 									</div>
 								</div>
 
@@ -212,11 +227,26 @@
 						</div>
 
 						<div id="step_3" class="step">
-							<div class="input-box col-md-5 position-relative">
-								<label for="descricao" class="form-label">2) Digite um guia de estudo para essa
-									atividade</label>
+							<div class="input-box col-md-5 position-relative " e>
+								<label for="titulo" class="form-label pergunta">Pergunta 1</label>
 
-								<textarea class="guia"> </textarea>
+								<input placeholder="Digite o titulo " th:field="*{titulo}" type="text"
+									class="form-control" id="titulo">
+
+								<div class=" container-erro alert-danger" role="alert"
+									th:if="${#fields.hasErrors('titulo')}">
+
+									<label class="validation-message" th:errors="*{titulo}"> </label>
+								</div>
+
+							</div>
+
+
+							<div class="input-box col-md-5 position-relative">
+								<label for="descricao" class="form-label a">Alternativa A</label>
+
+								<input placeholder="Digite a alternativa A" th:field="*{descricao}" type="text"
+									class="form-control" id="descricao">
 
 								<div class=" container-erro alert-danger" role="alert"
 									th:if="${#fields.hasErrors('descricao')}">
@@ -224,27 +254,80 @@
 									<label class="validation-message" th:errors="*{descricao}"> </label>
 								</div>
 
+
+
 							</div>
+
+							<div class="input-box col-md-5 position-relative">
+								<label for="descricao" class="form-label b">Alternativa B</label>
+
+								<input placeholder="Digite a alternativa B " th:field="*{descricao}" type="text"
+									class="form-control" id="descricao">
+
+								<div class=" container-erro alert-danger" role="alert"
+									th:if="${#fields.hasErrors('descricao')}">
+
+									<label class="validation-message" th:errors="*{descricao}"> </label>
+								</div>
+
+
+
+							</div>
+
+							<div class="input-box col-md-5 position-relative">
+								<label for="descricao" class="form-label c">Alternativa C</label>
+
+								<input placeholder="Digite a alternativa C" th:field="*{descricao}" type="text"
+									class="form-control" id="descricao">
+
+								<div class=" container-erro alert-danger" role="alert"
+									th:if="${#fields.hasErrors('descricao')}">
+
+									<label class="validation-message" th:errors="*{descricao}"> </label>
+								</div>
+
+
+
+							</div>
+
+							<div class="input-box col-md-5 position-relative">
+								<label for="descricao" class="form-label rc">Resposta correta</label>
+
+								<input placeholder="Digite a resposta correta " th:field="*{descricao}" type="text"
+									class="form-control" id="descricao">
+
+								<div class=" container-erro alert-danger" role="alert"
+									th:if="${#fields.hasErrors('descricao')}">
+
+									<label class="validation-message" th:errors="*{descricao}"> </label>
+								</div>
+
+
+
+							</div>
+
 							<div class="col-12 mt-4">
 								<button class="btn btn-primary enviar" type="submit">Enviar informações</button>
 							</div>
 						</div>
 
-
-
-
-
-
-
-					</form>
-				</div>
-				<div class="botoes-row">
-					<button class="btn btn-primary" id="prev">Anterior</button>
-					<button class="btn btn-success" id="next">Avançar</button>
 				</div>
 
 
+
+
+
+
+
+				</form>
 			</div>
+			<div class="botoes-row">
+				<button class="btn btn-primary" id="prev">Anterior</button>
+				<button class="btn btn-success" id="next">Avançar</button>
+			</div>
+
+
+		</div>
 
 	</section>
 

@@ -40,13 +40,20 @@
 	.ok{
 		width: 100px;
 	}
+	
+	html, body{
+		height: 100%;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 </style>
 
 <body>
 
-	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
 
-
+<main>
 	<section class="conteudo">
 
 
@@ -67,6 +74,9 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</section>
+</main>
 
 
 

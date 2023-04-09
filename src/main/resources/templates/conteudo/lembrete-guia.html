@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/HomeAdmin.css">
+	<title>Lembrete</title>
+</head>
+<style>
+	.container-erro {
+
+		font-size: 12px;
+		color: red;
+	}
+
+	.teste {
+		margin-top: 20px;
+	}
+
+	.card {
+		height: 520px;
+		width: 900px;
+		background-color: transparent;
+		border-radius: 20px;
+		border: none;
+		border-bottom: 1px solid #2e7bab;
+		display: flex;
+
+
+	}
+
+	.container-funcoes {
+
+		height: 500px;
+	}
+
+	.container-textos {
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.icon {
+		height: 400px;
+	}
+
+	.botoes-avancar {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	h1 {
+		color: rgb(173, 210, 233);
+	}
+</style>
+
+<body>
+
+	<!-- Cabecalho -->
+	<header th:fragment="cabecalho2" class="cabecalho">
+
+		<nav class="navbar bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand text-light">Y.our Study</a>
+				<form class="d-flex" role="search">
+					<button class="btn btn-danger sair" type="submit">Sair</button>
+				</form>
+			</div>
+		</nav>
+
+
+	</header>
+
+
+	<section class="conteudo">
+		<div th:fragment="side-bar-user" class="side-bar bg-dark">
+			<div class="menu">
+				<div class="item"><a th:href="@{/usuario/home}"><i class="fas fa-desktop"></i>Dashboard</a></div>
+				<div class="item">
+					<a class="sub-btn"><i class="fas fa-table"></i>Atividades<i
+							class="fas fa-angle-right dropdown"></i></a>
+					<div class="sub-menu">
+						<a th:href="@{/frontend}" class="sub-item">Front-end</a>
+						<a href="#" onclick="abrirPag(`backend`)" class="sub-item">Back-End</a>
+						<a href="#" class="sub-item">Data Science</a>
+					</div>
+				</div>
+
+				<div class="item">
+					<a th:href="@{/listanotificacao}"><i class="fas fa-bell"></i>Notificações</a>
+				</div>
+
+				<div class="item">
+					<a href="#"><i class="fas fa-th"></i>Minha conta</a>
+				</div>
+
+				<div class="item"><a href="index.html"><i class="fas fa-info-circle"></i>Sobre</a></div>
+			</div>
+		</div>
+
+
+		<div class="container-funcoes">
+
+
+			<div class="container">
+				<div class="card  text-light container">
+					<div class="form-header mb-3 container">
+						<h1>Verifique o guia antes de continuar</h1>
+						<h5>Melhore sua experiência e aprenda com mais facilidade</h2>
+					</div>
+
+					<div class="container-textos">
+						<div class="image">
+							<img src="/assets/img/cat.svg" alt="" class="icon">
+						</div>
+
+						<div class="botoes-avancar">
+
+							<a class="btn btn-primary" th:href="@{/guia/{id}(id=${conteudo.id})}">
+								<button class="btn btn-primary">Verificar guia</button>
+							</a>
+
+
+							<a class="btn btn-success" th:href="@{/questionario/html/{id}(id=${conteudo.id})}">
+								<button class="btn btn-success">Realizar atividade</button>
+							</a>
+						</div>
+					</div>
+
+					<!-- Na tag form precisamos dizer q o método é post e precisamos trazer o objeto usuario-->
+
+				</div>
+
+
+
+			</div>
+
+	</section>
+
+
+
+	<script src="/assets/js/abrirPagina.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			$('.sub-btn').click(function () {
+				$(this).next('.sub-menu').slideToggle();
+				$(this).find('.dropdown').toggleClass('rotate');
+			});
+
+			$('.menu-btn').click(function () {
+				$('.side-bar').addClass('active');
+				$('.menu-btn').css("visibility", "hidden");
+			});
+
+			$('.close-btn').click(function () {
+				$('.side-bar').removeClass('active');
+				$('.menu-btn').css("visibility", "visible");
+			});
+
+		});
+
+
+	</script>
+
+</body>
+
+</html>
