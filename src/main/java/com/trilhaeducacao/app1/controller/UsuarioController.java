@@ -159,6 +159,16 @@ public class UsuarioController {
 	public String usuarioSolicitacao() {
 		return "usuario/usuario-solicitacao";
 	}
+	
+	@GetMapping("/usuario/perfil")
+	public String Perfil() {
+		return "usuario/perfil";
+	}
+	
+	@GetMapping("/usuario/editar-perfil")
+	public String EditarPerfil() {
+		return "usuario/editar-perfil";
+	}
 
 
 

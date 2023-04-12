@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/HomeAdmin.css">
+	<title>Minha conta</title>
+</head>
+<style>
+	.card {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		height: 550px;
+		width: 100%;
+		background-color: transparent;
+		border-radius: 20px;
+		border: none;
+		justify-content: space-around;
+		border-bottom: 1px solid #2e7bab;
+
+	}
+
+
+	.container-funcoes {
+		height: 500px;
+	}
+
+
+	.container-imagem-perfil {
+		display: flex;
+		height: 100%;
+		width: 300px;
+		gap: 20px;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		background-color: transparent;
+	}
+
+	.user-icon {
+		height: 300px;
+		width: 300px;
+		border-radius: 100%;
+		background-color: grey;
+	}
+
+	.edicao-perfil {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		width: 40%;
+		padding: 40px;
+	}
+
+	.inputs {
+		width: 400px;
+	}
+
+	.send {
+		width: 100%;
+		margin-top: 15px;
+	}
+
+	.titulo-edicao-perfil {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-bottom: 20px;
+		width: 400px;
+	}
+
+	.input-box {
+		padding: 3px;
+	}
+</style>
+
+<body>
+
+	<!-- Cabecalho -->
+	<div th:replace="fragmentos/fragmentos :: cabecalho2"></div>
+
+
+	<section class="conteudo">
+		<div th:replace="fragmentos/fragmentos :: side-bar-user"></div>
+
+		<div class="container-funcoes">
+
+
+			<div class="container">
+				<div class="card text-light container bg-dark ">
+
+					<div class="container-imagem-perfil">
+						<img src="" alt="" class="user-icon">
+						<!-- <button class="btn btn-primary">Editar imagem</button> -->
+					</div>
+
+					<div class="edicao-perfil">
+
+						<div class="titulo-edicao-perfil">
+							<h2>Minha conta</h2>
+							<h1>Informações sobre sua conta</h1>
+						</div>
+
+						<div class="informacoes">
+							<form>
+								<div class="input-box position-relative">
+									<label for="nome" class="form-label">Nome</label>
+									<input type="text" class="form-control inputs" disabled id="nome">
+								</div>
+
+								<div class="input-box position-relative">
+									<label for="email" class="form-label">Email</label>
+									<input type="text" class="form-control inputs" disabled id="email">
+								</div>
+
+								<div class="input-box position-relative">
+									<label for="telefone" class="form-label">Telefone celular</label>
+									<input type="text" class="form-control inputs" disabled id="telefone">
+								</div>
+
+								<div class="input-box position-relative">
+									<label for="cep" class="form-label">CEP</label>
+									<input type="text" class="form-control inputs" disabled id="cep">
+								</div>
+
+							</form>
+							<a th:href="@{/usuario/editar-perfil}">
+								<button class="btn btn-primary send">Editar informações</button></a>
+
+						</div>
+					</div>
+
+				</div>
+
+
+
+			</div>
+
+	</section>
+
+
+
+	<script src="/assets/js/abrirPagina.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			$('.sub-btn').click(function () {
+				$(this).next('.sub-menu').slideToggle();
+				$(this).find('.dropdown').toggleClass('rotate');
+			});
+
+			$('.menu-btn').click(function () {
+				$('.side-bar').addClass('active');
+				$('.menu-btn').css("visibility", "hidden");
+			});
+
+			$('.close-btn').click(function () {
+				$('.side-bar').removeClass('active');
+				$('.menu-btn').css("visibility", "visible");
+			});
+
+		});
+
+
+	</script>
+
+</body>
+
+</html>

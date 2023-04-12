@@ -105,9 +105,12 @@
         height: 70px;
         width: 100px;
         border-radius: 10px;
-        border-bottom: 1px solid blue;
+        border-bottom: 1px solid rgb(71, 188, 255);
+         color: rgb(71, 188, 255);
     }
 
+	.titulo-guia,
+	.introducao-titulo,
     .titulo-explicacao,
     .exemplos-titulo {
         color: rgb(71, 188, 255);
@@ -123,46 +126,11 @@
 <body>
 
     <!-- Cabecalho -->
-    <header th:fragment="cabecalho2" class="cabecalho">
-
-        <nav class="navbar bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand text-light">Y.our Study</a>
-                <form class="d-flex" role="search">
-                    <button class="btn btn-danger sair" type="submit">Sair</button>
-                </form>
-            </div>
-        </nav>
-
-
-    </header>
+<div th:replace="fragmentos/fragmentos :: cabecalho2"></div>
 
 
     <section class="conteudo">
-        <div th:fragment="side-bar-user" class="side-bar bg-dark">
-            <div class="menu">
-                <div class="item"><a th:href="@{/usuario/home}"><i class="fas fa-desktop"></i>Dashboard</a></div>
-                <div class="item">
-                    <a class="sub-btn"><i class="fas fa-table"></i>Atividades<i
-                            class="fas fa-angle-right dropdown"></i></a>
-                    <div class="sub-menu">
-                        <a th:href="@{/frontend}" class="sub-item">Front-end</a>
-                        <a href="#" onclick="abrirPag(`backend`)" class="sub-item">Back-End</a>
-                        <a href="#" class="sub-item">Data Science</a>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <a th:href="@{/listanotificacao}"><i class="fas fa-bell"></i>Notificações</a>
-                </div>
-
-                <div class="item">
-                    <a href="#"><i class="fas fa-th"></i>Minha conta</a>
-                </div>
-
-                <div class="item"><a href="index.html"><i class="fas fa-info-circle"></i>Sobre</a></div>
-            </div>
-        </div>
+<div th:replace="fragmentos/fragmentos :: side-bar-user"></div>
 
 
         <div class="container-funcoes">
@@ -176,7 +144,7 @@
                         </div>
 
                         <div class="container-titulo">
-                            <h1>Guia da atividade <span th:text = "${conteudo.id}"> </span></h1>
+                            <h1 class="titulo-guia">Guia da atividade <span th:text = "${conteudo.id}"> </span></h1>
                             <h5>Verifique o guia para ter um melhor aprendizado! </h2>
                         </div>
 
@@ -185,12 +153,12 @@
                     </div>
 
                     <div class="container-textos">
-                        <h1>Introdução</h1>
+                        <h1 class="introducao-titulo" >Introdução</h1>
                         <h5>Conheça as tags </h5>
                     </div>
 
                     <div class="container-introducao">
-                        <p class="introducao">
+                        <p class="introducao " th:text="${conteudo.guia}">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam autem assumenda impedit quas
                             nam quasi voluptates accusamus, possimus sed nesciunt. Ipsum veniam aut hic officia tempora
                             repudiandae quae harum vel!
@@ -208,27 +176,27 @@
                             <div class="todos-exemplos">
 
                                 <div class="exemplos bg-dark bg-dark">
-                                    Exemplo 1
+                                     <span th:text="${conteudo.exemplo1}"> </span>
                                 </div>
 
                                 <div class="exemplos bg-dark">
-                                    Exemplo 2
+                                     <span th:text="${conteudo.exemploDois}"> </span>
                                 </div>
 
                                 <div class="exemplos bg-dark">
-                                    Exemplo 3
+                                     <span th:text="${conteudo.exemploTres}"> </span>
                                 </div>
 
                                 <div class="exemplos bg-dark">
-                                    Exemplo 3
+                                       <span th:text="${conteudo.exemploQuatro}"> </span>
                                 </div>
 
                                 <div class="exemplos bg-dark">
-                                    Exemplo 3
+                                       <span th:text="${conteudo.exemplo1}"> </span>
                                 </div>
 
                                 <div class="exemplos bg-dark">
-                                    Exemplo 3
+                                       <span th:text="${conteudo.exemploDois}"> </span>
                                 </div>
 
                             </div>
@@ -236,12 +204,12 @@
                         </div>
 
                         <div class="explicacao-1">
-                            <h1 class="titulo-explicacao">Por que usarmos essas tags?</h1>
-                            <p class="explicacao-texto-1">
+                            <h1 class="titulo-explicacao">Explicação dos exemplos citados</h1>
+                            <span th:text="${conteudo.exemploCinco}"class="explicacao-texto-1">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet exercitationem libero
                                 alias ex consequuntur maxime dicta accusamus doloribus! Culpa ipsum nisi obcaecati quod
                                 veritatis nobis iure fugiat voluptate veniam qui!
-                            </p>
+                            </span>
                         </div>
 
                     </div>

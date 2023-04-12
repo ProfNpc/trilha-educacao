@@ -98,15 +98,27 @@
 									</div>
 
 									<div class="container-texto-notificacao-hidden">
-										<h6><span th:text="${conteudo.alternativa1}"> </span></h6>
+										<h6> </span></h6>
 									</div>
+
+									<div class="container-texto-notificacao-hidden">
+										<h6><span th:text="${conteudo.guia}"> </span></h6>
+									</div>
+									<div class="container-texto-notificacao-hidden">
+										<h6><span th:text="${conteudo.exemplo1}"> </span></h6>
+									</div>
+
+									<div class="container-texto-notificacao-hidden">
+										<h6><span th:text="${conteudo.exemploCinco}"> </span></h6>
+									</div>
+
 								</div>
 
 
 							</div>
 							<div class="botoes">
 								<a th:href="@{/lembrete/{id}(id=${conteudo.id})}">
-							
+
 
 									<button class="btn btn-primary btn-continuar">Realizar atividade</button></a>
 

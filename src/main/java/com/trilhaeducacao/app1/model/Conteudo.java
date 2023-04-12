@@ -28,23 +28,51 @@ public class Conteudo {
 	@NotBlank(message = "O titulo nao pode ser vazio.") 
 	private String titulo;
 	
-	private String dataAdicao;
-	private String alternativa1;
+	private String guia;
+	private String exemplo1;
+	private String exemploDois;
+	private String exemploTres;
+	private String exemploQuatro;
+	private String exemploCinco;
 	
-	public String getAlternativa1() {
-		return alternativa1;
+	public String getExemploCinco() {
+		return exemploCinco;
 	}
-	public void setAlternativa1(String alternativa1) {
-		this.alternativa1 = alternativa1;
+	public void setExemploCinco(String exemploCinco) {
+		this.exemploCinco = exemploCinco;
 	}
-	@Column(name = "descricao")
-	@Size(min = 5, max = 200, message = "A descricao deve conter no minimo 5 caracteres") 
-	@NotBlank(message = "A descricao nao pode ser vazia.") 
+	public String getExemploTres() {
+		return exemploTres;
+	}
+	public void setExemploTres(String exemploTres) {
+		this.exemploTres = exemploTres;
+	}
+	public String getExemploQuatro() {
+		return exemploQuatro;
+	}
+	public void setExemploQuatro(String exemploQuatro) {
+		this.exemploQuatro = exemploQuatro;
+	}
+	public String getExemploDois() {
+		return exemploDois;
+	}
+	public void setExemploDois(String exemploDois) {
+		this.exemploDois = exemploDois;
+	}
+	public String getExemplo1() {
+		return exemplo1;
+	}
+	public void setExemplo1(String exemplo1) {
+		this.exemplo1 = exemplo1;
+	}
+	public String getGuia() {
+		return guia;
+	}
+	public void setGuia(String guia) {
+		this.guia = guia;
+	}
 	private String descricao;
-	
-	@Column(name = "pergunta1")
-	@Size(min = 5, max = 200, message = "A descricao deve conter no minimo 5 caracteres") 
-	@NotBlank(message = "A descricao nao pode ser vazia.")
+
 	private String pergunta1;
 	public String getPergunta1() {
 		return pergunta1;
@@ -55,12 +83,7 @@ public class Conteudo {
 	public String getDescricao() {
 		return descricao;
 	}
-	public String getDataAdicao() {
-		return dataAdicao;
-	}
-	public void setDataAdicao(String dataAdicao) {
-		this.dataAdicao = dataAdicao;
-	}
+
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}

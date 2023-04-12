@@ -39,9 +39,9 @@
 	}
 
 	.guia {
-		height: 130px;
-		width: 350px;
-		border: 10px;
+		width: 800px;
+		border-radius: 10px;
+		border: 1px solid blue;
 	}
 
 
@@ -118,6 +118,47 @@
 	.rc {
 		color: green;
 	}
+
+	.labels-inputs {
+		display: flex;
+		width: 100%;
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+
+	.input-pergunta {
+		width: 800px;
+		margin-bottom: 20px;
+	}
+
+	.titulo-pergunta h1 {
+		font-size: 30px;
+		margin-bottom: 30px;
+	}
+
+	.alternativas {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		gap: 20px;
+	}
+
+	.passo3 {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+
+	}
+
+	#step_3 {
+		display: flex;
+		gap: 40px;
+		flex-wrap: wrap;
+	}
+
+	.opcoes {
+		width: 390px;
+	}
 </style>
 
 <body>
@@ -173,158 +214,174 @@
 									class="form-control" id="descricao">
 
 								<div class=" container-erro alert-danger" role="alert"
-									th:if="${#fields.hasErrors('descricao')}">
-
-									<label class="validation-message" th:errors="*{descricao}"> </label>
-								</div>
-
-
-
-							</div>
-
-						</div>
-
-
-						<div id="step_2" class="step">
-							<div class="input-box col-md-4 position-relative right teste">
-								<label for="descricao" class="form-label">Guia de estudo
-								</label>
-
-								<div class="container-imports left">
-
-									<textarea class="guia"> </textarea>
-
-									<div class="imports">
-
-
-										<!--<div class="titulo-imports">
-									<h1>Importe arquivos necessarios</h1>
-									</div> -->
-
-										<div class="imports-test">
-											<div class="funcao bg-dark"><img src="/assets/img/imagem.png" alt=""
-													class="icon">
-												<p>Importar imagem</p>
-											</div>
-											<div class="funcao  bg-dark"><img src="/assets/img/video.png" alt=""
-													class="icon">
-												<p>Importar video</p>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div class=" container-erro alert-danger" role="alert"
-									th:if="${#fields.hasErrors('descricao')}">
-
-									<label class="validation-message" th:errors="*{descricao}"> </label>
-								</div>
-
-							</div>
-
-
-
-						</div>
-
-						<div id="step_3" class="step">
-							<div class="input-box col-md-5 position-relative " e>
-								<label for="titulo" class="form-label pergunta">Pergunta 1</label>
-
-								<input placeholder="Digite o titulo " th:field="*{titulo}" type="text"
-									class="form-control" id="titulo">
-
-								<div class=" container-erro alert-danger" role="alert"
 									th:if="${#fields.hasErrors('titulo')}">
 
-									<label class="validation-message" th:errors="*{titulo}"> </label>
-								</div>
-
-							</div>
-
-
-							<div class="input-box col-md-5 position-relative">
-								<label for="descricao" class="form-label a">Alternativa A</label>
-
-								<input placeholder="Digite a alternativa A" th:field="*{descricao}" type="text"
-									class="form-control" id="descricao">
-
-								<div class=" container-erro alert-danger" role="alert"
-									th:if="${#fields.hasErrors('descricao')}">
-
 									<label class="validation-message" th:errors="*{descricao}"> </label>
 								</div>
-
-
-
 							</div>
 
-							<div class="input-box col-md-5 position-relative">
-								<label for="descricao" class="form-label b">Alternativa B</label>
-
-								<input placeholder="Digite a alternativa B " th:field="*{descricao}" type="text"
-									class="form-control" id="descricao">
-
-								<div class=" container-erro alert-danger" role="alert"
-									th:if="${#fields.hasErrors('descricao')}">
-
-									<label class="validation-message" th:errors="*{descricao}"> </label>
-								</div>
-
-
-
-							</div>
-
-							<div class="input-box col-md-5 position-relative">
-								<label for="descricao" class="form-label c">Alternativa C</label>
-
-								<input placeholder="Digite a alternativa C" th:field="*{descricao}" type="text"
-									class="form-control" id="descricao">
-
-								<div class=" container-erro alert-danger" role="alert"
-									th:if="${#fields.hasErrors('descricao')}">
-
-									<label class="validation-message" th:errors="*{descricao}"> </label>
-								</div>
-
-
-
-							</div>
-
-							<div class="input-box col-md-5 position-relative">
-								<label for="descricao" class="form-label rc">Resposta correta</label>
-
-								<input placeholder="Digite a resposta correta " th:field="*{descricao}" type="text"
-									class="form-control" id="descricao">
-
-								<div class=" container-erro alert-danger" role="alert"
-									th:if="${#fields.hasErrors('descricao')}">
-
-									<label class="validation-message" th:errors="*{descricao}"> </label>
-								</div>
-
-
-
-							</div>
 
 							<div class="col-12 mt-4">
 								<button class="btn btn-primary enviar" type="submit">Enviar informações</button>
 							</div>
 						</div>
 
+
+
+						<div id="step_2" class="step">
+
+							<div class="passo3">
+								<div class="titulo-pergunta">
+									<h1 class="react">Guia de estudo</h1>
+								</div>
+
+								<div class="labels-inputs">
+									<div class="input-box col-md-4 position-relative">
+										<label for="pergunta" class="form-label">Introdução *</label>
+										<textarea th:field="*{guia}" class="guia" name="" id="" cols="85"
+											rows="5"></textarea>
+									</div>
+
+
+
+									<div class="alternativas">
+
+										<div class="input-box opcoes col-md-4 position-relative">
+											<label for="alternativa" class="form-label">Exemplo 1 *</label>
+											<input type="text" th:field="*{exemplo1}" class="form-control"
+												id="alternativa">
+										</div>
+
+										<div class="input-box opcoes col-md-4 position-relative">
+											<label for="alternativa" class="form-label">Exemplo 2 *</label>
+											<input type="text" th:field="*{exemploDois}" class="form-control"
+												id="alternativa">
+										</div>
+
+										<div class="input-box opcoes col-md-4 position-relative">
+											<label for="telefone" class="form-label">Exemplo 3 *</label>
+											<input type="text" th:field="*{exemploTres}" class="cep form-control"
+												id="cep">
+										</div>
+
+										<div class="input-box opcoes col-md-4 position-relative">
+											<label for="cep" class="form-label">Exemplo 4 *</label>
+											<input type="text" th:field="*{exemploQuatro}" class="cep form-control"
+												id="cep">
+										</div>
+										<div class="input-box col-md-4 position-relative">
+											<label for="pergunta" class="form-label">Explicação dos exemplos *</label>
+											<textarea th:field="*{exemploCinco}" class="guia" name="" id="" cols="85"
+												rows="5"></textarea>
+										</div>
+
+										<div class="col-12 mt-4">
+											<button class="btn btn-primary enviar" type="submit">Enviar
+												informações</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Step 3 
+						<div id="step_3" class="step">
+
+							<div class="passo3">
+								<div class="titulo-pergunta">
+									<h1 class="react">Pergunta 1</h1>
+								</div>
+
+								<div class="labels-inputs">
+									<div class="input-box col-md-4 position-relative">
+										<label for="pergunta" class="form-label">Pergunta *</label>
+										<input type="text" class="form-control input-pergunta" id="pergunta">
+									</div>
+
+									<div class="alternativas">
+
+										<div class="input-box opcoes col-md-4 position-relative">
+											<label for="alternativa" class="form-label">Alternativa A *</label>
+											<input type="text" class="form-control" id="alternativa">
+										</div>
+
+										<div class="input-box opcoes col-md-4 position-relative">
+											<label for="alternativa" class="form-label">Alternativa B *</label>
+											<input type="text" class="form-control" id="alternativa">
+										</div>
+
+										<div class="input-box opcoes col-md-4 position-relative">
+											<label for="telefone" class="form-label">Alternativa C *</label>
+											<input type="text" class="cep form-control" id="cep">
+										</div>
+
+										<div class="input-box opcoes col-md-4 position-relative">
+											<label for="cep" class="form-label">Alternativa D *</label>
+											<input type="text" class="cep form-control" id="cep">
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- step 4 
+						<div id="step_4" class="step">
+
+							<div class="passo3">
+								<div class="titulo-pergunta">
+									<h1 class="react">Pergunta 2</h1>
+								</div>
+
+								<div class="labels-inputs">
+									<div class="input-box col-md-4 position-relative">
+										<label for="pergunta" class="form-label">Pergunta *</label>
+										<input type="text" class="form-control input-pergunta" id="pergunta">
+									</div>
+
+									<div class="alternativas">
+
+										<div class="input-box opcoes col-md-4 position-relative">
+											<label for="alternativa" class="form-label">Alternativa A *</label>
+											<input type="text" class="form-control" id="alternativa">
+										</div>
+
+										<div class="input-box opcoes col-md-4 position-relative">
+											<label for="alternativa" class="form-label">Alternativa B *</label>
+											<input type="text" class="form-control" id="alternativa">
+										</div>
+
+										<div class="input-box opcoes col-md-4 position-relative">
+											<label for="telefone" class="form-label">Alternativa C *</label>
+											<input type="text" class="cep form-control" id="cep">
+										</div>
+
+										<div class="input-box opcoes col-md-4 position-relative">
+											<label for="cep" class="form-label">Alternativa D *</label>
+											<input type="text" class="cep form-control" id="cep">
+										</div>
+
+									</div>
+								</div>
+							</div>
+-->
 				</div>
 
 
 
-
-
-
-
-				</form>
 			</div>
-			<div class="botoes-row">
-				<button class="btn btn-primary" id="prev">Anterior</button>
-				<button class="btn btn-success" id="next">Avançar</button>
-			</div>
+		</div>
+		<div class="botoes-row">
+			<button class="btn btn-primary" id="prev">Anterior</button>
+			<button class="btn btn-success" id="next">Avançar</button>
+		</div>
+		</div>
+
+		</div>
+		</form>
+		</div>
+
 
 
 		</div>
