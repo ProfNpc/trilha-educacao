@@ -32,5 +32,10 @@ public class CategoriaController {
 	public String QuestionarioHtml() {
 		return "categorias/questionario-html";
 	}
+	
+	@GetMapping("/frontend/html/niveis")
+	public String EscolherNivel() {
+		return "categorias/html-niveis";
+	}
 
 }
