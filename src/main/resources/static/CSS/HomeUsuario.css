@@ -142,7 +142,7 @@ strong{
 
 .side-bar{
   width: 250px;
-  height: 100vh;
+  height: 1800%;
   background-color: blue;
   overflow-y: auto;
   transition-property: left;

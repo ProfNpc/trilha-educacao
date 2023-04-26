@@ -2,16 +2,17 @@
 <html lang="pt-br">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+	<link rel="stylesheet" href="/css/janela-modal.css" />
 	<link rel="stylesheet" href="/css/niveis-html.css">
-	<title>Lembrete</title>
+	<title>Percursos</title>
 </head>
 <style>
 	.titulo-categoria {
@@ -20,13 +21,11 @@
 		border-radius: 10px;
 		height: 60px;
 		width: 100%;
-
 	}
 
 	.container-texto-categoria {
 		border: none;
 	}
-
 
 	.botoes {
 		display: flex;
@@ -37,18 +36,12 @@
 		height: 150px;
 	}
 
-
-
 	.container-niveis {
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: flex-start;
-		height: 100%;
-		flex-wrap: wrap;
-		gap: 30px;
-
-
+		gap: 20px;
 	}
 
 	.nivel-1 {
@@ -59,7 +52,7 @@
 		border-radius: 10px;
 		padding: 20px;
 		width: 500px;
-		border-bottom: 1px solid #6427a1;
+		border-bottom: 1px solid purple;
 		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
 	}
 
@@ -71,28 +64,23 @@
 	}
 
 	.img {
-		height: 80px;
+		height: 100px;
 	}
 
 	.star {
-		height: 10px;
-	}
-
-	.star img {
 		height: 20px;
 	}
 
 	.nivel-titulo {
-		color: #FFF;
+		color: #fff;
 		font-size: 20px;
 	}
 
 	.nivel-image {
 		display: flex;
-		flex-direction: column;
 		height: 100%;
 		justify-content: center;
-
+		align-items: last baseline;
 	}
 
 	.botoes {
@@ -100,13 +88,124 @@
 		display: flex;
 		gap: 5px;
 	}
+
+	.container-cards {
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: column;
+		width: 90%;
+		height: 80%;
+		margin-top: 20px;
+	}
+
+	.card-atividade-recente {
+		display: flex;
+		height: 180px;
+		width: 80%;
+		background-color: white;
+	}
+
+	.info-direita {
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		justify-content: space-between;
+		padding: 20px;
+		height: 100%;
+		width: 35%;
+		background-color: rgb(61, 155, 61);
+		overflow: auto;
+	}
+
+	.info-esquerda {
+		display: flex;
+		flex-direction: column;
+		width: 65%;
+		display: flex;
+		justify-content: space-between;
+		overflow: auto;
+	}
+
+	.info-esquerda-titulo {
+		height: 90%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 20px;
+	}
+
+	.botoes {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+		gap: 10px;
+	}
+
+	.botoes-confirma {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		justify-content: center;
+		padding: 10px;
+	}
+
+	.label-size {
+		font-size: 15px;
+		display: flex;
+		justify-content: flex-start;
+		width: 100%;
+		align-items: center;
+	}
+
+	h6 {
+		font-weight: 500;
+	}
+
+	.input-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		padding: 10px;
+	}
+
+	.form {
+		width: 80%;
+		padding: 20px;
+	}
+
+	.botao {
+		width: 100%;
+	}
+
+	.conhecer-titulo {
+		display: flex;
+		height: 20%;
+		text-align: left;
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	.container-conhecer {
+		display: flex;
+		justify-content: center;
+		text-align: left;
+		width: 100%;
+		height: 70%;
+
+	}
+	
+	.fechar{
+		font-size: 20px;
+		text-decoration: none;
+		color:#FFF;
+	}
 </style>
 
 <body>
-
 	<!-- Cabecalho -->
 	<header th:fragment="cabecalho2" class="cabecalho">
-
 		<nav class="navbar bg-dark">
 			<div class="container-fluid">
 				<a class="navbar-brand text-light">Y.our Study</a>
@@ -115,15 +214,14 @@
 				</form>
 			</div>
 		</nav>
-
-
 	</header>
-
 
 	<section class="conteudo">
 		<div th:fragment="side-bar-user" class="side-bar bg-dark">
 			<div class="menu">
-				<div class="item"><a th:href="@{/usuario/home}"><i class="fas fa-desktop"></i>Dashboard</a></div>
+				<div class="item">
+					<a th:href="@{/usuario/home}"><i class="fas fa-desktop"></i>Dashboard</a>
+				</div>
 				<div class="item">
 					<a class="sub-btn"><i class="fas fa-table"></i>Atividades<i
 							class="fas fa-angle-right dropdown"></i></a>
@@ -142,116 +240,114 @@
 					<a href="#"><i class="fas fa-th"></i>Minha conta</a>
 				</div>
 
-				<div class="item"><a href="index.html"><i class="fas fa-info-circle"></i>Sobre</a></div>
+				<div class="item">
+					<a href="index.html"><i class="fas fa-info-circle"></i>Sobre</a>
+				</div>
 			</div>
 		</div>
 
-
-
 		<div class="container-funcoes">
-
 			<div class="container-texto-categoria">
-
 				<div class="texto-categoria">
-					<h1 class="titulo-categoria text-light "><strong class="html"> HTML </strong> Nível das
-						atividades</h1>
+					<h1 class="titulo-categoria text-light">
+						Selecione o percurso que deseja estudar
+					</h1>
 				</div>
 
 				<div class="container-niveis">
+					<div class="card-atividade-recente bg-dark">
+						<div class="info-direita bg-primary">
+							<h6 class="text-light">Curso</h6>
+							<h3 class="info-titulo text-light">HTML<br> iniciante</h3>
 
-					<div class="nivel-1 bg-dark">
-						<div class="nivel-image">
-							<img src="/assets/img/icons8-html-100.png" alt="" class="img">
+							<a href="#modal_1" th:href="@{/frontend}">
+								<h6 class="text-light">Ver todos os cursos</h6>
+							</a>
+						</div>
 
-							<div class="star">
-								<img src="/assets/img/star.png" alt="" class="">
+						<div class="info-esquerda">
+							<div class="info-esquerda-titulo">
+								<h7 class="text-light">PERCURSO INICIANTE</h7>
+								<h3 class="text-light">Atividades básicas de facil entendimento</h3>
+
+								<div class="botoes">
+									<a href="#modal_1">
+										<button class="btn btn-primary">Conhecer</button>
+									</a>
+									<a href="#modal_1" th:href="@{/frontend/html}">
+										<button class="btn btn-success">Começar</button></a>
+								</div>
 							</div>
 						</div>
 
-						<div class="texto-nivel">
-							<h1 class="react">Nivel 1</h1>
+						<div id="modal_1" class="modal">
+							<div class="modal__content bg-dark">
+								<div class="conhecer-titulo">
+									<h4> <strong class="html"> HTML </strong>PERCURSO INICIANTE</h4>
+									<a class="fechar" href="#"> X</a>
+								</div>
 
-							<!-- <div class="star-img">
-                                <img src="star.png" alt="" class="star">
-                            </div> -->
+								<div class="container-conhecer">
+									<h5>Melhor opção para os iniciantes em HTML que desejam iniciar seus estudos em
+										HTML, ofereceremos guias de estudos com aulas e questionarios com feedback
+										imediato de sem desempenho.</p>
+								</div>
 
-							<h1 class="nivel-titulo">Atividades de nivel básico</h1>
-							<div class="botoes">
-								<a th:href="@{/frontend/html}">
-									<button class="btn btn-success">Explorar</button>
-								</a>
-								<button class="btn btn-primary">Introdução</button>
-
-							</div>
-						</div>
-
-
-					</div>
-
-					<div class="nivel-1 bg-dark">
-						<div class="nivel-image">
-							<img src="/assets/img/icons8-html-100.png" alt="" class="img">
-
-							<div class="star">
-								<img src="/assets/img/star.png" alt="" class="">
-								<img src="/assets/img/star.png" alt="" class="">
-								
-							</div>
-						</div>
-
-						<div class="texto-nivel">
-							<h1 class="js">Nivel 2</h1>
-
-							<!-- <div class="star-img">
-                                <img src="star.png" alt="" class="star">
-                            </div> -->
-
-							<h1 class="nivel-titulo">Atividades de nivel médio</h1>
-							<div class="botoes">
-								<button class="btn btn-success">Explorar</button>
-								<button class="btn btn-primary">Introdução</button>
+								<div class="botoes">
+									<a href="#">
+										<button class="btn btn-success">Entendi</button></a>
+								</div>
 
 							</div>
 						</div>
-
-
 					</div>
 
 
+					<div class="card-atividade-recente bg-dark">
+						<div class="bg-warning info-direita">
+							<h6 class="text-light">Curso</h6>
+							<h3 class="info-titulo text-light">HTML <br>Intermediário</h3>
 
+							<h6 class="text-light">Ver todos os cursos</h6>
+						</div>
+
+						<div class="info-esquerda">
+							<div class="info-esquerda-titulo">
+								<h7 class="text-light">PERCURSO INICIANTE</h7>
+								<h3 class="text-light">Novos desafios com uma dificuldade um pouco maior</h3>
+
+								<div class="botoes">
+									<button class="btn btn-primary">Conhecer</button>
+									<a href="#modal_1" th:href="@{/frontend/html}">
+										<button class="btn btn-success">Começar</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-
 			</div>
-
+		</div>
 	</section>
-
-
 
 	<script src="/assets/js/abrirPagina.js"></script>
 	<script type="text/javascript">
-
 		$(document).ready(function () {
-
-			$('.sub-btn').click(function () {
-				$(this).next('.sub-menu').slideToggle();
-				$(this).find('.dropdown').toggleClass('rotate');
+			$(".sub-btn").click(function () {
+				$(this).next(".sub-menu").slideToggle();
+				$(this).find(".dropdown").toggleClass("rotate");
 			});
 
-			$('.menu-btn').click(function () {
-				$('.side-bar').addClass('active');
-				$('.menu-btn').css("visibility", "hidden");
+			$(".menu-btn").click(function () {
+				$(".side-bar").addClass("active");
+				$(".menu-btn").css("visibility", "hidden");
 			});
 
-			$('.close-btn').click(function () {
-				$('.side-bar').removeClass('active');
-				$('.menu-btn').css("visibility", "visible");
+			$(".close-btn").click(function () {
+				$(".side-bar").removeClass("active");
+				$(".menu-btn").css("visibility", "visible");
 			});
-
 		});
-
-
 	</script>
-
 </body>
 
 </html>

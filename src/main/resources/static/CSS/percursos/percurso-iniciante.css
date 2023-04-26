@@ -1,0 +1,82 @@
+	.titulo-categoria {
+		display: flex;
+		font-size: 30px;
+		border-bottom: 1px solid #6427a1;
+		border-radius: 10px;
+		height: 60px;
+		width: 100%;
+		gap: 20px;
+
+	}
+
+	.container-texto-categoria {
+		border: none;
+	}
+
+	.card-atividade,
+	.card-desafio {
+		height: 200px;
+		width: 700px;
+		border-radius: 5px;
+		display: flex;
+		flex-direction: column;
+		margin-top: 20px;
+	}
+
+	.card-desafio {
+		height: 300px;
+	}
+
+	.titulo-atividade {
+		display: flex;
+		justify-content: flex-start;
+		height: 10%;
+		width: 100%;
+		border-bottom: 1px solid rgb(80, 77, 77);
+		text-align: center;
+		align-items: center;
+		padding: 30px;
+		gap: 20px;
+	}
+
+
+	.img-atividade {
+		height: 40px;
+	}
+
+	.container-textos {
+		display: flex;
+		height: 80%;
+		width: 100%;
+	}
+
+
+	.container-texto-esquerdo,
+	.container-texto-direito {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		text-align: left;
+		height: 100%;
+		width: 50%;
+		padding: 20px;
+	}
+
+	.img-desafio {
+		height: 300px;
+	}
+
+	a {
+		margin-bottom: 10px;
+	}
+	
+	
+
+	.container-texto-notificacao-hidden {
+		display: none;
+	}
+	
+	.btn{
+		width: 100%;
+	}

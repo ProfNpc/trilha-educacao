@@ -35,15 +35,18 @@
 						<form class="questions_box">
 							<div id="question-1">
 								<h2 class="h2">Questão 1
-									<h3 class="h3" th:text="${conteudo.pergunta1}">Qual tag é responsavel por deixar o texto em negrito?</h3>
-									
+									<h3 class="h3" th:text="${conteudo.pergunta1}">Qual tag é responsavel por deixar o
+										texto em negrito?</h3>
+
 									<div class="form-check">
 										<input id="question-1-answer-a" type="radio" name="favelang" value="1" />
-										Usamos a tag LI<br />
+										<span th:text="${conteudo.alt}"> </span><br />
 										<input id="question-1-answer-b" type="radio" name="favelang" value="2" />
-										Com a tag B<br />
+										<span th:text="${conteudo.alt2}"> </span><br />
 										<input id="question-1-answer-c" type="radio" name="favelang" value="3" />
-										Não é possivel deixar o texto em negrito<br />
+										<span th:text="${conteudo.alt3}"> </span><br />
+										<input id="question-1-answer-c" type="radio" name="favelang" value="3" />
+										<span th:text="${conteudo.respostaCorreta}"> </span><br />
 
 									</div>
 									<div id="submit1" class="button">Avançar</div>
@@ -52,14 +55,15 @@
 
 							<div id="question-2">
 								<h2 class="h2">Questão 2</h2>
-								<h3 class="h3">Você tem quantos anos?</h3>
+								<h3 class="h3" th:text="${conteudo.pergunta2}">Qual tag é responsavel por deixar o
+									texto em negrito?</h3>
 								<div class="form-check">
 									<input id="question-2-answer-a" type="radio" name="favelang" value="1" />
-									Entre 10-14.<br />
+									<span th:text="${conteudo.alt4}"> </span><br />
 									<input id="question-2-answer-b" type="radio" name="favelang" value="2" />
-									Entre 14 e 18. <br />
+									<span th:text="${conteudo.alt5}"> </span><br />
 									<input id="question-2-answer-c" type="radio" name="favelang" value="3" />
-									18 ou mais.<br />
+									<span th:text="${conteudo.alt6}"> </span><br />
 									<div id="submit2" class="button">Avançar</div>
 									<div class="clearfix"></div>
 								</div>

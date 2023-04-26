@@ -10,84 +10,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-	<link rel="stylesheet" href="html-percurso-iniciante.css">
-	<title>HTML- PERCURSO INICIANTE</title>
+	<link rel="stylesheet" href="/css/HomeUsuario.css">
+	<link rel="stylesheet" href="/css/percursos/percurso-iniciante.css">
+	<title>Percurso Iniciante</title>
 </head>
-<style>
-	.titulo-categoria {
-		display: flex;
-		font-size: 30px;
-		border-bottom: 1px solid #6427a1;
-		border-radius: 10px;
-		height: 60px;
-		width: 100%;
-
-	}
-
-	.container-texto-categoria {
-		border: none;
-	}
-
-	.card-atividade, .card-desafio {
-		height: 200px;
-		width: 700px;
-		border-radius: 5px;
-		display: flex;
-		flex-direction: column;
-	}
-
-	.card-desafio{
-		height: 300px;
-	}
-
-	.titulo-atividade {
-		display: flex;
-		justify-content: flex-start;
-		height: 20%;
-		width: 100%;
-		border-bottom: 1px solid rgb(80, 77, 77);
-		text-align: center;
-		align-items: center;
-		padding: 30px;
-		gap: 20px;
-	}
-	
-
-	.img-atividade {
-		height: 40px;
-	}
-
-	.container-textos {
-		display: flex;
-		height: 80%;
-		width: 100%;
-	}
-
-
-	.container-texto-esquerdo,
-	.container-texto-direito {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: flex-start;
-		text-align: left;
-		height: 100%;
-		width: 50%;
-		padding: 20px;
-	}
-
-	.img-desafio{
-		height: 300px;
-	}
-
-	a{
-		margin-bottom: 10px;
-	}
-	.container-texto-notificacao-hidden {
-		display: none;
-	}
-	
-</style>
 
 <body>
 
@@ -108,14 +34,15 @@
 			<div class="container-texto-categoria">
 
 				<div class="texto-categoria">
-					<h1 class="titulo-categoria text-light "><strong class="html">HTML </strong>Atividades nivel 1</h1>
+					<h1 class="titulo-categoria text-light "><strong class="html">HTML </strong>Percurso Inciante</h1>
 				</div>
 
 				<a>
 					<div class="card-atividade bg-dark" id="color1" th:each="conteudo : ${conteudoList}">
 						<div class="titulo-atividade">
-							<img class="img-atividade" src="icons8-código-fonte-100.png">
-							<h1 class="text-light"><strong class="html">HTML</strong> Primeiras tags</h1>
+							<img class="img-atividade" src="/assets/img/icons8-código-fonte-100.png">
+							<h1 class="text-light"><strong class="html">HTML <span th:text="${conteudo.id}"></span>
+								</strong> <span th:text="${conteudo.titulo}"> </span></h1>
 						</div>
 
 						<div class="container-textos">
@@ -131,46 +58,35 @@
 								<h6 class="react">Desafio final</h6>
 							</div>
 
-						</div>
-
-						<button class="btn btn-primary">Realizar Atividade</button>
-
-					</div>
-				</a>
-
-
-				<div class="card-desafio bg-dark" id="color1" th:each="conteudo : ${conteudoList}">
-					<div class="titulo-atividade">
-						<img class="img-atividade" src="icons8-código-fonte-100.png" alt="">
-						<h1 class="text-light"><strong class="react">DESAFIO FINAL</strong> Percurso Iniciante HTML</h1>
-					</div>
-
-					<div class="container-textos">
-						<div class="container-texto-esquerdo text-light">
-							<a href="#">A seguir</a>
-							<h1>Desafio do Percurso</h1>
-
-							<div class="texto-percurso">
-								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi iure optio ipsam nulla nostrum rerum reprehenderit, eveniet, impedit vitae quasi dolor, adipisci corrupti aut repellat explicabo labore tempore natus. Neque!</p>
+							<div class="container-texto-notificacao-hidden">
+								<h6><span th:text="${conteudo.pergunta1}"> </span></h6>
 							</div>
 
-							<button class="btn btn-primary">Começar desafio</button>
-						</div>
+							<div class="container-texto-notificacao-hidden">
+								<h6> </span></h6>
+							</div>
 
-						<div class="container-texto-direito text-light">
-							<img class="img-desafio" src="cat.svg." alt="">
-						</div>
+							<div class="container-texto-notificacao-hidden">
+								<h6><span th:text="${conteudo.guia}"> </span></h6>
+							</div>
+							<div class="container-texto-notificacao-hidden">
+								<h6><span th:text="${conteudo.exemplo1}"> </span></h6>
+							</div>
 
+							<div class="container-texto-notificacao-hidden">
+								<h6><span th:text="${conteudo.exemploCinco}"> </span></h6>
+							</div>
+						</div>
+						<a th:href="@{/lembrete/{id}(id=${conteudo.id})}">
+							<button th:href="@{/lembrete/{id}(id=${conteudo.id})}" class="btn btn-primary">Realizar
+								Atividade</button>
+						</a>
 					</div>
-
-
-
-				</div>
+				</a>
 			</div>
-
+			<div class="container-central container ">
+			</div>
 		</div>
-		</div>
-
 	</section>
 
 	<!-- Section 2-->

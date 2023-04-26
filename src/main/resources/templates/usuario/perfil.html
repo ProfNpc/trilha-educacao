@@ -2,64 +2,100 @@
 <html lang="pt-br">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
 	<link rel="stylesheet" href="/css/HomeAdmin.css">
-	<title>Minha conta</title>
+	<title>Lembrete</title>
 </head>
 <style>
+	h1 {
+		font-size: 30px;
+	}
+
 	.card {
 		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		height: 550px;
+		flex-direction: column;
+		height: 600px;
 		width: 100%;
 		background-color: transparent;
 		border-radius: 20px;
 		border: none;
-		justify-content: space-around;
-		border-bottom: 1px solid #2e7bab;
-
+		margin: 0px;
+		padding: 0px;
 	}
-
 
 	.container-funcoes {
 		height: 500px;
 	}
 
-
-	.container-imagem-perfil {
+	.container-imagem-info-perfil {
 		display: flex;
-		height: 100%;
-		width: 300px;
-		gap: 20px;
+		flex-direction: row;
+		background-image: url(galaxy3.jpg);
+		background-repeat: repeat-x;
+		width: 100%;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		border-radius: 10px;
+		align-items: center;
+		padding: 20px;
+	}
+
+	.informacoes-conta {
+		display: flex;
 		justify-content: center;
 		align-items: center;
+		text-align: start;
+		gap: 20px;
+	}
+
+	.informacoes-adicionais {
+		height: 100%;
+		display: flex;
 		flex-direction: column;
-		background-color: transparent;
+		justify-content: space-around;
+	}
+
+	.informacoes-texto {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.informacoes-quantidade {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.info-atividades {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		gap: 20px;
 	}
 
 	.user-icon {
-		height: 300px;
-		width: 300px;
+		height: 200px;
+		width: 200px;
 		border-radius: 100%;
 		background-color: grey;
+		border: 2px solid rgb(70, 70, 173);
 	}
 
 	.edicao-perfil {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		align-items: center;
-		height: 100%;
+		align-items: flex-start;
 		width: 40%;
-		padding: 40px;
 	}
 
 	.inputs {
@@ -72,109 +108,220 @@
 	}
 
 	.titulo-edicao-perfil {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
 		margin-bottom: 20px;
-		width: 400px;
 	}
 
 	.input-box {
 		padding: 3px;
 	}
+
+	.botao {
+		display: flex;
+		justify-content: flex-start;
+		width: 100%;
+	}
+
+	.container-atividade-recente {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+
+		width: 100%;
+		height: 100%;
+		padding: 20px;
+	}
+
+	.atividade-recente-texto {
+		display: flex;
+		width: 90%;
+		border-bottom: 1px solid #fff;
+	}
+
+	.container-cards {
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: column;
+		width: 90%;
+		height: 80%;
+		margin-top: 20px;
+	}
+
+	.card-atividade-recente {
+		display: flex;
+		height: 180px;
+		width: 80%;
+		background-color: white;
+	}
+
+	.info-direita {
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		justify-content: space-between;
+		padding: 20px;
+		height: 100%;
+		width: 35%;
+		background-color: rgb(190, 190, 35);
+		overflow: auto;
+	}
+
+	.info-esquerda {
+		display: flex;
+		flex-direction: column;
+		width: 65%;
+		display: flex;
+		justify-content: space-between;
+		overflow: auto;
+	}
+
+	.info-esquerda-titulo {
+		height: 90%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 20px;
+	}
+
+	.botoes {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+		gap: 10px;
+	}
+
+	h6 {
+		font-weight: 500;
+	}
 </style>
 
 <body>
-
 	<!-- Cabecalho -->
-	<div th:replace="fragmentos/fragmentos :: cabecalho2"></div>
-
+	<header th:fragment="cabecalho2" class="cabecalho">
+		<nav class="navbar bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand text-light">Y.our Study</a>
+				<form class="d-flex" role="search">
+					<button class="btn btn-danger sair" type="submit">Sair</button>
+				</form>
+			</div>
+		</nav>
+	</header>
 
 	<section class="conteudo">
-		<div th:replace="fragmentos/fragmentos :: side-bar-user"></div>
-
-		<div class="container-funcoes">
-
-
-			<div class="container">
-				<div class="card text-light container bg-dark ">
-
-					<div class="container-imagem-perfil">
-						<img src="" alt="" class="user-icon">
-						<!-- <button class="btn btn-primary">Editar imagem</button> -->
+		<div th:fragment="side-bar-user" class="side-bar bg-dark">
+			<div class="menu">
+				<div class="item">
+					<a th:href="@{/usuario/home}"><i class="fas fa-desktop"></i>Dashboard</a>
+				</div>
+				<div class="item">
+					<a class="sub-btn"><i class="fas fa-table"></i>Atividades<i
+							class="fas fa-angle-right dropdown"></i></a>
+					<div class="sub-menu">
+						<a th:href="@{/frontend}" class="sub-item">Front-end</a>
+						<a href="#" onclick="abrirPag(`backend`)" class="sub-item">Back-End</a>
+						<a href="#" class="sub-item">Data Science</a>
 					</div>
-
-					<div class="edicao-perfil">
-
-						<div class="titulo-edicao-perfil">
-							<h2>Minha conta</h2>
-							<h1>Informações sobre sua conta</h1>
-						</div>
-
-						<div class="informacoes">
-							<form>
-								<div class="input-box position-relative">
-									<label for="nome" class="form-label">Nome</label>
-									<input type="text" class="form-control inputs" disabled id="nome">
-								</div>
-
-								<div class="input-box position-relative">
-									<label for="email" class="form-label">Email</label>
-									<input type="text" class="form-control inputs" disabled id="email">
-								</div>
-
-								<div class="input-box position-relative">
-									<label for="telefone" class="form-label">Telefone celular</label>
-									<input type="text" class="form-control inputs" disabled id="telefone">
-								</div>
-
-								<div class="input-box position-relative">
-									<label for="cep" class="form-label">CEP</label>
-									<input type="text" class="form-control inputs" disabled id="cep">
-								</div>
-
-							</form>
-							<a th:href="@{/usuario/editar-perfil}">
-								<button class="btn btn-primary send">Editar informações</button></a>
-
-						</div>
-					</div>
-
 				</div>
 
+				<div class="item">
+					<a th:href="@{/listanotificacao}"><i class="fas fa-bell"></i>Notificações</a>
+				</div>
 
+				<div class="item">
+					<a href="#"><i class="fas fa-th"></i>Minha conta</a>
+				</div>
 
+				<div class="item">
+					<a href="index.html"><i class="fas fa-info-circle"></i>Sobre</a>
+				</div>
 			</div>
+		</div>
 
+		<div class="container-funcoes">
+			<div class="container">
+				<div class="card text-light container">
+					<div class="container-imagem-info-perfil">
+						<div class="informacoes-conta">
+							<img src="icon-teste.jpg" alt="" class="user-icon" />
+							<div class="informacoes-texto">
+								<h4>Kaique Oliveira</h4>
+								<h4><strong class="react">5.000</strong> Pts</h4>
+								<h4>Rank <strong class="js">Gold</strong></h4>
+							</div>
+						</div>
+						<div class="informacoes-adicionais">
+							<div class="informacoes-quantidade">
+								<div class="info-atividades">
+									<h6>0</h6>
+									<h6>Atividades realizadas</h6>
+								</div>
+
+								<div class="info-atividades">
+									<h6>0</h6>
+									<h6>Atividades realizadas</h6>
+								</div>
+							</div>
+							<div class="botao">
+								<button class="btn btn-primary">Editar perfil</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="container-atividade-recente">
+						<div class="atividade-recente-texto">
+							<h4 class="text-light">Atividade recente</h4>
+						</div>
+
+						<div class="container-cards">
+							<div class="card-atividade-recente bg-dark " th:each="conteudo : ${conteudoList}">
+								<span th:text="${conteudo.tituldo}"> </span>
+								<div class="info-direita">
+									<h6 class="text-light">Curso</h6>
+									<h3 class="info-titulo text-light">
+
+									</h3>
+
+									<h6 class="text-light">Ver todos os cursos</h6>
+								</div>
+
+								<div class="info-esquerda">
+									<div class="info-esquerda-titulo">
+										<h7 class="text-light">PERCURSO INICIANTE</h7>
+										<h3 class="text-light">Tipos de Arrays e Strings</h3>
+
+										<div class="botoes">
+											<button class="btn btn-danger">Desistir</button>
+											<button class="btn btn-primary">Continue</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
-
-
 
 	<script src="/assets/js/abrirPagina.js"></script>
 	<script type="text/javascript">
-
 		$(document).ready(function () {
-
-			$('.sub-btn').click(function () {
-				$(this).next('.sub-menu').slideToggle();
-				$(this).find('.dropdown').toggleClass('rotate');
+			$(".sub-btn").click(function () {
+				$(this).next(".sub-menu").slideToggle();
+				$(this).find(".dropdown").toggleClass("rotate");
 			});
 
-			$('.menu-btn').click(function () {
-				$('.side-bar').addClass('active');
-				$('.menu-btn').css("visibility", "hidden");
+			$(".menu-btn").click(function () {
+				$(".side-bar").addClass("active");
+				$(".menu-btn").css("visibility", "hidden");
 			});
 
-			$('.close-btn').click(function () {
-				$('.side-bar').removeClass('active');
-				$('.menu-btn').css("visibility", "visible");
+			$(".close-btn").click(function () {
+				$(".side-bar").removeClass("active");
+				$(".menu-btn").css("visibility", "visible");
 			});
-
 		});
-
-
 	</script>
-
 </body>
 
 </html>

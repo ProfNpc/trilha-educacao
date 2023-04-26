@@ -285,7 +285,7 @@
 							</div>
 						</div>
 
-						<!-- Step 3 
+
 						<div id="step_3" class="step">
 
 							<div class="passo3">
@@ -296,29 +296,31 @@
 								<div class="labels-inputs">
 									<div class="input-box col-md-4 position-relative">
 										<label for="pergunta" class="form-label">Pergunta *</label>
-										<input type="text" class="form-control input-pergunta" id="pergunta">
+										<input type="text" th:field="*{pergunta1}" class="form-control input-pergunta"
+											id="pergunta">
 									</div>
 
 									<div class="alternativas">
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="alternativa" class="form-label">Alternativa A *</label>
-											<input type="text" class="form-control" id="alternativa">
+											<input type="text" th:field="*{alt}" class="form-control" id="alternativa">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="alternativa" class="form-label">Alternativa B *</label>
-											<input type="text" class="form-control" id="alternativa">
+											<input type="text" th:field="*{alt2}" class="form-control" id="alternativa">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="telefone" class="form-label">Alternativa C *</label>
-											<input type="text" class="cep form-control" id="cep">
+											<input type="text" th:field="*{alt3}" class="cep form-control" id="cep">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="cep" class="form-label">Alternativa D *</label>
-											<input type="text" class="cep form-control" id="cep">
+											<input type="text" th:field="*{respostaCorreta}" class="cep form-control"
+												id="cep">
 										</div>
 
 									</div>
@@ -326,7 +328,7 @@
 							</div>
 						</div>
 
-						<!-- step 4 
+
 						<div id="step_4" class="step">
 
 							<div class="passo3">
@@ -337,45 +339,47 @@
 								<div class="labels-inputs">
 									<div class="input-box col-md-4 position-relative">
 										<label for="pergunta" class="form-label">Pergunta *</label>
-										<input type="text" class="form-control input-pergunta" id="pergunta">
+										<input type="text" th:field="*{pergunta2}" class="form-control input-pergunta"
+											id="pergunta">
 									</div>
 
 									<div class="alternativas">
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="alternativa" class="form-label">Alternativa A *</label>
-											<input type="text" class="form-control" id="alternativa">
+											<input type="text" th:field="*{alt4}" class="form-control" id="alternativa">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="alternativa" class="form-label">Alternativa B *</label>
-											<input type="text" class="form-control" id="alternativa">
+											<input type="text" th:field="*{alt5}" class="form-control" id="alternativa">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="telefone" class="form-label">Alternativa C *</label>
-											<input type="text" class="cep form-control" id="cep">
+											<input type="text" th:field="*{alt6}" class="cep form-control" id="cep">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="cep" class="form-label">Alternativa D *</label>
-											<input type="text" class="cep form-control" id="cep">
+											<input type="text" th:field="*{respostaCorreta2}" class="cep form-control"
+												id="cep">
 										</div>
 
 									</div>
 								</div>
 							</div>
--->
+							-->
+						</div>
+
+
+
 				</div>
-
-
-
 			</div>
-		</div>
-		<div class="botoes-row">
-			<button class="btn btn-primary" id="prev">Anterior</button>
-			<button class="btn btn-success" id="next">Avançar</button>
-		</div>
+			<div class="botoes-row">
+				<button class="btn btn-primary" id="prev">Anterior</button>
+				<button class="btn btn-success" id="next">Avançar</button>
+			</div>
 		</div>
 
 		</div>

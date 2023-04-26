@@ -1,0 +1,72 @@
+
+.card-atividade,
+.card-desafio {
+  height: 100px;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+   cursor: pointer;
+}
+
+.card-atividade:hover {
+  box-shadow: 10px 7px 4px 0px rgba(0, 0, 0, 0.43);
+  transition: 0.3s;
+}
+
+.titulo-atividade {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  padding: 30px;
+  gap: 20px;
+}
+
+.titulo-escrito {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  width: 70%;
+  height: 100%;
+}
+
+.card-desafio {
+  height: 300px;
+}
+
+.arrow {
+  display: flex;
+  width: 30%;
+  justify-content: flex-end;
+}
+
+.arrow-img {
+  height: 40px;
+  cursor: pointer;
+}
+
+.img-atividade {
+  height: 40px;
+}
+
+.container-textos {
+  display: flex;
+  height: 80%;
+  width: 100%;
+}
+
+.img-desafio {
+  height: 300px;
+}
+
+a {
+  margin-bottom: 10px;
+}
+.container-texto-notificacao-hidden {
+  display: none;
+}

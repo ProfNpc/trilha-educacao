@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      charset="UTF-8"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+   <link rel="stylesheet" href="/CSS/projetos/cards.css">
+    <link rel="stylesheet" href="janela-modal.css" />
+      <link rel="stylesheet" href="/CSS/projetos/meus-projetos.css">
+    <title>Cadastrar novo projeto</title>
+  </head>
+  <style>
+    .new-projeto {
+      height: 40px;
+    }
+    .card-atividade {
+      height: 930px;
+      border-radius: 10px;
+    }
+
+    .arquivo-projeto {
+      height: 16%;
+      box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.212);
+      margin-top: 5px;
+    }
+
+    .container-preview {
+      height: 600px;
+      margin-top: 50px;
+    }
+
+    .preview-img {
+      height: 300px;
+      box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.212);
+    }
+
+    .ver-codigo {
+      height: 40px;
+    }
+
+    label {
+      font-size: 15px;
+    }
+
+
+
+    .border-input {
+      height: 150px;
+     
+    }
+
+
+
+    .bor{
+        border: 1px solid #2e7bab;
+    }
+    
+    .botoes-acao{
+		display: flex;
+		flex-direction:column;
+		width: 50%;	
+		gap: 5px;
+		}
+  </style>
+
+  <body>
+    <!-- Cabecalho -->
+    <header th:fragment="cabecalho2" class="cabecalho">
+      <nav class="navbar bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light">Y.our Study</a>
+          <form class="d-flex" role="search">
+            <button class="btn btn-danger sair" type="submit">Sair</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <section class="conteudo">
+	<div th:replace="fragmentos/fragmentos :: side-bar-user"></div>
+
+      <div class="container-funcoes">
+        <div class="container-texto-categoria">
+          <div class="texto-categoria">
+            <h1 class="titulo-categoria text-light">
+              Publicar Projeto
+            </h1>
+          </div>
+
+          <div class="container-niveis">
+            <h1 class="text-light">Inisira as informações</h1>
+
+            <!-- card -->
+
+            <div
+              class="card-atividade bg-dark"
+              id="color1"
+            >
+            
+              <form method="post" class="form" action="/editar" th:object="${projeto}">
+                <input type="hidden" th:field='*{id}'>
+                <div class="mb-3">
+                  <label for="titulo" class="form-label text-light"
+                    >Titulo</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control text-light bg-dark bor "
+                    id="titulo"
+                    placeholder="name@example.com"
+                    th:field="*{titulo}"
+                  />
+                </div>
+
+                <div class="mb-3 border-input">
+                  <label for="desc" class="form-label text-light"
+                    >Descrição</label
+                  >
+                  <textarea class="form-control text-light bg-dark bor" id="desc" rows="3"
+                   th:field="*{descricao}">
+                   </textarea>
+                </div>
+
+                <div class="mb-3">
+                  <h1 class="text-light mb-4">Códigos do projeto</h1>
+                  <label for="codigoHtml" class="form-label text-light"
+                    >Código <strong class="html"> HTML</strong></label
+                  >
+                  <textarea
+                    class="form-control text-light bg-dark bor"
+                    id="codigoHtml"
+                    rows="3"
+                     th:field="*{codHtml}"
+                  ></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label for="codigoHtml" class="form-label text-light"
+                    >Código <strong class="css"> CSS</strong></label
+                  >
+                  <textarea
+                    class="form-control text-light bg-dark bor"
+                    id="codigoHtml"
+                    rows="3"
+                     th:field="*{codCss}"
+                  ></textarea>
+                </div>
+
+                <div class="mb-3 border-input">
+                  <label for="codigoHtml" class="form-label text-light"
+                    >Código <strong class="js"> Java Script</strong></label
+                  >
+                  <textarea
+                    class="form-control text-light bg-dark bor "
+                    id="codigoHtml"
+                    rows="3"
+                     th:field="*{codJs}"
+                  ></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <h1 class="text-light">Preview</h1>
+                  <input
+                    type="file"
+                    class="form-control text-light bg-dark bor "
+                    id="inputGroupFile02"
+                  />
+                  <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
+                </div>
+                
+                <div class="botoes-acao"> 
+                <button class="btn btn-success text-light">Salvar</button>
+                <a th:href="@{/projeto/excluir/{id}(id=${projeto.id})}" class="btn btn-danger">Excluir Projeto</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="text-center text-lg-start bg-dark text-light">
+      <!-- Section: Social media -->
+      <section
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+      >
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div>
+          <a href="" class="me-4 link-secondary">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="me-4 link-secondary">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="me-4 link-secondary">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="me-4 link-secondary">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="me-4 link-secondary">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="me-4 link-secondary">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+      <section>
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-gem me-3 text-secondary"></i>Company name
+              </h6>
+              <p>
+                Here you can use rows and columns to organize your footer
+                content. Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit.
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Products</h6>
+              <p>
+                <a href="#!" class="text-reset">Angular</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">React</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Vue</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Laravel</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+              <p>
+                <a href="#!" class="text-reset">Pricing</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Settings</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Orders</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Help</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p>
+                <i class="fas fa-home me-3 text-secondary"></i> New York, NY
+                10012, US
+              </p>
+              <p>
+                <i class="fas fa-envelope me-3 text-secondary"></i>
+                info@example.com
+              </p>
+              <p>
+                <i class="fas fa-phone me-3 text-secondary"></i> + 01 234 567 88
+              </p>
+              <p>
+                <i class="fas fa-print me-3 text-secondary"></i> + 01 234 567 89
+              </p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.025)"
+      >
+        © 2023 Copyright:
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
+          >MDBootstrap.com</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <script src="/assets/js/abrirPagina.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".sub-btn").click(function () {
+          $(this).next(".sub-menu").slideToggle();
+          $(this).find(".dropdown").toggleClass("rotate");
+        });
+
+        $(".menu-btn").click(function () {
+          $(".side-bar").addClass("active");
+          $(".menu-btn").css("visibility", "hidden");
+        });
+
+        $(".close-btn").click(function () {
+          $(".side-bar").removeClass("active");
+          $(".menu-btn").css("visibility", "visible");
+        });
+      });
+    </script>
+  </body>
+</html>

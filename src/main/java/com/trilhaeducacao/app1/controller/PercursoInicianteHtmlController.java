@@ -1,8 +1,5 @@
 package com.trilhaeducacao.app1.controller;
 
-import java.util.Arrays;
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.trilhaeducacao.app1.model.Conteudo;
-import com.trilhaeducacao.app1.model.Notificacao;
-import com.trilhaeducacao.app1.model.Usuario;
 import com.trilhaeducacao.app1.repository.ConteudoRepository;
 
 @Controller
-public class ConteudoController {
+public class PercursoInicianteHtmlController {
 
 	@Autowired
 	private ConteudoRepository conteudorepositorio;
@@ -53,7 +48,7 @@ public class ConteudoController {
 	@GetMapping("/frontend/html")
 	public ModelAndView listagemHtml() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("categorias/html");
+		mv.setViewName("percurso-iniciante/html-percurso-iniciante");
 		
 		mv.addObject("conteudoList", conteudorepositorio.findAll()); 
 		
@@ -131,3 +126,4 @@ public class ConteudoController {
 
 	
 }
+
