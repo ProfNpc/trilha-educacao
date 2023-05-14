@@ -48,7 +48,77 @@ public class Conteudo {
 	private String respostaCorreta2;
 	
 	// Pergunta 3
+	private String pergunta3;
 	private String alt7;
+	private String alt8;
+	private String alt9;
+	private String respostaCorreta3;
+	
+	
+	// Pergunta 4
+	private String pergunta4;
+	private String alt10;
+	private String alt11;
+	private String alt12;
+	private String respostaCorreta4;
+	
+	// Pergunta 5
+	private String pergunta5;
+	private String alt13;
+	private String alt14;
+	private String alt15;
+	private String respostaCorreta5;
+	
+	public String getPergunta4() {
+		return pergunta4;
+	}
+	public void setPergunta4(String pergunta4) {
+		this.pergunta4 = pergunta4;
+	}
+	public String getAlt10() {
+		return alt10;
+	}
+	public void setAlt10(String alt10) {
+		this.alt10 = alt10;
+	}
+	public String getAlt11() {
+		return alt11;
+	}
+	public void setAlt11(String alt11) {
+		this.alt11 = alt11;
+	}
+	public String getAlt12() {
+		return alt12;
+	}
+	public void setAlt12(String alt12) {
+		this.alt12 = alt12;
+	}
+	public String getRespostaCorreta4() {
+		return respostaCorreta4;
+	}
+	public void setRespostaCorreta4(String respostaCorreta4) {
+		this.respostaCorreta4 = respostaCorreta4;
+	}
+
+	public String getAlt8() {
+		return alt8;
+	}
+	public void setAlt8(String alt8) {
+		this.alt8 = alt8;
+	}
+	public String getAlt9() {
+		return alt9;
+	}
+	public void setAlt9(String alt9) {
+		this.alt9 = alt9;
+	}
+	public String getRespostaCorreta3() {
+		return respostaCorreta3;
+	}
+	public void setRespostaCorreta3(String respostaCorreta3) {
+		this.respostaCorreta3 = respostaCorreta3;
+	}
+
 
 	public String getAlt4() {
 		return alt4;
@@ -86,6 +156,13 @@ public class Conteudo {
 	}
 	public void setPergunta2(String pergunta2) {
 		this.pergunta2 = pergunta2;
+	}
+	
+	public String getPergunta3() {
+		return pergunta3;
+	}
+	public void setPergunta3(String pergunta3) {
+		this.pergunta3 = pergunta3;
 	}
 	public String getAlt3() {
 		return alt3;
@@ -178,6 +255,36 @@ public class Conteudo {
 	}
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
+	}
+	public String getPergunta5() {
+		return pergunta5;
+	}
+	public void setPergunta5(String pergunta5) {
+		this.pergunta5 = pergunta5;
+	}
+	public String getAlt13() {
+		return alt13;
+	}
+	public void setAlt13(String alt13) {
+		this.alt13 = alt13;
+	}
+	public String getAlt14() {
+		return alt14;
+	}
+	public void setAlt14(String alt14) {
+		this.alt14 = alt14;
+	}
+	public String getAlt15() {
+		return alt15;
+	}
+	public void setAlt15(String alt15) {
+		this.alt15 = alt15;
+	}
+	public String getRespostaCorreta5() {
+		return respostaCorreta5;
+	}
+	public void setRespostaCorreta5(String respostaCorreta5) {
+		this.respostaCorreta5 = respostaCorreta5;
 	}
 
 	

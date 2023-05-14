@@ -37,5 +37,10 @@ public class CategoriaController {
 	public String EscolherNivel() {
 		return "categorias/html-niveis";
 	}
+	
+	@GetMapping("/frontend/css/niveis")
+	public String cssNiveis() {
+		return "categorias/css-niveis";
+	}
 
 }

@@ -177,13 +177,13 @@
 			<div class="container">
 				<div class="card bg-dark text-light">
 					<div class="form-header mb-3 container">
-						<h1><strong class="html">HTML </strong>Cadastro de Atividades</h1>
+						<h1><strong class="css">CSS </strong>Cadastro de Atividades</h1>
 						<h5>Preencha todas as informações com atenção</h5>
 					</div>
 
 					<!-- Na tag form precisamos dizer q o método é post e precisamos trazer o objeto usuario-->
 					<!-- <h3>Pergunta <span id="passo"></span></h3> -->
-					<form method="post" action="/insertConteudo" th:object="${conteudo}"
+					<form method="post" action="/insertCssIniciante" th:object="${cssIniciante}"
 						class="input-group row g-3 needs-validation">
 
 						<!--Nome -->
@@ -304,22 +304,25 @@
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="alternativa" class="form-label">Alternativa A *</label>
-											<input type="text" th:field="*{alt}" class="form-control" id="alternativa">
+											<input type="text" th:field="*{alternativa_1_a}" class="form-control"
+												id="alternativa">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="alternativa" class="form-label">Alternativa B *</label>
-											<input type="text" th:field="*{alt2}" class="form-control" id="alternativa">
+											<input type="text" th:field="*{alternativa_1_b}" class="form-control"
+												id="alternativa">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="telefone" class="form-label">Alternativa C *</label>
-											<input type="text" th:field="*{alt3}" class="cep form-control" id="cep">
+											<input type="text" th:field="*{alternativa_1_c}" class="cep form-control"
+												id="cep">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="cep" class="form-label">Alternativa D *</label>
-											<input type="text" th:field="*{respostaCorreta}" class="cep form-control"
+											<input type="text" th:field="*{alternativa_1_d}" class="cep form-control"
 												id="cep">
 										</div>
 
@@ -347,22 +350,25 @@
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="alternativa" class="form-label">Alternativa A *</label>
-											<input type="text" th:field="*{alt4}" class="form-control" id="alternativa">
+											<input type="text" th:field="*{alternativa_2_a}" class="form-control"
+												id="alternativa">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="alternativa" class="form-label">Alternativa B *</label>
-											<input type="text" th:field="*{alt5}" class="form-control" id="alternativa">
+											<input type="text" th:field="*{alternativa_2_b}" class="form-control"
+												id="alternativa">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="telefone" class="form-label">Alternativa C *</label>
-											<input type="text" th:field="*{alt6}" class="cep form-control" id="cep">
+											<input type="text" th:field="*{alternativa_2_c}" class="cep form-control"
+												id="cep">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="cep" class="form-label">Alternativa D *</label>
-											<input type="text" th:field="*{respostaCorreta2}" class="cep form-control"
+											<input type="text" th:field="*{alternativa_2_d}" class="cep form-control"
 												id="cep">
 										</div>
 
@@ -389,22 +395,25 @@
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="alternativa" class="form-label">Alternativa A *</label>
-											<input type="text" th:field="*{alt7}" class="form-control" id="alternativa">
+											<input type="text" th:field="*{alternativa_3_a}" class="form-control"
+												id="alternativa">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="alternativa" class="form-label">Alternativa B *</label>
-											<input type="text" th:field="*{alt8}" class="form-control" id="alternativa">
+											<input type="text" th:field="*{alternativa_3_b}" class="form-control"
+												id="alternativa">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="telefone" class="form-label">Alternativa C *</label>
-											<input type="text" th:field="*{alt9}" class="cep form-control" id="cep">
+											<input type="text" th:field="*{alternativa_3_c}" class="cep form-control"
+												id="cep">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="cep" class="form-label">Alternativa D *</label>
-											<input type="text" th:field="*{respostaCorreta3}" class="cep form-control"
+											<input type="text" th:field="*{alternativa_3_d}" class="cep form-control"
 												id="cep">
 										</div>
 
@@ -431,24 +440,25 @@
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="alternativa" class="form-label">Alternativa A *</label>
-											<input type="text" th:field="*{alt10}" class="form-control"
+											<input type="text" th:field="*{alternativa_4_a}" class="form-control"
 												id="alternativa">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="alternativa" class="form-label">Alternativa B *</label>
-											<input type="text" th:field="*{alt11}" class="form-control"
+											<input type="text" th:field="*{alternativa_4_b}" class="form-control"
 												id="alternativa">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="telefone" class="form-label">Alternativa C *</label>
-											<input type="text" th:field="*{alt12}" class="cep form-control" id="cep">
+											<input type="text" th:field="*{alternativa_4_c}" class="cep form-control"
+												id="cep">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="cep" class="form-label">Alternativa D *</label>
-											<input type="text" th:field="*{respostaCorreta4}" class="cep form-control"
+											<input type="text" th:field="*{alternativa_4_d}" class="cep form-control"
 												id="cep">
 										</div>
 
@@ -456,8 +466,8 @@
 								</div>
 							</div>
 						</div>
-						
-												<div id="step_7" class="step">
+
+						<div id="step_7" class="step">
 
 							<div class="passo3">
 								<div class="titulo-pergunta">
@@ -475,24 +485,25 @@
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="alternativa" class="form-label">Alternativa A *</label>
-											<input type="text" th:field="*{alt13}" class="form-control"
+											<input type="text" th:field="*{alternativa_5_a}" class="form-control"
 												id="alternativa">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="alternativa" class="form-label">Alternativa B *</label>
-											<input type="text" th:field="*{alt14}" class="form-control"
+											<input type="text" th:field="*{alternativa_5_b}" class="form-control"
 												id="alternativa">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="telefone" class="form-label">Alternativa C *</label>
-											<input type="text" th:field="*{alt15}" class="cep form-control" id="cep">
+											<input type="text" th:field="*{alternativa_5_c}" class="cep form-control"
+												id="cep">
 										</div>
 
 										<div class="input-box opcoes col-md-4 position-relative">
 											<label for="cep" class="form-label">Alternativa D *</label>
-											<input type="text" th:field="*{respostaCorreta5}" class="cep form-control"
+											<input type="text" th:field="*{alternativa_5_d}" class="cep form-control"
 												id="cep">
 										</div>
 

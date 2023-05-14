@@ -171,14 +171,15 @@
 
 						<div class="botoes-avancar">
 
-							<a class="btn btn-primary" th:href="@{/guia/{id}(id=${conteudo.id})}">
+							<!--<a class="btn btn-primary" th:href="@{/guia-intermediario/{id}(id=${intermediario.id})}">
 								Verificar guia
-							</a>
+							</a>-->
 
-
-							<a class="btn btn-success" th:href="@{/questionario/html/{id}(id=${conteudo.id})}">
+							<!--
+							<a class="btn btn-success" th:href="@{/questionario/html/{id}(id=${intermediario.id})}">
 								Realizar atividade
 							</a>
+							-->
 
 							<!--<a href="#modal_1">abrir modal</a> -->
 						</div>
@@ -195,18 +196,18 @@
 							<a class="fechar" href="#"> X</a>
 						</div>
 
-						
-						
 
-								<div class="input-box">
-									<h5>Até que data você pretende finzalir atividade?</p>
-									<form class="form">
-										<input type="date" placeholder="informe a data">
-										<form method="post" action="//" th:object="${conteudo}">
+
+
+						<div class="input-box">
+							<h5>Até que data você pretende finzalir atividade?</p>
+								<form class="form">
+									<input type="date" placeholder="informe a data">
+									<form method="post" action="//" th:object="${conteudo}">
 										<button class="btn btn-primary">Ok</button></a>
 									</form>
-								</div>
-						
+						</div>
+
 
 
 
