@@ -11,9 +11,8 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<link rel="stylesheet" href="/css/HomeUsuario.css">
-	<link rel="stylesheet" href="/css/conteudo/percurso-iniciante.css">
-	<link rel="stylesheet" href="/css/conteudo/conteudo-form.css">
-	<title>Cadastrar Conteuúdos</title>
+	<link rel="stylesheet" href="/css/percursos/percurso-iniciante.css">
+	<title>Html Percurso Iniciante</title>
 </head>
 
 <body>
@@ -27,69 +26,78 @@
 	<section class="conteudo">
 
 		<!-- Side-bar -->
-		<div th:replace="fragmentos/fragmentos :: side-bar"></div>
+		<div th:replace="fragmentos/fragmentos :: side-bar-user"></div>
 
 
 		<div class="container-funcoes">
 
 			<div class="container-texto-categoria">
 
-
 				<div class="texto-categoria">
-					<h1 class="titulo-categoria text-light "><strong class="css">Cadastro </strong>Atividades</h1>
+					<h1 class="titulo-categoria text-light "><strong class="css">CSS </strong>Atividades Inciantes</h1>
 				</div>
 
-				<div class="container-card">
-					<div class="card-form bg-dark">
-						<div class="titulo-card">
-							<h2 class="text-primary">
-								Cadastro de atividades
-							</h2>
-
-							<h5 class="text-light">Inisira as informações</h5>
+				<a>
+					<div class="card-atividade bg-dark" id="color1" th:each="conteudo : ${ConteudoList}">
+						<div class="titulo-atividade">
+							<img class="img-atividade" src="/assets/img/icons8-código-fonte-100.png">
+							<h1 class="text-light"><strong class="css">CSS <span th:text="${conteudo.id}"></span>
+								</strong> <span th:text="${conteudo.titulo}"> </span></h1>
 						</div>
 
-						<forn class="form" method="post" action="/insertHtmlIntermediario" th:object="${htmlIntermediario}">
-							<div class="input-group">
-
-								<div class="input-box">
-									<label class="text-light" for="titulo">Titulo</label>
-									<input type="text" name="" id="titulo" placeholder="Digite o Titulo" th:field="*{titulo}" >
-								</div>
-								<div class="input-box">
-									<label class="text-light" for="descricao">Descrição</label>
-									<input type="text" name="" id="descricao" placeholder="Digite a descrição" th:field="*{descricao}" >
-								</div>
-
-								<div class="input-box">
-									<label class="text-light" for="descricao">Selecione a categoria</label>
-									<select id="paginaDestino" name="paginaDestino" required>
-										<option value="HtmlIniciante" disabled>Selecione</option>
-										<option value="/HtmlIniciante">HTML para Iniciantes</option>
-										<option value="/HtmlIntermediario">HTML para Intermediários</option>
-
-										<option value="/CssIniciante">CSS para Iniciantes</option>
-										<option value="/CssIntermediario">CSS para Intermediários</option>
-
-
-									</select>
-								</div>
-								<div class="container-botao">
-									<button class="btn btn-primary">Enviar</button>
-								</div>
+						<div class="container-textos">
+							<div class="container-texto-esquerdo text-light">
+								<h6 class="react">Atividades</h6>
+								<h6 class="react">Guias</h6>
+								<h6 class="react">Desafio final</h6>
 							</div>
-						</forn>
+
+							<div class="container-texto-direito text-light">
+								<h6 class="react">Atividades</h6>
+								<h6 class="react">Guias</h6>
+								<h6 class="react">Desafio final</h6>
+							</div>
+
+							<div class="container-texto-notificacao-hidden">
+								<h6><span th:text="${cssIniciante.pergunta1}"> </span></h6>
+							</div>
+
+							<div class="container-texto-notificacao-hidden">
+								<h6> </span></h6>
+							</div>
+
+							<div class="container-texto-notificacao-hidden">
+								<h6><span th:text="${cssIniciante.guia}"> </span></h6>
+							</div>
+							<div class="container-texto-notificacao-hidden">
+								<h6><span th:text="${cssIniciante.exemplo1}"> </span></h6>
+							</div>
+
+							<div class="container-texto-notificacao-hidden">
+								<h6><span th:text="${cssIniciante.exemploCinco}"> </span></h6>
+							</div>
+						</div>
+						<a th:href="@{/lembrete/{id}(id=${cssIniciante.id})}">
+							<button th:href="@{/lembrete/{id}(id=${cssIniciante.id})}" class="btn btn-primary">Realizar
+								Atividade</button>
+						</a>
 					</div>
-				</div>
-
-
+				</a>
 			</div>
 			<div class="container-central container ">
 			</div>
 		</div>
 	</section>
 
+	<!-- Section 2-->
 
+	<section class="conteudo-2">
+
+
+
+	</section>
+
+	<div class="alteracao">
 	</div>
 	<!--<script src="assets/js/homeAdmin.js"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"

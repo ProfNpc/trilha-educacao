@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/HomeUsuario.css">
+	<link rel="stylesheet" href="/css/percursos/percurso-iniciante.css">
+	<title>Html Percurso Iniciante</title>
+</head>
+
+<body>
+
+	<!-- Cabecalho -->
+	<div th:replace="fragmentos/fragmentos :: cabecalho2"></div>
+
+
+
+	<!-- Home -->
+	<section class="conteudo">
+
+		<!-- Side-bar -->
+		<div th:replace="fragmentos/fragmentos :: side-bar-user"></div>
+
+
+		<div class="container-funcoes">
+
+			<div class="container-texto-categoria">
+
+				<div class="texto-categoria">
+					<h1 class="titulo-categoria text-light "><strong class="html">HTML </strong>Atividades Inciantes</h1>
+				</div>
+
+				<a>
+					<div class="card-atividade bg-dark" id="color1" th:each="conteudo : ${ConteudoList}">
+						<div class="titulo-atividade">
+							<img class="img-atividade" src="/assets/img/icons8-código-fonte-100.png">
+							<h1 class="text-light"><strong class="css">CSS <span th:text="${conteudo.id}"></span>
+								</strong> <span th:text="${conteudo.titulo}"> </span></h1>
+						</div>
+
+						<div class="container-textos">
+							<div class="container-texto-esquerdo text-light">
+								<h6 class="react">Atividades</h6>
+								<h6 class="react">Guias</h6>
+								<h6 class="react">Desafio final</h6>
+							</div>
+
+							<div class="container-texto-direito text-light">
+								<h6 class="react">Atividades</h6>
+								<h6 class="react">Guias</h6>
+								<h6 class="react">Desafio final</h6>
+							</div>
+
+							<div class="container-texto-notificacao-hidden">
+								<h6><span th:text="${cssIniciante.pergunta1}"> </span></h6>
+							</div>
+
+							<div class="container-texto-notificacao-hidden">
+								<h6> </span></h6>
+							</div>
+
+							<div class="container-texto-notificacao-hidden">
+								<h6><span th:text="${cssIniciante.guia}"> </span></h6>
+							</div>
+							<div class="container-texto-notificacao-hidden">
+								<h6><span th:text="${cssIniciante.exemplo1}"> </span></h6>
+							</div>
+
+							<div class="container-texto-notificacao-hidden">
+								<h6><span th:text="${cssIniciante.exemploCinco}"> </span></h6>
+							</div>
+						</div>
+						<a th:href="@{/lembrete/{id}(id=${cssIniciante.id})}">
+							<button th:href="@{/lembrete/{id}(id=${cssIniciante.id})}" class="btn btn-primary">Realizar
+								Atividade</button>
+						</a>
+					</div>
+				</a>
+			</div>
+			<div class="container-central container ">
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 2-->
+
+	<section class="conteudo-2">
+
+
+
+	</section>
+
+	<div class="alteracao">
+	</div>
+	<!--<script src="assets/js/homeAdmin.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+		crossorigin="anonymous"></script>
+	<script src="/assets/js/abrirPagina.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			$('.sub-btn').click(function () {
+				$(this).next('.sub-menu').slideToggle();
+				$(this).find('.dropdown').toggleClass('rotate');
+			});
+
+			$('.menu-btn').click(function () {
+				$('.side-bar').addClass('active');
+				$('.menu-btn').css("visibility", "hidden");
+			});
+
+			$('.close-btn').click(function () {
+				$('.side-bar').removeClass('active');
+				$('.menu-btn').css("visibility", "visible");
+			});
+
+		});
+
+
+	</script>
+
+</body>
+
+</html>

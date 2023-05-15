@@ -12,7 +12,7 @@
 		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
 	<link rel="stylesheet" href="/css/janela-modal.css" />
 	<link rel="stylesheet" href="/css/niveis-html.css">
-	<title>Percursos</title>
+	<title>CSS niveis</title>
 </head>
 <style>
 	.titulo-categoria {
@@ -224,7 +224,7 @@
 					<div class="card-atividade-recente bg-dark">
 						<div class="info-direita bg-primary">
 							<h6 class="text-light">Curso</h6>
-							<h3 class="info-titulo text-light">HTML<br> iniciante</h3>
+							<h3 class="info-titulo text-light">Java Script<br> iniciante</h3>
 
 							<a href="#modal_1" th:href="@{/frontend}">
 								<h6 class="text-light">Ver todos os cursos</h6>
@@ -240,8 +240,7 @@
 									<a href="#modal_1">
 										<button class="btn btn-primary">Conhecer</button>
 									</a>
-									<a href="#modal_1" th:href="@{/html/iniciante}">
-										<button class="btn btn-success">Começar</button></a>
+									<a class="btn btn-success" th:href="@{/js/iniciante}">Começar</a>
 								</div>
 							</div>
 						</div>
@@ -249,13 +248,13 @@
 						<div id="modal_1" class="modal">
 							<div class="modal__content bg-dark">
 								<div class="conhecer-titulo">
-									<h4> <strong class="html"> HTML </strong>PERCURSO INICIANTE</h4>
+									<h4> <strong class="js"> Java Script </strong>PERCURSO INICIANTE</h4>
 									<a class="fechar" href="#"> X</a>
 								</div>
 
 								<div class="container-conhecer">
-									<h5>Melhor opção para os iniciantes em HTML que desejam iniciar seus estudos em
-										HTML, ofereceremos guias de estudos com aulas e questionarios com feedback
+									<h5>Melhor opção para os iniciantes em Java Script que desejam iniciar seus estudos em
+										Java Script, ofereceremos guias de estudos com aulas e questionarios com feedback
 										imediato de sem desempenho.</p>
 								</div>
 
@@ -271,19 +270,19 @@
 					<div class="card-atividade-recente bg-dark">
 						<div class="bg-warning info-direita">
 							<h6 class="text-light">Curso</h6>
-							<h3 class="info-titulo text-light">HTML <br>Intermediário</h3>
+							<h3 class="info-titulo text-light">Java Script <br>Intermediário</h3>
 
 							<h6 class="text-light">Ver todos os cursos</h6>
 						</div>
 
 						<div class="info-esquerda">
 							<div class="info-esquerda-titulo">
-								<h7 class="text-light">PERCURSO INICIANTE</h7>
+								<h7 class="text-light">PERCURSO INTERMEDIARIO</h7>
 								<h3 class="text-light">Novos desafios com uma dificuldade um pouco maior</h3>
 
 								<div class="botoes">
 									<button class="btn btn-primary">Conhecer</button>
-									<a href="#modal_1" th:href="@{/frontend/html}">
+									<a href="#modal_1" th:href="@{#}">
 										<a class="btn btn-success" th:href="@{#}">Começar</a>
 								</div>
 							</div>

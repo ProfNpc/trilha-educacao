@@ -12,7 +12,7 @@
 		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
 	<link rel="stylesheet" href="/css/janela-modal.css" />
 	<link rel="stylesheet" href="/css/niveis-html.css">
-	<title>Percursos</title>
+	<title>CSS niveis</title>
 </head>
 <style>
 	.titulo-categoria {
@@ -205,46 +205,12 @@
 
 <body>
 	<!-- Cabecalho -->
-	<header th:fragment="cabecalho2" class="cabecalho">
-		<nav class="navbar bg-dark">
-			<div class="container-fluid">
-				<a class="navbar-brand text-light">Y.our Study</a>
-				<form class="d-flex" role="search">
-					<button class="btn btn-danger sair" type="submit">Sair</button>
-				</form>
-			</div>
-		</nav>
-	</header>
+	<div th:replace="fragmentos/fragmentos :: cabecalho2"></div>
+
 
 	<section class="conteudo">
-		<div th:fragment="side-bar-user" class="side-bar bg-dark">
-			<div class="menu">
-				<div class="item">
-					<a th:href="@{/usuario/home}"><i class="fas fa-desktop"></i>Dashboard</a>
-				</div>
-				<div class="item">
-					<a class="sub-btn"><i class="fas fa-table"></i>Atividades<i
-							class="fas fa-angle-right dropdown"></i></a>
-					<div class="sub-menu">
-						<a th:href="@{/frontend}" class="sub-item">Front-end</a>
-						<a href="#" onclick="abrirPag(`backend`)" class="sub-item">Back-End</a>
-						<a href="#" class="sub-item">Data Science</a>
-					</div>
-				</div>
-
-				<div class="item">
-					<a th:href="@{/listanotificacao}"><i class="fas fa-bell"></i>Notificações</a>
-				</div>
-
-				<div class="item">
-					<a href="#"><i class="fas fa-th"></i>Minha conta</a>
-				</div>
-
-				<div class="item">
-					<a href="index.html"><i class="fas fa-info-circle"></i>Sobre</a>
-				</div>
-			</div>
-		</div>
+		<!-- Side-bar -->
+		<div th:replace="fragmentos/fragmentos :: side-bar-user"></div>
 
 		<div class="container-funcoes">
 			<div class="container-texto-categoria">
@@ -274,7 +240,7 @@
 									<a href="#modal_1">
 										<button class="btn btn-primary">Conhecer</button>
 									</a>
-									<a class="btn btn-success" th:href="@{/frontend/css-iniciante}">Começar</a>
+									<a class="btn btn-success" th:href="@{/css/iniciante}">Começar</a>
 								</div>
 							</div>
 						</div>
@@ -316,8 +282,8 @@
 
 								<div class="botoes">
 									<button class="btn btn-primary">Conhecer</button>
-									<a href="#modal_1" th:href="@{/frontend/html}">
-										<a class="btn btn-success" th:href="@{/frontend/css-iniciante}">Começar</a>
+									<a href="#modal_1" th:href="@{#}">
+										<a class="btn btn-success" th:href="@{#}">Começar</a>
 								</div>
 							</div>
 						</div>

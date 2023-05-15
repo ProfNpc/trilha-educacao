@@ -33,14 +33,19 @@ public class CategoriaController {
 		return "categorias/questionario-html";
 	}
 	
-	@GetMapping("/frontend/html/niveis")
+	@GetMapping("/html/niveis")
 	public String EscolherNivel() {
 		return "categorias/html-niveis";
 	}
 	
-	@GetMapping("/frontend/css/niveis")
+	@GetMapping("/css/niveis")
 	public String cssNiveis() {
 		return "categorias/css-niveis";
+	}
+	
+	@GetMapping("/js/niveis")
+	public String jsNiveis() {
+		return "categorias/js-niveis";
 	}
 
 }
